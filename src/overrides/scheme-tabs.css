@@ -1,0 +1,83 @@
+/* ============================================
+   SCHEME-SPECIFIC TAB OVERRIDES (high specificity)
+   Must come last to override all other tab rules
+   ============================================ */
+
+/* Anthropic Light - all active tabs */
+body.scheme-anthropic.theme-light .workspace-tab-header.is-active,
+body.scheme-anthropic.theme-light .workspace-tab-header.mod-active,
+body.scheme-anthropic.theme-light .mod-root .workspace-tab-header.is-active,
+body.scheme-anthropic.theme-light .mod-root .workspace-tab-header.mod-active {
+  background-color: #D5D2CB !important;
+}
+
+/* Anthropic Light - non-active tabs */
+body.scheme-anthropic.theme-light .workspace-tab-header:not(.is-active):not(.mod-active) {
+  background-color: #f0efe8 !important;
+}
+
+/* Anthropic Dark - all active tabs */
+body.scheme-anthropic.theme-dark .workspace-tab-header.is-active,
+body.scheme-anthropic.theme-dark .workspace-tab-header.mod-active,
+body.scheme-anthropic.theme-dark .mod-root .workspace-tab-header.is-active,
+body.scheme-anthropic.theme-dark .mod-root .workspace-tab-header.mod-active {
+  background-color: #2a2a2b !important;
+}
+
+/* Anthropic Dark - non-active tabs */
+body.scheme-anthropic.theme-dark .workspace-tab-header:not(.is-active):not(.mod-active) {
+  background-color: #1a1a1b !important;
+}
+
+/* Nordic Light - all active tabs */
+body.scheme-nordic.theme-light .workspace-tab-header.is-active,
+body.scheme-nordic.theme-light .workspace-tab-header.mod-active,
+body.scheme-nordic.theme-light .mod-root .workspace-tab-header.is-active,
+body.scheme-nordic.theme-light .mod-root .workspace-tab-header.mod-active {
+  background-color: #D8DEE9 !important;
+}
+
+/* Nordic Light - non-active tabs */
+body.scheme-nordic.theme-light .workspace-tab-header:not(.is-active):not(.mod-active) {
+  background-color: #E5E9F0 !important;
+}
+
+/* Nordic Dark - all active tabs */
+body.scheme-nordic.theme-dark .workspace-tab-header.is-active,
+body.scheme-nordic.theme-dark .workspace-tab-header.mod-active,
+body.scheme-nordic.theme-dark .mod-root .workspace-tab-header.is-active,
+body.scheme-nordic.theme-dark .mod-root .workspace-tab-header.mod-active {
+  background-color: #3B4252 !important;
+}
+
+/* Nordic Dark - non-active tabs */
+body.scheme-nordic.theme-dark .workspace-tab-header:not(.is-active):not(.mod-active) {
+  background-color: #2E3440 !important;
+}
+
+/* Academic Light - all active tabs */
+body.scheme-academic.theme-light .workspace-tab-header.is-active,
+body.scheme-academic.theme-light .workspace-tab-header.mod-active,
+body.scheme-academic.theme-light .mod-root .workspace-tab-header.is-active,
+body.scheme-academic.theme-light .mod-root .workspace-tab-header.mod-active {
+  background-color: #E0E0E0 !important;
+}
+
+/* Academic Light - non-active tabs */
+body.scheme-academic.theme-light .workspace-tab-header:not(.is-active):not(.mod-active) {
+  background-color: #F0F0F0 !important;
+}
+
+/* Academic Dark - all active tabs */
+body.scheme-academic.theme-dark .workspace-tab-header.is-active,
+body.scheme-academic.theme-dark .workspace-tab-header.mod-active,
+body.scheme-academic.theme-dark .mod-root .workspace-tab-header.is-active,
+body.scheme-academic.theme-dark .mod-root .workspace-tab-header.mod-active {
+  background-color: #2a2a2a !important;
+}
+
+/* Academic Dark - non-active tabs */
+body.scheme-academic.theme-dark .workspace-tab-header:not(.is-active):not(.mod-active) {
+  background-color: #1a1a1a !important;
+}
+

@@ -1,0 +1,620 @@
+/* ============================================
+   MOBILE & TABLET STYLING
+   Responsive adjustments for touch devices
+   ============================================ */
+
+/* --------------------------------------------
+   Mobile Base Variables
+   -------------------------------------------- */
+
+body.is-mobile {
+  /* Touch-friendly sizes */
+  --touch-size-xs: 32px;
+  --touch-size-s: 36px;
+  --touch-size-m: 44px;  /* Apple's minimum recommended touch target */
+  --touch-size-l: 48px;
+
+  /* Increased spacing for touch */
+  --mobile-padding: 12px;
+  --mobile-padding-large: 16px;
+
+  /* Larger text for readability */
+  --mobile-font-size: 16px;
+  --mobile-font-size-small: 14px;
+
+  /* Increased border radius for softer look on mobile */
+  --mobile-radius: 8px;
+
+  /* Safe area insets (for notched devices) */
+  --safe-area-top: env(safe-area-inset-top, 0px);
+  --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-area-left: env(safe-area-inset-left, 0px);
+  --safe-area-right: env(safe-area-inset-right, 0px);
+}
+
+/* Phone-specific variables */
+body.is-phone {
+  --mobile-font-size: 16px;
+  --nav-item-size: var(--touch-size-m);
+}
+
+/* Tablet-specific variables */
+body.is-tablet {
+  --mobile-font-size: 15px;
+  --nav-item-size: var(--touch-size-s);
+}
+
+/* --------------------------------------------
+   Workspace Container (Mobile)
+   -------------------------------------------- */
+
+body.is-mobile .workspace {
+  padding-top: var(--safe-area-top);
+}
+
+body.is-mobile .workspace-tab-container {
+  padding-top: var(--safe-area-top);
+}
+
+/* --------------------------------------------
+   Workspace Drawer (Mobile Sidebar)
+   -------------------------------------------- */
+
+body.is-mobile .workspace-drawer {
+  background-color: var(--sidebar-bg);
+}
+
+body.is-mobile .workspace-drawer-inner {
+  padding-bottom: var(--safe-area-bottom);
+  background-color: var(--sidebar-bg);
+}
+
+/* Drawer header (vault name area) */
+body.is-mobile .workspace-drawer-header {
+  padding: var(--mobile-padding) var(--mobile-padding-large);
+  background-color: var(--background-secondary);
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+body.is-mobile .workspace-drawer-header-icon {
+  color: var(--icon-color);
+}
+
+body.is-mobile .workspace-drawer-header-name {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.1em;
+  color: var(--text-normal);
+}
+
+body.is-mobile .workspace-drawer-header-info {
+  font-size: 0.8em;
+  color: var(--text-muted);
+}
+
+/* Drawer vault switcher */
+body.is-mobile .workspace-drawer-vault-switcher {
+  padding: 8px;
+  border-radius: var(--mobile-radius);
+}
+
+body.is-mobile .workspace-drawer-vault-switcher:hover {
+  background-color: var(--background-modifier-hover);
+}
+
+/* Drawer tab options (Files, Search, Bookmarks tabs) */
+body.is-mobile .workspace-drawer-active-tab-header {
+  padding: 8px var(--mobile-padding);
+  background-color: var(--background-secondary);
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+body.is-mobile .workspace-drawer-tab-option-item {
+  padding: 10px 14px;
+  border-radius: var(--mobile-radius);
+  min-height: var(--touch-size-s);
+  display: flex;
+  align-items: center;
+}
+
+body.is-mobile .workspace-drawer-tab-option-item.is-active {
+  background-color: var(--background-modifier-hover);
+}
+
+/* Drawer content area */
+body.is-mobile .workspace-drawer-active-tab-content {
+  padding-bottom: var(--safe-area-bottom);
+}
+
+/* Drawer tab select styling */
+body.is-mobile .workspace-drawer-tab-select .workspace-tab-header-inner {
+  background-color: transparent;
+}
+
+body.is-mobile .workspace-drawer-tab-options-list {
+  background-color: var(--background-secondary);
+  border-radius: var(--mobile-radius);
+  border: 1px solid var(--background-modifier-border);
+}
+
+/* Drawer backdrop */
+body.is-mobile .workspace-drawer-backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* --------------------------------------------
+   File Explorer (Mobile)
+   -------------------------------------------- */
+
+/* Larger tap targets for file/folder items */
+body.is-mobile .nav-file-title,
+body.is-mobile .nav-folder-title {
+  min-height: var(--touch-size-m);
+  padding: 10px var(--mobile-padding);
+  display: flex;
+  align-items: center;
+}
+
+body.is-mobile .nav-file-title-content,
+body.is-mobile .nav-folder-title-content {
+  font-size: var(--mobile-font-size);
+}
+
+/* Allow text to wrap on narrow screens */
+body.is-phone .nav-file-title-content,
+body.is-phone .nav-folder-title-content {
+  white-space: normal;
+  word-break: break-word;
+}
+
+/* Nav buttons container */
+body.is-mobile .workspace-drawer .nav-buttons-container {
+  padding: var(--mobile-padding);
+  gap: 8px;
+  background-color: var(--background-secondary);
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+body.is-mobile .nav-action-button {
+  min-width: var(--touch-size-s);
+  min-height: var(--touch-size-s);
+  padding: 8px;
+  border-radius: var(--mobile-radius);
+}
+
+body.is-mobile .nav-action-button:active {
+  background-color: var(--background-modifier-active-hover);
+}
+
+/* Collapse indicator - larger touch target */
+body.is-mobile .nav-folder-collapse-indicator {
+  width: 24px;
+  height: 24px;
+  padding: 4px;
+}
+
+/* --------------------------------------------
+   Mobile Navbar (Bottom Bar)
+   -------------------------------------------- */
+
+body.is-mobile .mobile-navbar {
+  background-color: var(--background-secondary);
+  border-top: 1px solid var(--background-modifier-border);
+  padding-bottom: var(--safe-area-bottom);
+}
+
+body.is-mobile .mobile-navbar-actions {
+  padding: 8px var(--mobile-padding);
+  gap: 4px;
+}
+
+body.is-mobile .mobile-navbar-action {
+  min-width: var(--touch-size-m);
+  min-height: var(--touch-size-m);
+  border-radius: var(--mobile-radius);
+  color: var(--icon-color);
+}
+
+body.is-mobile .mobile-navbar-action:active {
+  background-color: var(--background-modifier-active-hover);
+}
+
+body.is-mobile .mobile-navbar-action.is-active {
+  color: var(--theme-accent);
+}
+
+/* --------------------------------------------
+   Mobile Toolbar (Editor Actions)
+   -------------------------------------------- */
+
+body.is-mobile .mobile-toolbar {
+  background-color: var(--background-secondary);
+  border-top: 1px solid var(--background-modifier-border);
+  padding: 6px var(--mobile-padding);
+}
+
+body.is-mobile .mobile-toolbar-options-container {
+  padding: 4px;
+  gap: 2px;
+}
+
+body.is-mobile .mobile-toolbar-option {
+  min-width: var(--touch-size-s);
+  min-height: var(--touch-size-s);
+  padding: 8px;
+  border-radius: var(--mobile-radius);
+  color: var(--icon-color);
+}
+
+body.is-mobile .mobile-toolbar-option:active {
+  background-color: var(--background-modifier-active-hover);
+}
+
+body.is-mobile .mobile-toolbar-option.is-active {
+  color: var(--theme-accent);
+  background-color: var(--background-modifier-hover);
+}
+
+/* Mobile toolbar options list (expanded toolbar) */
+body.is-mobile .mobile-toolbar-options-list {
+  background-color: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--mobile-radius);
+  box-shadow: 0 -4px 16px var(--background-modifier-box-shadow);
+}
+
+/* --------------------------------------------
+   View Header (Mobile)
+   -------------------------------------------- */
+
+body.is-mobile .view-header {
+  padding: 8px var(--mobile-padding);
+  min-height: var(--touch-size-m);
+  background-color: var(--background-secondary);
+}
+
+body.is-mobile .view-header-title {
+  font-size: var(--mobile-font-size);
+}
+
+body.is-mobile .view-header-nav-buttons {
+  gap: 4px;
+}
+
+body.is-mobile .view-action {
+  min-width: var(--touch-size-s);
+  min-height: var(--touch-size-s);
+  padding: 8px;
+  border-radius: var(--mobile-radius);
+}
+
+body.is-mobile .view-action:active {
+  background-color: var(--background-modifier-active-hover);
+}
+
+/* --------------------------------------------
+   Pull-Down Action (Mobile Refresh)
+   -------------------------------------------- */
+
+body.is-mobile .pull-down-action {
+  background-color: var(--background-secondary);
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------
+   Modals & Prompts (Mobile)
+   -------------------------------------------- */
+
+/* Full-width modals on phone */
+body.is-phone .modal {
+  width: 95%;
+  max-width: none;
+  margin: var(--mobile-padding);
+}
+
+body.is-phone .prompt {
+  width: 92%;
+  max-height: 85vh;
+  margin-top: var(--safe-area-top);
+}
+
+/* Larger suggestion items for touch */
+body.is-mobile .suggestion-item {
+  min-height: var(--touch-size-m);
+  padding: 10px var(--mobile-padding);
+}
+
+body.is-mobile .suggestion-item:active {
+  background-color: var(--background-modifier-active-hover);
+}
+
+/* Prompt input */
+body.is-mobile .prompt-input {
+  font-size: var(--mobile-font-size);
+  padding: 12px var(--mobile-padding);
+}
+
+/* --------------------------------------------
+   Settings (Mobile)
+   -------------------------------------------- */
+
+body.is-mobile .vertical-tab-header {
+  padding: var(--mobile-padding);
+}
+
+body.is-mobile .vertical-tab-nav-item {
+  min-height: var(--touch-size-m);
+  padding: 12px var(--mobile-padding);
+  border-radius: var(--mobile-radius);
+}
+
+body.is-mobile .setting-item {
+  padding: var(--mobile-padding) 0;
+}
+
+body.is-mobile .setting-item-control {
+  gap: 8px;
+}
+
+/* Larger toggles and buttons */
+body.is-mobile .checkbox-container {
+  min-width: 44px;
+  min-height: 24px;
+}
+
+body.is-mobile button {
+  min-height: var(--touch-size-s);
+  padding: 8px 16px;
+}
+
+body.is-mobile .dropdown {
+  min-height: var(--touch-size-s);
+  padding: 8px 12px;
+}
+
+/* --------------------------------------------
+   Tree Items (Mobile) - Outline, Tags, etc.
+   -------------------------------------------- */
+
+body.is-mobile .tree-item-self {
+  min-height: var(--touch-size-m);
+  padding: 10px var(--mobile-padding);
+}
+
+body.is-mobile .tree-item-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Outline pane */
+body.is-mobile .outline-heading {
+  min-height: var(--touch-size-m);
+  padding: 10px var(--mobile-padding);
+}
+
+/* Tag pane */
+body.is-mobile .tag-pane-tag {
+  min-height: var(--touch-size-s);
+  padding: 8px var(--mobile-padding);
+}
+
+/* --------------------------------------------
+   Search Results (Mobile)
+   -------------------------------------------- */
+
+body.is-mobile .search-result-file-title {
+  min-height: var(--touch-size-s);
+  padding: 10px var(--mobile-padding);
+}
+
+body.is-mobile .search-result-file-match {
+  padding: 8px var(--mobile-padding);
+}
+
+body.is-mobile .search-result-collapse-indicator {
+  width: 24px;
+  height: 24px;
+}
+
+/* Search input */
+body.is-mobile .search-input-container input {
+  font-size: var(--mobile-font-size);
+  padding: 10px var(--mobile-padding);
+  min-height: var(--touch-size-m);
+}
+
+/* --------------------------------------------
+   Editor Content (Mobile)
+   -------------------------------------------- */
+
+/* Comfortable reading on mobile */
+body.is-mobile .markdown-preview-view,
+body.is-mobile .markdown-source-view {
+  font-size: var(--mobile-font-size);
+  padding: var(--mobile-padding-large);
+}
+
+/* Larger line height for touch scrolling */
+body.is-mobile .markdown-preview-view {
+  line-height: 1.7;
+}
+
+/* Ensure links have enough space between them */
+body.is-mobile .markdown-preview-view a {
+  padding: 2px 0;
+}
+
+/* Inline title */
+body.is-mobile .inline-title {
+  font-size: 1.5em;
+  padding-bottom: var(--mobile-padding);
+}
+
+/* --------------------------------------------
+   Callouts (Mobile)
+   -------------------------------------------- */
+
+body.is-mobile .callout {
+  padding: var(--mobile-padding);
+}
+
+body.is-mobile .callout-title {
+  padding: 8px 0;
+}
+
+/* --------------------------------------------
+   Tables (Mobile)
+   -------------------------------------------- */
+
+/* Horizontal scroll for wide tables */
+body.is-phone .markdown-preview-view table {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+body.is-mobile .markdown-preview-view th,
+body.is-mobile .markdown-preview-view td {
+  padding: 10px 12px;
+  min-width: 80px;
+}
+
+/* --------------------------------------------
+   Code Blocks (Mobile)
+   -------------------------------------------- */
+
+/* Horizontal scroll for code */
+body.is-mobile .markdown-preview-view pre {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+body.is-mobile .markdown-preview-view pre code {
+  font-size: var(--mobile-font-size-small);
+}
+
+/* --------------------------------------------
+   Images (Mobile)
+   -------------------------------------------- */
+
+/* Full width images on phone */
+body.is-phone .markdown-preview-view img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Disable zoom on hover for mobile (interferes with touch) */
+body.is-mobile .markdown-rendered img:hover {
+  transform: none;
+}
+
+/* --------------------------------------------
+   Checkboxes (Mobile) - Larger Touch Targets
+   -------------------------------------------- */
+
+body.is-mobile input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
+}
+
+body.is-mobile .task-list-item {
+  min-height: var(--touch-size-s);
+  padding: 4px 0;
+}
+
+/* --------------------------------------------
+   Embeds (Mobile)
+   -------------------------------------------- */
+
+body.is-mobile .markdown-embed {
+  padding: var(--mobile-padding);
+}
+
+body.is-mobile .file-embed {
+  padding: var(--mobile-padding);
+}
+
+/* --------------------------------------------
+   Graph View (Mobile)
+   -------------------------------------------- */
+
+body.is-mobile .graph-controls {
+  padding: var(--mobile-padding);
+}
+
+body.is-mobile .graph-control-section {
+  padding: 8px 0;
+}
+
+/* --------------------------------------------
+   Menu (Mobile)
+   -------------------------------------------- */
+
+body.is-mobile .menu {
+  border-radius: var(--mobile-radius);
+}
+
+body.is-mobile .menu-item {
+  min-height: var(--touch-size-m);
+  padding: 10px var(--mobile-padding);
+}
+
+body.is-mobile .menu-item:active {
+  background-color: var(--background-modifier-active-hover);
+}
+
+body.is-mobile .menu-separator {
+  margin: 4px 0;
+}
+
+/* --------------------------------------------
+   Scrollbars (Mobile) - Hide by default
+   -------------------------------------------- */
+
+body.is-mobile ::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+body.is-mobile ::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+/* Show scrollbar when actively scrolling */
+body.is-mobile *:hover::-webkit-scrollbar-thumb,
+body.is-mobile *:active::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-bg);
+}
+
+/* --------------------------------------------
+   Scheme-Specific Mobile Overrides
+   -------------------------------------------- */
+
+/* Anthropic scheme mobile */
+body.scheme-anthropic.is-mobile.theme-light .workspace-drawer {
+  background-color: #F3F1EA;
+}
+
+body.scheme-anthropic.is-mobile.theme-dark .workspace-drawer {
+  background-color: #131314;
+}
+
+/* Nordic scheme mobile */
+body.scheme-nordic.is-mobile.theme-light .workspace-drawer {
+  background-color: #E5E9F0;
+}
+
+body.scheme-nordic.is-mobile.theme-dark .workspace-drawer {
+  background-color: #242933;
+}
+
+/* Academic scheme mobile */
+body.scheme-academic.is-mobile.theme-light .workspace-drawer {
+  background-color: #F5F5F5;
+}
+
+body.scheme-academic.is-mobile.theme-dark .workspace-drawer {
+  background-color: #141414;
+}
+

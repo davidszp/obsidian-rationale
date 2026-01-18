@@ -1,0 +1,134 @@
+/* ============================================
+   NORDIC COLOR SCHEME - Light Mode
+   Inspired by Nord theme (nordtheme.com)
+   ============================================ */
+
+body.scheme-nordic.theme-light {
+  /* Accent - Frost blue */
+  --theme-accent: var(--custom-accent, #5E81AC);
+  --accent-h: 213;
+  --accent-s: 32%;
+  --accent-l: 52%;
+
+  /* Snow Storm backgrounds */
+  --background-primary: #ECEFF4;
+  --sidebar-bg: #E5E9F0;
+  --background-primary-alt: #E5E9F0;
+  --background-secondary: #D8DEE9;
+  --background-secondary-alt: #D0D6E0;
+  --background-modifier-border: #C8CED9;
+  --background-modifier-border-hover: #B8C0CC;
+  --background-modifier-border-focus: var(--theme-accent);
+
+  /* Form backgrounds */
+  --background-modifier-form-field: #F0F4F8;
+  --background-modifier-form-field-highlighted: #E8ECF2;
+
+  /* Overlays */
+  --background-modifier-cover: rgba(46, 52, 64, 0.6);
+  --background-modifier-box-shadow: rgba(46, 52, 64, 0.1);
+
+  /* Interactive states */
+  --background-modifier-hover: rgba(46, 52, 64, 0.06);
+  --background-modifier-active-hover: rgba(46, 52, 64, 0.1);
+  --background-modifier-success: rgba(163, 190, 140, 0.2);
+  --background-modifier-error: rgba(191, 97, 106, 0.15);
+  --background-modifier-error-hover: rgba(191, 97, 106, 0.25);
+
+  /* Text - Polar Night */
+  --text-normal: #2E3440;
+  --text-muted: #4C566A;
+  --text-faint: #6C7A8E;
+  --text-on-accent: #ECEFF4;
+  --text-on-accent-inverted: #2E3440;
+  --text-error: #BF616A;
+  --text-success: #A3BE8C;
+  --text-warning: #D08770;
+  --text-highlight-bg: rgba(94, 129, 172, 0.25);
+  --text-highlight-bg-active: rgba(94, 129, 172, 0.35);
+  --text-selection: rgba(94, 129, 172, 0.2);
+  --text-accent: #5E81AC;
+  --text-accent-hover: #81A1C1;
+
+  /* Interactive */
+  --interactive-normal: #E5E9F0;
+  --interactive-hover: #D8DEE9;
+  --interactive-accent: var(--theme-accent);
+  --interactive-accent-hover: #81A1C1;
+
+  /* Links */
+  --link-color: #5E81AC;
+  --link-color-hover: #81A1C1;
+  --link-external-color: #5E81AC;
+  --link-external-color-hover: #81A1C1;
+  --link-unresolved-color: #8FBCBB;
+  --link-unresolved-opacity: 0.7;
+
+  /* Tags */
+  --tag-color: #5E81AC;
+  --tag-color-hover: #81A1C1;
+  --tag-background: rgba(94, 129, 172, 0.12);
+  --tag-background-hover: rgba(94, 129, 172, 0.2);
+
+  /* Code */
+  --code-normal: #2E3440;
+  --code-background: #FFFFFF;
+  --code-comment: #4C566A;
+
+  /* Blockquote */
+  --blockquote-border-color: #81A1C1;
+  --blockquote-background-color: rgba(129, 161, 193, 0.08);
+
+  /* Horizontal rule */
+  --hr-color: #C8CED9;
+
+  /* Table */
+  --table-header-background: #D8DEE9;
+  --table-header-background-hover: #CDD4E0;
+  --table-row-even-background: #E5E9F0;
+  --table-row-odd-background: #ECEFF4;
+  --table-row-background-hover: rgba(94, 129, 172, 0.1);
+  --table-border-color: #C8CED9;
+
+  /* Scrollbar */
+  --scrollbar-thumb-bg: rgba(76, 86, 106, 0.3);
+  --scrollbar-active-thumb-bg: rgba(76, 86, 106, 0.5);
+
+  /* Tab */
+  --tab-text-color: #4C566A;
+  --tab-text-color-active: #2E3440;
+  --tab-text-color-focused: #2E3440;
+  --tab-text-color-focused-active: #2E3440;
+  --tab-background-active: #ECEFF4;
+
+  /* Nav */
+  --nav-item-color: #4C566A;
+  --nav-item-color-hover: #2E3440;
+  --nav-item-color-active: #2E3440;
+  --nav-item-background-hover: rgba(46, 52, 64, 0.06);
+  --nav-item-background-active: rgba(46, 52, 64, 0.1);
+
+  /* Graph */
+  --graph-line: #B8C0CC;
+  --graph-node: #5E81AC;
+  --graph-node-focused: #81A1C1;
+
+  /* Callouts */
+  --callout-default: rgba(94, 129, 172, 0.12);
+  --callout-info: rgba(136, 192, 208, 0.15);
+  --callout-warning: rgba(208, 135, 112, 0.15);
+  --callout-error: rgba(191, 97, 106, 0.15);
+  --callout-success: rgba(163, 190, 140, 0.15);
+  --callout-question: rgba(180, 142, 173, 0.15);
+  --callout-tip: rgba(143, 188, 187, 0.15);
+
+  /* Indentation guides */
+  --indentation-guide-color: #C8CED9;
+  --indentation-guide-color-active: #5E81AC;
+
+  /* Icon */
+  --icon-color: #4C566A;
+  --icon-color-hover: #2E3440;
+  --icon-color-active: #5E81AC;
+  --icon-color-focused: #5E81AC;
+}

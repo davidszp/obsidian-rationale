@@ -1,0 +1,17 @@
+/* ============================================
+   JUSTIFIED TEXT
+   Justify paragraph text in reading and editing modes
+   ============================================ */
+
+/* Reading mode */
+body.justified-text .markdown-preview-view p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Source view and live preview */
+body.justified-text .markdown-source-view.mod-cm6 .cm-line {
+  text-align: justify;
+  text-justify: inter-word;
+}
+

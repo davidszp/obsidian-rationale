@@ -1,0 +1,49 @@
+/* ============================================
+   TABLE ENHANCEMENTS
+   ============================================ */
+
+.markdown-rendered table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  margin: 16px 0;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+}
+
+.markdown-rendered th {
+  background-color: var(--background-secondary);
+  font-weight: 600;
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.markdown-rendered td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.markdown-rendered tr:last-child td {
+  border-bottom: none;
+}
+
+/* Row striping */
+.markdown-rendered tbody tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.theme-dark .markdown-rendered tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Row hover */
+.markdown-rendered tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.theme-dark .markdown-rendered tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+

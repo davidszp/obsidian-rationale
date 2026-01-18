@@ -1,0 +1,369 @@
+/* ============================================
+   SIDEBAR / FILE EXPLORER (Claude Docs Style)
+   Clean, minimal, text-only navigation
+   ============================================ */
+
+/*
+ * Claude docs colors:
+ * - Content area: white/bright (#ffffff or #fefefe)
+ * - Sidebar: warm beige/sand (#f5f4ef or similar)
+ */
+
+/* Sidebar background - warm sand/beige (darker than content) */
+.workspace-split.mod-left-split,
+.workspace-split.mod-right-split {
+  background-color: var(--sidebar-bg) !important;
+}
+
+.mod-left-split .workspace-tabs,
+.mod-right-split .workspace-tabs,
+.mod-left-split .workspace-tab-container,
+.mod-right-split .workspace-tab-container,
+.mod-left-split .workspace-leaf,
+.mod-right-split .workspace-leaf,
+.mod-left-split .workspace-leaf-content,
+.mod-right-split .workspace-leaf-content,
+.mod-left-split .nav-files-container,
+.mod-right-split .nav-files-container {
+  background-color: var(--sidebar-bg) !important;
+}
+
+/* File explorer container */
+.nav-folder.mod-root {
+  padding: 12px 8px;
+}
+
+/* Hide file icons for clean look, but keep collapse indicators */
+.nav-file-icon,
+.nav-folder-title-content::before {
+  display: none !important;
+}
+
+/* Style the collapse indicator (chevron) */
+.nav-folder-collapse-indicator {
+  color: var(--text-faint);
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+}
+
+.nav-folder-collapse-indicator:hover {
+  color: var(--text-muted);
+}
+
+/* Tree item collapse icons */
+.tree-item-icon.collapse-icon {
+  color: var(--text-faint);
+}
+
+/* Folder titles (section headers) - bold like Claude docs */
+.nav-folder-title {
+  font-weight: 600;
+  font-size: 0.85em;
+  color: var(--text-normal);
+  padding: 8px 12px;
+  margin-top: 16px;
+  margin-bottom: 4px;
+  border-radius: 0;
+  background: transparent;
+}
+
+.nav-folder-title:first-child,
+.nav-folder.mod-root > .nav-folder-children > .nav-folder:first-child > .nav-folder-title {
+  margin-top: 0;
+}
+
+/* File titles - regular weight, generous spacing */
+.nav-file-title {
+  font-weight: 400;
+  font-size: 0.85em;
+  color: var(--text-muted);
+  padding: 6px 12px;
+  margin: 2px 0;
+  border-radius: var(--radius-s);
+  background: transparent;
+}
+
+/* Folder title content - no extra padding since icons are hidden */
+.nav-folder-title-content,
+.nav-file-title-content {
+  padding-left: 0;
+}
+
+/* Hover states - very subtle */
+.nav-file-title:hover {
+  background-color: transparent;
+  color: var(--text-normal);
+}
+
+.nav-folder-title:hover {
+  background-color: transparent;
+}
+
+/* Active/selected state - Anthropic scheme */
+body.scheme-anthropic.theme-light .nav-file-title.is-active {
+  background-color: #E8E6DF;
+  color: var(--text-normal);
+  font-weight: 400;
+  border-radius: var(--radius-s);
+}
+
+body.scheme-anthropic.theme-dark .nav-file-title.is-active {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--text-normal);
+  font-weight: 400;
+  border-radius: var(--radius-s);
+}
+
+/* Active/selected state - Nordic scheme */
+body.scheme-nordic.theme-light .nav-file-title.is-active {
+  background-color: #D8DEE9;
+  color: var(--text-normal);
+  font-weight: 400;
+  border-radius: var(--radius-s);
+}
+
+body.scheme-nordic.theme-dark .nav-file-title.is-active {
+  background-color: rgba(216, 222, 233, 0.1);
+  color: var(--text-normal);
+  font-weight: 400;
+  border-radius: var(--radius-s);
+}
+
+/* Active/selected state - Academic scheme (neutral grey) */
+body.scheme-academic.theme-light .nav-file-title.is-active {
+  background-color: #E0E0E0;
+  color: var(--text-normal);
+  font-weight: 400;
+  border-radius: var(--radius-s);
+}
+
+body.scheme-academic.theme-dark .nav-file-title.is-active {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-normal);
+  font-weight: 400;
+  border-radius: var(--radius-s);
+}
+
+/* Nested folders - simple indentation, no lines */
+.nav-folder-children {
+  padding-left: 12px;
+  margin-left: 0;
+  border-left: none;
+}
+
+.nav-folder.mod-root > .nav-folder-children {
+  padding-left: 0;
+}
+
+/* Tree items (outline, tags, etc.) */
+.tree-item-self {
+  padding: 6px 12px;
+  border-radius: var(--radius-s);
+  font-size: 0.85em;
+  color: var(--text-muted);
+}
+
+.tree-item-self:hover {
+  background-color: transparent;
+  color: var(--text-normal);
+}
+
+.theme-light .tree-item-self.is-selected {
+  background-color: #E8E6DF;
+  color: var(--text-normal);
+}
+
+.theme-dark .tree-item-self.is-selected {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--text-normal);
+}
+
+/* Tree item children - simple indent */
+.tree-item-children {
+  padding-left: 12px;
+  border-left: none;
+  margin-left: 0;
+}
+
+/* Search in sidebar */
+.search-result-file-title {
+  font-weight: 500;
+  font-size: 0.85em;
+  padding: 6px 12px;
+}
+
+.search-result-file-match {
+  font-size: 0.8em;
+  color: var(--text-muted);
+  padding: 4px 12px;
+}
+
+/* Tag pane */
+.tag-pane-tag {
+  font-size: 0.85em;
+  padding: 6px 12px;
+  border-radius: var(--radius-s);
+  color: var(--text-muted);
+}
+
+.tag-pane-tag:hover {
+  color: var(--text-normal);
+  background: transparent;
+}
+
+/* Outline pane */
+.outline-heading {
+  font-size: 0.85em;
+  padding: 6px 12px;
+  color: var(--text-muted);
+}
+
+.outline-heading:hover {
+  color: var(--text-normal);
+}
+
+/* Backlinks */
+.backlink-pane .tree-item-self {
+  font-size: 0.85em;
+}
+
+/* Vault name at top - subtle separator */
+.nav-folder.mod-root > .nav-folder-title {
+  font-weight: 600;
+  font-size: 0.9em;
+  color: var(--text-normal);
+  padding: 8px 12px 12px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+/* Ribbon (left icon bar) - uses sidebar background */
+.workspace-ribbon {
+  background-color: var(--sidebar-bg) !important;
+  border-right: 1px solid var(--background-modifier-border);
+}
+
+.workspace-ribbon.mod-left,
+.workspace-ribbon.mod-right {
+  background-color: var(--sidebar-bg) !important;
+}
+
+.workspace-ribbon-collapse-btn {
+  color: var(--text-faint);
+}
+
+.side-dock-ribbon-action {
+  color: var(--text-muted);
+  padding: 10px;
+}
+
+.side-dock-ribbon-action:hover {
+  color: var(--text-normal);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Tab headers in sidebar - uses sidebar background */
+.mod-left-split .workspace-tab-header-container,
+.mod-right-split .workspace-tab-header-container {
+  background-color: var(--sidebar-bg) !important;
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding: 0 8px;
+}
+
+.mod-left-split .workspace-tab-header-container-inner,
+.mod-right-split .workspace-tab-header-container-inner {
+  background-color: var(--sidebar-bg) !important;
+}
+
+.workspace-tab-header {
+  font-size: 0.8em;
+  font-weight: 500;
+  color: var(--text-muted);
+  padding: 8px 12px;
+  border-bottom: 2px solid transparent;
+  background-color: var(--background-secondary-alt);
+}
+
+.workspace-tab-header:hover {
+  color: var(--text-normal);
+}
+
+.workspace-tab-header.is-active {
+  color: var(--text-normal);
+  border-bottom-color: var(--theme-accent, #d97757);
+}
+
+/* Nav header (buttons above file list) */
+.nav-header {
+  padding: 8px;
+}
+
+.nav-action-button {
+  color: var(--text-muted);
+  padding: 6px;
+}
+
+.nav-action-button:hover {
+  color: var(--text-normal);
+  background: transparent;
+}
+
+/* Status bar - uses sidebar background */
+.status-bar {
+  background-color: var(--sidebar-bg);
+  border-top: 1px solid var(--background-modifier-border);
+  font-size: 0.75em;
+  color: var(--text-faint);
+}
+
+/* Empty state text */
+.nav-folder-children:empty::after {
+  display: none;
+}
+
+/* Ensure sidebar items use sidebar background, not primary */
+.mod-left-split .nav-folder,
+.mod-left-split .nav-file,
+.mod-left-split .tree-item,
+.mod-left-split .search-result,
+.mod-right-split .nav-folder,
+.mod-right-split .nav-file,
+.mod-right-split .tree-item,
+.mod-right-split .search-result {
+  background-color: transparent;
+}
+
+/* Selected item in sidebar - Anthropic scheme */
+body.scheme-anthropic.theme-light .mod-left-split .nav-file-title.is-active,
+body.scheme-anthropic.theme-light .mod-right-split .nav-file-title.is-active {
+  background-color: #E8E6DF;
+}
+
+body.scheme-anthropic.theme-dark .mod-left-split .nav-file-title.is-active,
+body.scheme-anthropic.theme-dark .mod-right-split .nav-file-title.is-active {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Selected item in sidebar - Nordic scheme */
+body.scheme-nordic.theme-light .mod-left-split .nav-file-title.is-active,
+body.scheme-nordic.theme-light .mod-right-split .nav-file-title.is-active {
+  background-color: #D8DEE9;
+}
+
+body.scheme-nordic.theme-dark .mod-left-split .nav-file-title.is-active,
+body.scheme-nordic.theme-dark .mod-right-split .nav-file-title.is-active {
+  background-color: rgba(216, 222, 233, 0.1);
+}
+
+/* Selected item in sidebar - Academic scheme */
+body.scheme-academic.theme-light .mod-left-split .nav-file-title.is-active,
+body.scheme-academic.theme-light .mod-right-split .nav-file-title.is-active {
+  background-color: #E0E0E0;
+}
+
+body.scheme-academic.theme-dark .mod-left-split .nav-file-title.is-active,
+body.scheme-academic.theme-dark .mod-right-split .nav-file-title.is-active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+

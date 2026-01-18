@@ -1,0 +1,22 @@
+/* ============================================
+   FOCUS MODE
+   Toggle with body class: .focus-mode
+   ============================================ */
+
+body.focus-mode .workspace-ribbon,
+body.focus-mode .status-bar,
+body.focus-mode .workspace-tab-header-container,
+body.focus-mode .view-header {
+  display: none !important;
+}
+
+body.focus-mode .workspace-split.mod-left-split,
+body.focus-mode .workspace-split.mod-right-split {
+  width: 0 !important;
+  min-width: 0 !important;
+}
+
+body.focus-mode .workspace-leaf-content {
+  padding-top: 20px;
+}
+

@@ -1,0 +1,41 @@
+/* ============================================
+   HIDE TOP TAB BAR (VERTICAL TABS)
+   When using vertical/stacked tabs, hides the horizontal
+   bar above the tabs that contains the + new tab button
+   ============================================ */
+
+/* Hide the new tab button */
+body.hide-top-tab-bar .mod-root .workspace-tab-header-new-tab {
+  display: none !important;
+}
+
+/* Hide the before container that holds the + button */
+body.hide-top-tab-bar .mod-root .workspace-tab-container-before {
+  display: none !important;
+}
+
+/* Collapse the spacer height without removing it from layout */
+body.hide-top-tab-bar .mod-root .workspace-tab-header-spacer {
+  height: 0 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Collapse the entire horizontal header container above vertical tabs */
+body.hide-top-tab-bar .mod-root .workspace-tab-header-container {
+  height: 0 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  overflow: hidden !important;
+}
+
+body.hide-top-tab-bar .mod-root .workspace-tab-header-container-inner {
+  height: 0 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+

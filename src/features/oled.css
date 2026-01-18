@@ -1,0 +1,19 @@
+/* ============================================
+   OLED TRUE BLACK MODE
+   Add cssclass: oled or use Style Settings
+   ============================================ */
+
+body.oled.theme-dark,
+.theme-dark.oled {
+  --background-primary: #000000;
+  --background-primary-alt: #0a0a0a;
+  --background-secondary: #000000;
+  --sidebar-bg: #000000;
+}
+
+body.oled.theme-dark .workspace-leaf-content,
+body.oled.theme-dark .view-content,
+body.oled.theme-dark .markdown-preview-view {
+  background-color: #000000 !important;
+}
+

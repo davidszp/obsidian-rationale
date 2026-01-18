@@ -1,0 +1,105 @@
+/* ============================================
+   FOOTLINKS / CONTENT POSITIONING
+   Prevent content from stretching to fill viewport
+   (places footlinks right after note content)
+   Adapted from Pale theme approach
+   ============================================ */
+
+/* Key fix: Make workspace leaf only as tall as content */
+.mod-root .workspace-leaf {
+  height: auto !important;
+  max-height: none;
+}
+
+/* Prevent sizer from expanding beyond content */
+.markdown-preview-sizer {
+  min-height: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Remove flex-grow that pushes footer to bottom */
+.markdown-reading-view {
+  flex-grow: 0 !important;
+}
+
+.cm-sizer {
+  min-height: 0 !important;
+}
+
+/* Richfoot plugin links - underline text only, not arrows */
+a[data-is-backlink="true"],
+a[data-is-outlink="true"],
+.embed-container a.cm-hmd-internal-link,
+.embed-container a.internal-link,
+a.cm-hmd-internal-link.cm-underline[data-is-backlink="true"],
+a.cm-hmd-internal-link.cm-underline[data-is-outlink="true"] {
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  text-decoration: underline !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 2px !important;
+}
+
+a[data-is-backlink="true"]:hover,
+a[data-is-outlink="true"]:hover,
+.embed-container a.cm-hmd-internal-link:hover,
+.embed-container a.internal-link:hover,
+a.cm-hmd-internal-link.cm-underline[data-is-backlink="true"]:hover,
+a.cm-hmd-internal-link.cm-underline[data-is-outlink="true"]:hover {
+  background-color: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+}
+
+/* Arrows - inline-block breaks text-decoration inheritance */
+a[data-is-backlink="true"]::before,
+a[data-is-outlink="true"]::after,
+.rich-foot--links ul li a::before,
+.rich-foot--links ul li a::after,
+.rich-foot--backlinks ul li a::before,
+.rich-foot--outlinks ul li a::after {
+  display: inline-block !important;
+  text-decoration: none !important;
+}
+
+/* Richfoot link text - crisp, full color (not muted) */
+.rich-foot--links ul li a,
+.rich-foot--backlinks ul li a,
+.rich-foot--outlinks ul li a {
+  color: var(--text-normal) !important;
+  opacity: 1 !important;
+  font-weight: 400;
+}
+
+/* Richfoot section headers - Anthropic scheme */
+body.scheme-anthropic .rich-foot--backlinks::before,
+body.scheme-anthropic .rich-foot--outlinks::before,
+body.scheme-anthropic .rich-foot--links::before {
+  color: #D67758 !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+
+/* Richfoot section headers - Nordic scheme */
+body.scheme-nordic .rich-foot--backlinks::before,
+body.scheme-nordic .rich-foot--outlinks::before,
+body.scheme-nordic .rich-foot--links::before {
+  color: #5E81AC !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+
+/* Richfoot section headers - Academic scheme */
+body.scheme-academic .rich-foot--backlinks::before,
+body.scheme-academic .rich-foot--outlinks::before,
+body.scheme-academic .rich-foot--links::before {
+  color: #555555 !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+

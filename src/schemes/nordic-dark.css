@@ -1,0 +1,150 @@
+/* ============================================
+   NORDIC COLOR SCHEME - Dark Mode
+   ============================================ */
+
+body.scheme-nordic.theme-dark {
+  /* Accent - Frost blue (brighter for dark mode) */
+  --theme-accent: var(--custom-accent, #88C0D0);
+  --accent-h: 193;
+  --accent-s: 43%;
+  --accent-l: 67%;
+
+  /* Polar Night backgrounds */
+  --background-primary: #2E3440;
+  --sidebar-bg: #242933;
+  --background-primary-alt: #3B4252;
+  --background-secondary: #2E3440;
+  --background-secondary-alt: #242933;
+  --background-modifier-border: #434C5E;
+  --background-modifier-border-hover: #4C566A;
+  --background-modifier-border-focus: var(--theme-accent);
+
+  /* Form backgrounds */
+  --background-modifier-form-field: #3B4252;
+  --background-modifier-form-field-highlighted: #434C5E;
+
+  /* Overlays */
+  --background-modifier-cover: rgba(0, 0, 0, 0.7);
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.4);
+
+  /* Interactive states */
+  --background-modifier-hover: rgba(216, 222, 233, 0.06);
+  --background-modifier-active-hover: rgba(216, 222, 233, 0.1);
+  --background-modifier-success: rgba(163, 190, 140, 0.15);
+  --background-modifier-error: rgba(191, 97, 106, 0.15);
+  --background-modifier-error-hover: rgba(191, 97, 106, 0.25);
+
+  /* Text - Snow Storm */
+  --text-normal: #ECEFF4;
+  --text-muted: #D8DEE9;
+  --text-faint: #A5B0C0;
+  --text-on-accent: #2E3440;
+  --text-on-accent-inverted: #ECEFF4;
+  --text-error: #BF616A;
+  --text-success: #A3BE8C;
+  --text-warning: #EBCB8B;
+  --text-highlight-bg: rgba(136, 192, 208, 0.3);
+  --text-highlight-bg-active: rgba(136, 192, 208, 0.4);
+  --text-selection: rgba(136, 192, 208, 0.25);
+  --text-accent: #88C0D0;
+  --text-accent-hover: #8FBCBB;
+
+  /* Interactive */
+  --interactive-normal: #3B4252;
+  --interactive-hover: #434C5E;
+  --interactive-accent: var(--theme-accent);
+  --interactive-accent-hover: #8FBCBB;
+
+  /* Links */
+  --link-color: #88C0D0;
+  --link-color-hover: #8FBCBB;
+  --link-external-color: #88C0D0;
+  --link-external-color-hover: #8FBCBB;
+  --link-unresolved-color: #81A1C1;
+  --link-unresolved-opacity: 0.7;
+
+  /* Tags */
+  --tag-color: #88C0D0;
+  --tag-color-hover: #8FBCBB;
+  --tag-background: rgba(136, 192, 208, 0.15);
+  --tag-background-hover: rgba(136, 192, 208, 0.25);
+
+  /* Code */
+  --code-normal: #ECEFF4;
+  --code-background: #3B4252;
+  --code-comment: #616E88;
+
+  /* Blockquote */
+  --blockquote-border-color: #88C0D0;
+  --blockquote-background-color: rgba(136, 192, 208, 0.1);
+
+  /* Horizontal rule */
+  --hr-color: #434C5E;
+
+  /* Table */
+  --table-header-background: #3B4252;
+  --table-header-background-hover: #434C5E;
+  --table-row-even-background: #3B4252;
+  --table-row-odd-background: #2E3440;
+  --table-row-background-hover: rgba(136, 192, 208, 0.1);
+  --table-border-color: #434C5E;
+
+  /* Scrollbar */
+  --scrollbar-thumb-bg: rgba(216, 222, 233, 0.2);
+  --scrollbar-active-thumb-bg: rgba(216, 222, 233, 0.35);
+
+  /* Tab */
+  --tab-text-color: #A5B0C0;
+  --tab-text-color-active: #ECEFF4;
+  --tab-text-color-focused: #ECEFF4;
+  --tab-text-color-focused-active: #ECEFF4;
+  --tab-background-active: #2E3440;
+
+  /* Nav */
+  --nav-item-color: #A5B0C0;
+  --nav-item-color-hover: #ECEFF4;
+  --nav-item-color-active: #ECEFF4;
+  --nav-item-background-hover: rgba(216, 222, 233, 0.06);
+  --nav-item-background-active: rgba(216, 222, 233, 0.1);
+
+  /* Graph */
+  --graph-line: #434C5E;
+  --graph-node: #88C0D0;
+  --graph-node-focused: #8FBCBB;
+
+  /* Callouts */
+  --callout-default: rgba(136, 192, 208, 0.12);
+  --callout-info: rgba(129, 161, 193, 0.15);
+  --callout-warning: rgba(235, 203, 139, 0.15);
+  --callout-error: rgba(191, 97, 106, 0.15);
+  --callout-success: rgba(163, 190, 140, 0.15);
+  --callout-question: rgba(180, 142, 173, 0.15);
+  --callout-tip: rgba(143, 188, 187, 0.15);
+
+  /* Indentation guides */
+  --indentation-guide-color: #434C5E;
+  --indentation-guide-color-active: #88C0D0;
+
+  /* Icon */
+  --icon-color: #A5B0C0;
+  --icon-color-hover: #ECEFF4;
+  --icon-color-active: #88C0D0;
+  --icon-color-focused: #88C0D0;
+
+  /* Title bar */
+  --titlebar-background: #2E3440;
+  --titlebar-background-focused: #242933;
+  --titlebar-text-color: #A5B0C0;
+  --titlebar-text-color-focused: #ECEFF4;
+
+  /* Status bar */
+  --status-bar-background: #2E3440;
+  --status-bar-text-color: #A5B0C0;
+
+  /* Ribbon */
+  --ribbon-background: #3B4252;
+  --ribbon-background-collapsed: #3B4252;
+
+  /* Sidebar */
+  --sidebar-background: #2E3440;
+}

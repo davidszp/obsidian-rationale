@@ -1,0 +1,57 @@
+/* ============================================
+   IMAGE GRIDS
+   Use: Place images consecutively without blank lines
+   ============================================ */
+
+/* Images in a row become a grid */
+.markdown-rendered p > .image-embed + .image-embed,
+.markdown-rendered p > img + img {
+  margin-left: 8px;
+}
+
+.markdown-rendered p:has(> .image-embed + .image-embed),
+.markdown-rendered p:has(> img + img) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.markdown-rendered p:has(> .image-embed + .image-embed) .image-embed,
+.markdown-rendered p:has(> img + img) img {
+  flex: 1 1 auto;
+  max-width: calc(50% - 4px);
+  margin: 0;
+}
+
+/* Three or more images */
+.markdown-rendered p:has(> .image-embed + .image-embed + .image-embed) .image-embed,
+.markdown-rendered p:has(> img + img + img) img {
+  max-width: calc(33.33% - 6px);
+}
+
+/* Image styling */
+.markdown-rendered img {
+  border-radius: var(--radius-m);
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* ============================================
+   IMAGE ZOOM ON HOVER
+   ============================================ */
+
+.markdown-rendered img {
+  transition: transform 0.3s ease;
+  cursor: zoom-in;
+}
+
+.markdown-rendered img:hover {
+  transform: scale(1.02);
+}
+
+/* Click to zoom (works with image modal) */
+.markdown-rendered img:active {
+  transform: scale(1);
+}
+

@@ -1,0 +1,22 @@
+/* ============================================
+   VIEW HEADER BACKGROUND FIXES
+   ============================================ */
+
+/* Nordic Dark - view header should match background */
+body.scheme-nordic.theme-dark .view-header {
+  background-color: #2E3440 !important;
+}
+
+body.scheme-nordic.theme-dark .workspace-leaf-content {
+  background-color: #2E3440 !important;
+}
+
+/* Academic Dark - view header should match background */
+body.scheme-academic.theme-dark .view-header {
+  background-color: #1a1a1a !important;
+}
+
+body.scheme-academic.theme-dark .workspace-leaf-content {
+  background-color: #1a1a1a !important;
+}
+

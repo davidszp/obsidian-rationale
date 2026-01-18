@@ -1,0 +1,102 @@
+/* ============================================
+   TAB STYLING - Consistent width and color
+   ============================================ */
+
+/* Tab styling - consistent width and distinct background */
+.workspace-tab-header[data-type="markdown"],
+.workspace-tab-header[data-type="canvas"] {
+  width: 28px !important;
+  min-width: 28px !important;
+  max-width: 28px !important;
+  padding: 3px !important;
+  background-color: var(--background-secondary-alt) !important;
+  font-family: var(--font-tab) !important;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Active tab - optional highlight (controlled by Style Settings toggle) */
+/* Anthropic scheme */
+body.scheme-anthropic.theme-light.active-tab-highlight .workspace-tab-header.is-active {
+  background-color: var(--active-tab-color, #f0efe7) !important;
+}
+
+body.scheme-anthropic.theme-dark.active-tab-highlight .workspace-tab-header.is-active {
+  background-color: var(--active-tab-color-dark, #1e1e1f) !important;
+}
+
+/* Nordic scheme defaults */
+body.scheme-nordic.theme-light.active-tab-highlight .workspace-tab-header.is-active {
+  background-color: var(--active-tab-color, #D8DEE9) !important;
+}
+
+body.scheme-nordic.theme-dark.active-tab-highlight .workspace-tab-header.is-active {
+  background-color: var(--active-tab-color-dark, #3B4252) !important;
+}
+
+/* Academic scheme defaults */
+body.scheme-academic.theme-light.active-tab-highlight .workspace-tab-header.is-active {
+  background-color: var(--active-tab-color, #E0E0E0) !important;
+}
+
+body.scheme-academic.theme-dark.active-tab-highlight .workspace-tab-header.is-active {
+  background-color: var(--active-tab-color-dark, #2a2a2a) !important;
+}
+
+/* ============================================
+   TEXT ALIGNMENT
+   ============================================ */
+
+/* Lists - left aligned (not justified) */
+.markdown-rendered ul,
+.markdown-rendered ol,
+.markdown-rendered li,
+.markdown-preview-view ul,
+.markdown-preview-view ol,
+.markdown-preview-view li,
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-list-line {
+  text-align: left !important;
+}
+
+
+/* ============================================
+   TAB STYLING (copied from Monocode/Shimmering Focus)
+   ============================================ */
+
+/* Variable for stacked tab width */
+body {
+  --tab-stacked-header-width: 28px;
+}
+
+/* Sidebar tab containers - collapse when not hovered */
+:is(.mod-left-split, .mod-right-split) .workspace-tabs:not(.mod-top) .workspace-tab-header-container:not(:hover) {
+  height: 12px;
+  transition: height 0.15s ease;
+}
+
+:is(.mod-left-split, .mod-right-split) .workspace-tabs:not(.mod-top) .workspace-tab-header-container:hover {
+  height: auto;
+}
+
+
+/* Right/Left split tab header styling */
+:is(.mod-right-split, .mod-left-split) .workspace-tabs:not(.mod-top) .workspace-tab-header-container {
+  background-color: var(--sidebar-bg) !important;
+}
+
+:is(.mod-right-split, .mod-left-split) .workspace-tab-header {
+  background-color: var(--sidebar-bg) !important;
+  font-family: var(--font-tab) !important;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Main workspace tab header - match document background */
+.mod-root .workspace-tab-header-container {
+  background-color: var(--background-primary) !important;
+}
+
+.mod-root .workspace-tab-header-container-inner {
+  background-color: var(--background-primary) !important;
+}
+

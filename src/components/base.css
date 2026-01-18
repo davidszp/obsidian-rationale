@@ -1,0 +1,347 @@
+/* ============================================
+   COMPONENT REFINEMENTS
+   ============================================ */
+
+/* Smooth transitions on interactive elements */
+.nav-file-title,
+.nav-folder-title,
+.tree-item-self,
+.workspace-tab-header,
+button,
+.clickable-icon,
+a {
+  transition:
+    color var(--transition-duration) ease,
+    background-color var(--transition-duration) ease,
+    border-color var(--transition-duration) ease,
+    opacity var(--transition-duration) ease;
+}
+
+/* Subtle card-like shadow for modals (Anthropic style) */
+.modal {
+  box-shadow: 0px 4px 20px var(--background-modifier-box-shadow);
+}
+
+/* Clean focus states */
+*:focus-visible {
+  outline: 2px solid var(--interactive-accent);
+  outline-offset: 2px;
+}
+
+/* Heading typography - Modern sans-serif like AnthropicSans */
+.markdown-rendered h1,
+.markdown-rendered h2,
+.markdown-rendered h3,
+.markdown-rendered h4,
+.markdown-rendered h5,
+.markdown-rendered h6,
+.inline-title,
+.HyperMD-header {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.markdown-rendered h1,
+.inline-title {
+  font-weight: 600;
+}
+
+/* Inline title (note filename as title) */
+.inline-title,
+.view-header-title,
+.workspace-leaf-content[data-type="markdown"] .inline-title {
+  font-family: var(--font-heading) !important;
+  font-weight: 600;
+}
+
+.markdown-rendered h2 {
+  font-weight: 500;
+}
+
+/* Live Preview heading support */
+.cm-header {
+  font-family: var(--font-heading);
+}
+
+.cm-header-1 {
+  font-weight: 600;
+}
+
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-weight: 500;
+}
+
+/* Blockquote styling */
+.markdown-rendered blockquote {
+  padding: var(--size-4-3) var(--size-4-4);
+  border-radius: 0 var(--radius-s) var(--radius-s) 0;
+}
+
+/* Code block styling - rounded corners, theme-aware colors */
+.markdown-rendered pre {
+  background-color: var(--code-background) !important;
+  border: 1px solid var(--background-modifier-border) !important;
+  border-radius: 8px !important;
+  padding: 16px !important;
+  margin: 16px 0 !important;
+}
+
+/* Code inside pre */
+.markdown-rendered pre code {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  color: var(--code-normal) !important;
+}
+
+/* Code block in editing/live preview mode */
+.cm-s-obsidian .HyperMD-codeblock-bg,
+.cm-s-obsidian .HyperMD-codeblock-begin-bg,
+.cm-s-obsidian .HyperMD-codeblock-end-bg {
+  background-color: var(--code-background) !important;
+}
+
+.cm-s-obsidian .HyperMD-codeblock {
+  background-color: var(--code-background) !important;
+}
+
+/* Add border to code block container in live preview */
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-begin {
+  border-top: 1px solid var(--background-modifier-border) !important;
+  border-left: 1px solid var(--background-modifier-border) !important;
+  border-right: 1px solid var(--background-modifier-border) !important;
+  border-top-left-radius: 8px !important;
+  border-top-right-radius: 8px !important;
+  padding-top: 12px !important;
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
+  border-left: 1px solid var(--background-modifier-border) !important;
+  border-right: 1px solid var(--background-modifier-border) !important;
+  background-color: var(--code-background) !important;
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-end {
+  border-bottom: 1px solid var(--background-modifier-border) !important;
+  border-left: 1px solid var(--background-modifier-border) !important;
+  border-right: 1px solid var(--background-modifier-border) !important;
+  border-bottom-left-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+  padding-bottom: 12px !important;
+}
+
+/* Inline code */
+.markdown-rendered code {
+  background-color: #f3f4f6;
+  border-radius: var(--radius-s);
+  padding: 2px 6px;
+  font-size: 0.9em;
+  color: var(--code-normal);
+}
+
+/* Dark mode inline code */
+.theme-dark .markdown-rendered code {
+  background-color: #2d2d2f;
+}
+
+/* Syntax highlighting - Claude docs style */
+.theme-light {
+  --code-keyword: #c0392b;
+  --code-string: #27ae60;
+  --code-number: #2980b9;
+  --code-function: #8e44ad;
+  --code-property: #1a1a1a;
+  --code-punctuation: #555;
+}
+
+.theme-dark {
+  --code-keyword: #e06c75;
+  --code-string: #98c379;
+  --code-number: #61afef;
+  --code-function: #c678dd;
+  --code-property: #e5e5e5;
+  --code-punctuation: #abb2bf;
+}
+
+/* Apply syntax colors */
+.cm-s-obsidian .cm-keyword,
+.token.keyword {
+  color: var(--code-keyword) !important;
+}
+
+.cm-s-obsidian .cm-string,
+.token.string {
+  color: var(--code-string) !important;
+}
+
+.cm-s-obsidian .cm-number,
+.token.number {
+  color: var(--code-number) !important;
+}
+
+.cm-s-obsidian .cm-def,
+.cm-s-obsidian .cm-callee,
+.token.function {
+  color: var(--code-function) !important;
+}
+
+.cm-s-obsidian .cm-property,
+.token.property {
+  color: var(--code-property) !important;
+}
+
+.cm-s-obsidian .cm-punctuation,
+.token.punctuation {
+  color: var(--code-punctuation) !important;
+}
+
+.cm-s-obsidian .cm-comment,
+.token.comment {
+  color: var(--code-comment) !important;
+}
+
+/* Tag pills */
+.tag {
+  border-radius: var(--tag-radius);
+  font-size: 0.85em;
+}
+
+/* Checkbox styling */
+.task-list-item-checkbox {
+  border-radius: var(--radius-s);
+}
+
+/* Table refinements */
+.markdown-rendered table {
+  border-radius: var(--radius-m);
+  overflow: hidden;
+}
+
+.markdown-rendered th {
+  font-weight: 600;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: var(--scrollbar-width);
+  height: var(--scrollbar-width);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-bg);
+  border-radius: var(--radius-l);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-active-thumb-bg);
+}
+
+/* Link styling - Claude docs style */
+.markdown-rendered a,
+.cm-link,
+.cm-hmd-internal-link,
+.internal-link,
+.external-link {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: text-decoration-thickness 0.15s ease;
+}
+
+/* Thicker underline on hover */
+.markdown-rendered a:hover,
+.cm-link:hover,
+.cm-hmd-internal-link:hover,
+.internal-link:hover,
+.external-link:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+/* Graph view nodes */
+.graph-view.color-fill-tag {
+  opacity: 0.9;
+}
+
+/* Callout styling */
+.callout {
+  border-radius: var(--radius-m);
+  border-left-width: 3px;
+}
+
+/* Clean button styling */
+button.mod-cta {
+  font-weight: 500;
+  border-radius: var(--radius-m);
+}
+
+/* Status bar subtle */
+.status-bar {
+  font-size: 0.8em;
+  border-top: 1px solid var(--background-modifier-border);
+}
+
+/* File explorer refinements */
+.nav-file-title,
+.nav-folder-title {
+  border-radius: var(--radius-s);
+  padding: var(--size-2-2) var(--size-4-2);
+}
+
+/* Tab header styling */
+.workspace-tab-header {
+  border-radius: var(--radius-s) var(--radius-s) 0 0;
+}
+
+/* Properties/frontmatter styling */
+.metadata-container {
+  border-radius: var(--radius-m);
+  background: var(--background-secondary);
+}
+
+/* Selection highlight */
+::selection {
+  background: var(--text-selection);
+}
+
+/* Embedded note styling */
+.markdown-embed {
+  border-radius: var(--radius-m);
+  margin: var(--size-4-2) 0;
+}
+
+/* Search results */
+.search-result-file-match {
+  border-radius: var(--radius-s);
+}
+
+/* Suggestion container */
+.suggestion-container {
+  border-radius: var(--radius-m);
+  box-shadow: 0px 4px 20px var(--background-modifier-box-shadow);
+}
+
+.suggestion-item {
+  border-radius: var(--radius-s);
+}
+
+/* Settings modal */
+.modal.mod-settings {
+  border-radius: var(--radius-l);
+}
+
+/* Popover */
+.popover {
+  border-radius: var(--radius-m);
+  box-shadow: 0px 4px 20px var(--background-modifier-box-shadow);
+}
+

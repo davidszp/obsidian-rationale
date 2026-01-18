@@ -1,0 +1,12 @@
+# Claude Code instructions (project-local)
+CLAUDE.md
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor directories
+.idea/
+.vscode/
+*.swp
+*.swo

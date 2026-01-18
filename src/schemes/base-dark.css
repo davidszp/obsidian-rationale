@@ -1,0 +1,214 @@
+/* ============================================
+   DARK MODE
+   ============================================ */
+
+.theme-dark {
+  /* Accent color - Academic default: light grey */
+  --theme-accent: var(--accent-color, #AAAAAA);
+  --accent-h: 0;
+  --accent-s: 0%;
+  --accent-l: 67%;
+
+  /*
+   * Academic (base): Near-black monochrome
+   * - Content: #1a1a1a
+   * - Sidebar: #141414
+   */
+  --background-primary: #1a1a1a;
+  --sidebar-bg: #141414;
+  --background-primary-alt: #242424;
+  --background-secondary: #1a1a1a;
+  --background-secondary-alt: #2a2a2a;
+  --background-modifier-border: #3a3a3a;
+  --background-modifier-border-hover: #4a4a4a;
+  --background-modifier-border-focus: var(--theme-accent);
+
+  /* Form backgrounds */
+  --background-modifier-form-field: #242424;
+  --background-modifier-form-field-highlighted: #2a2a2a;
+
+  /* Overlays and modals */
+  --background-modifier-cover: rgba(0, 0, 0, 0.7);
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.3);
+
+  /* Interactive states */
+  --background-modifier-hover: rgba(255, 255, 255, 0.05);
+  --background-modifier-active-hover: rgba(255, 255, 255, 0.08);
+  --background-modifier-success: rgba(200, 200, 200, 0.1);
+  --background-modifier-error: rgba(200, 200, 200, 0.15);
+  --background-modifier-error-hover: rgba(200, 200, 200, 0.2);
+
+  /* Text colors - White/grey scale */
+  --text-normal: #E0E0E0;
+  --text-muted: #999999;
+  --text-faint: #666666;
+  --text-on-accent: #1a1a1a;
+  --text-on-accent-inverted: #E0E0E0;
+  --text-error: #AAAAAA;
+  --text-success: #BBBBBB;
+  --text-warning: #999999;
+  --text-highlight-bg: rgba(255, 255, 255, 0.1);
+  --text-highlight-bg-active: rgba(255, 255, 255, 0.15);
+  --text-selection: rgba(255, 255, 255, 0.12);
+  --text-accent: #BBBBBB;
+  --text-accent-hover: #DDDDDD;
+
+  /* Interactive text */
+  --interactive-normal: #2a2a2a;
+  --interactive-hover: #3a3a3a;
+  --interactive-accent: var(--theme-accent);
+  --interactive-accent-hover: #CCCCCC;
+
+  /* Links - Light grey */
+  --link-color: #BBBBBB;
+  --link-color-hover: #DDDDDD;
+  --link-external-color: #AAAAAA;
+  --link-external-color-hover: #CCCCCC;
+  --link-unresolved-color: #777777;
+  --link-unresolved-opacity: 0.7;
+  --link-decoration: underline;
+  --link-decoration-hover: underline;
+
+  /* Tags */
+  --tag-color: #AAAAAA;
+  --tag-color-hover: #CCCCCC;
+  --tag-background: rgba(255, 255, 255, 0.08);
+  --tag-background-hover: rgba(255, 255, 255, 0.12);
+  --tag-padding-x: 8px;
+  --tag-padding-y: 2px;
+  --tag-radius: 4px;
+
+  /* Code */
+  --code-normal: #E0E0E0;
+  --code-background: #242424;
+  --code-comment: #888888;
+
+  /* Headings */
+  --h1-color: var(--text-normal);
+  --h2-color: var(--text-normal);
+  --h3-color: var(--text-normal);
+  --h4-color: var(--text-normal);
+  --h5-color: var(--text-muted);
+  --h6-color: var(--text-muted);
+
+  /* Bold and italic */
+  --bold-color: var(--text-normal);
+  --italic-color: var(--text-normal);
+  --bold-weight: 600;
+
+  /* Lists */
+  --list-marker-color: var(--text-faint);
+  --list-marker-color-hover: var(--theme-accent);
+  --list-marker-color-collapsed: var(--theme-accent);
+
+  /* Checkbox */
+  --checkbox-color: var(--theme-accent);
+  --checkbox-color-hover: color-mix(in srgb, var(--theme-accent) 115%, #fff);
+  --checkbox-border-color: var(--background-modifier-border);
+  --checkbox-border-color-hover: var(--theme-accent);
+  --checklist-done-color: var(--text-faint);
+  --checklist-done-decoration: line-through;
+
+  /* Blockquote */
+  --blockquote-border-color: var(--theme-accent);
+  --blockquote-border-thickness: 3px;
+  --blockquote-background-color: color-mix(in srgb, var(--theme-accent) 8%, transparent);
+
+  /* Horizontal rule */
+  --hr-color: var(--background-modifier-border);
+
+  /* Table */
+  --table-header-background: var(--background-secondary);
+  --table-header-background-hover: var(--background-secondary-alt);
+  --table-row-even-background: var(--background-primary-alt);
+  --table-row-odd-background: var(--background-primary);
+  --table-row-background-hover: color-mix(in srgb, var(--theme-accent) 10%, transparent);
+  --table-border-color: #3a3a3a;
+
+  /* Scrollbar - monochrome */
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb-bg: rgba(255, 255, 255, 0.15);
+  --scrollbar-active-thumb-bg: rgba(255, 255, 255, 0.25);
+
+  /* Tab */
+  --tab-text-color: #888888;
+  --tab-text-color-active: #E0E0E0;
+  --tab-text-color-focused: #E0E0E0;
+  --tab-text-color-focused-active: #E0E0E0;
+  --tab-background-active: #1a1a1a;
+
+  /* Nav / File explorer */
+  --nav-item-color: #888888;
+  --nav-item-color-hover: #E0E0E0;
+  --nav-item-color-active: #E0E0E0;
+  --nav-item-background-hover: rgba(255, 255, 255, 0.05);
+  --nav-item-background-active: rgba(255, 255, 255, 0.08);
+
+  /* Buttons */
+  --button-color: #E0E0E0;
+  --button-background: #2a2a2a;
+
+  /* Graph */
+  --graph-line: #4a4a4a;
+  --graph-node: #AAAAAA;
+  --graph-node-focused: #CCCCCC;
+  --graph-node-tag: #888888;
+  --graph-node-attachment: #777777;
+  --graph-node-unresolved: #555555;
+
+  /* Canvas */
+  --canvas-color: #242424;
+
+  /* Callouts - monochrome */
+  --callout-default: rgba(255, 255, 255, 0.05);
+  --callout-info: rgba(255, 255, 255, 0.05);
+  --callout-warning: rgba(255, 255, 255, 0.08);
+  --callout-error: rgba(255, 255, 255, 0.08);
+  --callout-success: rgba(255, 255, 255, 0.05);
+  --callout-question: rgba(255, 255, 255, 0.05);
+  --callout-tip: rgba(255, 255, 255, 0.05);
+
+  /* Indentation guides */
+  --indentation-guide-color: #3a3a3a;
+  --indentation-guide-color-active: #777777;
+
+  /* Embedded content */
+  --embed-border-left: 3px solid #AAAAAA;
+  --embed-background: rgba(255, 255, 255, 0.02);
+
+  /* Search */
+  --search-match-color: #E0E0E0;
+  --search-match-color-current: #E0E0E0;
+  --search-match-background: rgba(255, 255, 255, 0.15);
+  --search-match-background-current: rgba(255, 255, 255, 0.25);
+
+  /* Vim cursor */
+  --vim-cursor: #AAAAAA;
+
+  /* Dividers */
+  --divider-color: #3a3a3a;
+  --divider-color-hover: #4a4a4a;
+
+  /* Icon */
+  --icon-color: #888888;
+  --icon-color-hover: #E0E0E0;
+  --icon-color-active: #AAAAAA;
+  --icon-color-focused: #AAAAAA;
+
+  /* Title bar (desktop) */
+  --titlebar-background: #1a1a1a;
+  --titlebar-background-focused: #141414;
+  --titlebar-text-color: #888888;
+  --titlebar-text-color-focused: #E0E0E0;
+
+  /* Status bar */
+  --status-bar-background: #1a1a1a;
+  --status-bar-text-color: #888888;
+
+  /* Ribbon */
+  --ribbon-background: #242424;
+  --ribbon-background-collapsed: #242424;
+
+  /* Sidebar */
+  --sidebar-background: #1a1a1a;
+}

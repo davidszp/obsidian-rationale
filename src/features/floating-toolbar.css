@@ -1,0 +1,22 @@
+/* ============================================
+   FLOATING STATUS BAR
+   Float the status bar in the center bottom of the screen
+   ============================================ */
+
+body.floating-toolbar .status-bar {
+  position: fixed !important;
+  bottom: 15px;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 1000;
+  background-color: var(--background-secondary);
+  border-radius: 5px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  padding: 4px 0px 4px 12px !important;
+  width: max-content;
+  min-width: max-content;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
