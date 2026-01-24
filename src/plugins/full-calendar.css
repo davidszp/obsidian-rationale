@@ -1,0 +1,113 @@
+/* ============================================
+   FULL CALENDAR PLUGIN COMPATIBILITY
+   Styles for the obsidian-full-calendar plugin
+   ============================================ */
+
+/* Today cell - use subtle accent tint instead of grey */
+.fc .fc-day-today {
+  background-color: var(--background-primary) !important;
+}
+
+/* Today cell highlight - subtle accent border instead of background */
+.fc .fc-daygrid-day.fc-day-today {
+  background-color: color-mix(in srgb, var(--interactive-accent) 8%, var(--background-primary)) !important;
+}
+
+/* Scheme-specific today backgrounds */
+body.scheme-anthropic.theme-light .fc .fc-daygrid-day.fc-day-today {
+  background-color: rgba(217, 119, 87, 0.08) !important;
+}
+
+body.scheme-anthropic.theme-dark .fc .fc-daygrid-day.fc-day-today {
+  background-color: rgba(217, 119, 87, 0.12) !important;
+}
+
+body.scheme-nordic.theme-light .fc .fc-daygrid-day.fc-day-today {
+  background-color: rgba(94, 129, 172, 0.08) !important;
+}
+
+body.scheme-nordic.theme-dark .fc .fc-daygrid-day.fc-day-today {
+  background-color: rgba(136, 192, 208, 0.12) !important;
+}
+
+body.scheme-academic.theme-light .fc .fc-daygrid-day.fc-day-today {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+body.scheme-academic.theme-dark .fc .fc-daygrid-day.fc-day-today {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+body.scheme-oldmoney.theme-light .fc .fc-daygrid-day.fc-day-today {
+  background-color: rgba(184, 149, 110, 0.08) !important;
+}
+
+body.scheme-oldmoney.theme-dark .fc .fc-daygrid-day.fc-day-today {
+  background-color: rgba(184, 149, 110, 0.12) !important;
+}
+
+/* Calendar grid borders - use theme border color */
+.fc .fc-scrollgrid,
+.fc .fc-scrollgrid-section > td,
+.fc .fc-scrollgrid-section > th,
+.fc td,
+.fc th {
+  border-color: var(--background-modifier-border) !important;
+}
+
+/* Day numbers - use theme text color */
+.fc .fc-daygrid-day-number {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.fc .fc-day-today .fc-daygrid-day-number {
+  color: var(--text-normal);
+  font-weight: 600;
+}
+
+/* Header toolbar */
+.fc .fc-toolbar-title {
+  color: var(--text-normal);
+  font-family: var(--font-headings, var(--font-interface));
+}
+
+.fc .fc-button {
+  background-color: var(--interactive-normal) !important;
+  border-color: var(--background-modifier-border) !important;
+  color: var(--text-normal) !important;
+}
+
+.fc .fc-button:hover {
+  background-color: var(--interactive-hover) !important;
+}
+
+.fc .fc-button-active {
+  background-color: var(--interactive-accent) !important;
+  color: var(--text-on-accent) !important;
+}
+
+/* Week/day headers */
+.fc .fc-col-header-cell-cushion {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+/* Event styling - let plugin colors through but ensure readability */
+.fc .fc-event {
+  border-radius: var(--radius-s);
+}
+
+/* Past days - slightly muted */
+.fc .fc-day-past .fc-daygrid-day-number {
+  color: var(--text-faint);
+}
+
+/* Calendar container background */
+.fc {
+  background-color: var(--background-primary);
+}
+
+.fc .fc-view-harness {
+  background-color: var(--background-primary);
+}

@@ -1,0 +1,25 @@
+/* ============================================
+   TASK GENIUS PLUGIN COMPATIBILITY
+   Additional fixes for Task Genius status selector
+   ============================================ */
+
+/* Ensure status selector containers are transparent */
+.details-status-selector {
+  background-color: transparent;
+}
+
+.details-status-selector .status-option {
+  background-color: transparent;
+}
+
+/* Current/selected status option - subtle highlight */
+.details-status-selector .status-option.current {
+  background-color: rgba(128, 128, 128, 0.15);
+  border-radius: 4px;
+}
+
+/* More options button */
+.details-status-selector .more-status,
+.details-status-selector .clickable-icon {
+  background-color: transparent;
+}

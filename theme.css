@@ -2788,19 +2788,19 @@ body.scheme-oldmoney.theme-dark .tree-item-self.is-being-dragged-over {
 }
 
 /* ============================================
-   CUSTOM CHECKBOXES (Maple-inspired with Anthropic colors)
-   Usage: - [ ] uncompleted, - [x] done, - [/] in progress,
-          - [-] canceled, - [>] deferred, - [<] scheduled,
-          - [!] important, - [?] question
+   CUSTOM CHECKBOXES (Using SVG masks - Outline Style)
+
+   Uses -webkit-mask with outline SVG icons for a
+   lighter, more elegant appearance.
    ============================================ */
 
-/* Base checkbox styling - rounded like Maple */
+/* Base checkbox styling - empty outline box */
 input[type="checkbox"] {
   appearance: none;
   -webkit-appearance: none;
   width: 18px;
   height: 18px;
-  border: 2px solid var(--text-faint);
+  border: 1.5px solid var(--checkbox-border-color, var(--text-faint));
   border-radius: 4px;
   background-color: transparent;
   cursor: pointer;
@@ -2808,31 +2808,29 @@ input[type="checkbox"] {
   margin-right: 8px;
   position: relative;
   flex-shrink: 0;
+  transition: var(--animation, 0.15s ease);
 }
 
 input[type="checkbox"]:hover {
   border-color: var(--theme-accent, #d97757);
 }
 
-/* Completed task: - [x] */
-input[type="checkbox"]:checked {
-  background-color: var(--theme-accent, #d97757);
+/* Completed task: - [x] - outline box with checkmark */
+input[type="checkbox"]:checked,
+input[data-task="x"]:checked,
+li[data-task="x"] > input[type="checkbox"],
+li[data-task="x"] > p > input[type="checkbox"] {
+  background-color: transparent;
   border-color: var(--theme-accent, #d97757);
 }
 
 input[type="checkbox"]:checked::after {
-  content: "✔";
-  color: white;
-  font-family: "Segoe UI Symbol", "Apple Symbols", "Noto Color Emoji", sans-serif;
-  font-size: 11px;
-  font-weight: normal;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  inset: 0;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' d='M3.5 8l3 3l6-6'/%3E%3C/svg%3E") no-repeat center;
+  -webkit-mask-size: 80% 80%;
+  background-color: var(--theme-accent, #d97757);
 }
 
 li[data-task="x"] {
@@ -2840,280 +2838,330 @@ li[data-task="x"] {
   color: var(--text-muted);
 }
 
-/* In progress task: - [/] - half circle */
-li[data-task="/"] > input[type="checkbox"],
-li[data-task="/"] > input[type="checkbox"]:checked,
+/* In progress: - [/] - half circle outline */
 input[data-task="/"],
-input[data-task="/"]:checked {
-  border-color: var(--theme-accent) !important;
-  border-radius: 50% !important;
-  background: linear-gradient(to top, var(--theme-accent) 50%, transparent 50%) !important;
+li[data-task="/"] > input[type="checkbox"],
+li[data-task="/"] > p > input[type="checkbox"] {
+  border: none !important;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='currentColor' stroke-width='1.5' d='M8 14.5a6.5 6.5 0 1 0 0-13a6.5 6.5 0 0 0 0 13z'/%3E%3Cpath fill='currentColor' d='M8 1.5a6.5 6.5 0 0 0 0 13V1.5z'/%3E%3C/svg%3E") no-repeat center;
+  -webkit-mask-size: 100% 100%;
+  background-color: var(--text-muted) !important;
 }
-body li[data-task="/"] > input.task-list-item-checkbox::after,
-body li[data-task="/"] > input.task-list-item-checkbox:checked::after,
-body input.task-list-item-checkbox[data-task="/"]::after,
-body input.task-list-item-checkbox[data-task="/"]:checked::after {
-  content: "" !important;
+input[data-task="/"]::after,
+li[data-task="/"] > input[type="checkbox"]::after,
+li[data-task="/"] > p > input[type="checkbox"]::after {
+  content: none !important;
   display: none !important;
 }
 
-/* Canceled task: - [-] */
-li[data-task="-"] > input[type="checkbox"],
-li[data-task="-"] > input[type="checkbox"]:checked,
+/* Cancelled: - [-] - circle with dash */
 input[data-task="-"],
-input[data-task="-"]:checked {
-  border-color: #9ca3af !important;
-  background-color: #9ca3af !important;
-  background-image: none !important;
-  border-radius: 4px !important;
+li[data-task="-"] > input[type="checkbox"],
+li[data-task="-"] > p > input[type="checkbox"] {
+  border: none !important;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6.5' fill='none' stroke='currentColor' stroke-width='1.5'/%3E%3Cpath stroke='currentColor' stroke-width='1.5' stroke-linecap='round' d='M5 8h6'/%3E%3C/svg%3E") no-repeat center;
+  -webkit-mask-size: 100% 100%;
+  background-color: var(--text-muted) !important;
 }
-body li[data-task="-"] > input.task-list-item-checkbox::after,
-body li[data-task="-"] > input.task-list-item-checkbox:checked::after,
-body input.task-list-item-checkbox[data-task="-"]::after,
-body input.task-list-item-checkbox[data-task="-"]:checked::after {
-  content: "—" !important;
-  color: white !important;
-  font-family: "Segoe UI Symbol", "Apple Symbols", sans-serif !important;
-  font-size: 14px !important;
-  font-weight: bold !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
+input[data-task="-"]::after,
+li[data-task="-"] > input[type="checkbox"]::after,
+li[data-task="-"] > p > input[type="checkbox"]::after {
+  content: none !important;
+  display: none !important;
 }
 li[data-task="-"] {
   text-decoration: line-through;
   color: var(--text-faint);
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
-/* Question task: - [?] */
-li[data-task="?"] > input[type="checkbox"],
-li[data-task="?"] > input[type="checkbox"]:checked,
-input[data-task="?"],
-input[data-task="?"]:checked {
-  border-color: #6b7b8a !important;
-  background-color: #6b7b8a !important;
-  background-image: none !important;
-  border-radius: 50% !important;
-}
-body li[data-task="?"] > input.task-list-item-checkbox::after,
-body li[data-task="?"] > input.task-list-item-checkbox:checked::after,
-body input.task-list-item-checkbox[data-task="?"]::after,
-body input.task-list-item-checkbox[data-task="?"]:checked::after {
-  content: "?" !important;
-  color: white !important;
-  font-size: 12px !important;
-  font-weight: bold !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-}
-
-/* Important task: - [!] */
-li[data-task="!"] > input[type="checkbox"],
-li[data-task="!"] > input[type="checkbox"]:checked,
-input[data-task="!"],
-input[data-task="!"]:checked {
-  border-color: var(--theme-accent) !important;
-  background-color: var(--theme-accent) !important;
-  background-image: none !important;
-  border-radius: 50% !important;
-}
-body li[data-task="!"] > input.task-list-item-checkbox::after,
-body li[data-task="!"] > input.task-list-item-checkbox:checked::after,
-body input.task-list-item-checkbox[data-task="!"]::after,
-body input.task-list-item-checkbox[data-task="!"]:checked::after {
-  content: "!" !important;
-  color: white !important;
-  font-size: 12px !important;
-  font-weight: bold !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-}
-
-/* Deferred task: - [>] - with background highlight */
-li[data-task=">"] > input[type="checkbox"],
-li[data-task=">"] > input[type="checkbox"]:checked,
+/* Deferred/Forwarded: - [>] - arrow outline */
 input[data-task=">"],
-input[data-task=">"]:checked {
-  border-color: #9c8b54 !important;
-  background-color: #9c8b54 !important;
-  background-image: none !important;
-  border-radius: 4px !important;
+li[data-task=">"] > input[type="checkbox"],
+li[data-task=">"] > p > input[type="checkbox"] {
+  border: none !important;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' d='M3 8h10m-4-4l4 4l-4 4'/%3E%3C/svg%3E") no-repeat center;
+  -webkit-mask-size: 100% 100%;
+  background-color: var(--text-muted) !important;
 }
-body li[data-task=">"] > input.task-list-item-checkbox::after,
-body li[data-task=">"] > input.task-list-item-checkbox:checked::after,
-body input.task-list-item-checkbox[data-task=">"]::after,
-body input.task-list-item-checkbox[data-task=">"]:checked::after {
-  content: "➜" !important;
-  color: white !important;
-  font-family: "Segoe UI Symbol", "Apple Symbols", "Noto Color Emoji", sans-serif !important;
-  font-size: 11px !important;
-  font-weight: normal !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-}
-li[data-task=">"] {
-  background-color: rgba(156, 139, 84, 0.1);
-  padding: 2px 6px;
-  border-radius: 4px;
-  margin-left: -6px;
+input[data-task=">"]::after,
+li[data-task=">"] > input[type="checkbox"]::after,
+li[data-task=">"] > p > input[type="checkbox"]::after {
+  content: none !important;
+  display: none !important;
 }
 
-/* Scheduled task: - [<] */
-li[data-task="<"] > input[type="checkbox"],
-li[data-task="<"] > input[type="checkbox"]:checked,
+/* Scheduled: - [<] - calendar outline */
 input[data-task="<"],
-input[data-task="<"]:checked {
-  border-color: #9ca3af !important;
-  background-color: #9ca3af !important;
-  background-image: none !important;
-  border-radius: 4px !important;
+li[data-task="<"] > input[type="checkbox"],
+li[data-task="<"] > p > input[type="checkbox"] {
+  border: none !important;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='currentColor' stroke-width='1.3' d='M2.5 5.5v8a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-8m-11 0v-2a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v2m-11 0h11M5 1.5v2m6-2v2'/%3E%3C/svg%3E") no-repeat center;
+  -webkit-mask-size: 100% 100%;
+  background-color: var(--text-muted) !important;
 }
-body li[data-task="<"] > input.task-list-item-checkbox::after,
-body li[data-task="<"] > input.task-list-item-checkbox:checked::after,
-body input.task-list-item-checkbox[data-task="<"]::after,
-body input.task-list-item-checkbox[data-task="<"]:checked::after {
-  content: "◀" !important;
-  color: white !important;
-  font-family: "Segoe UI Symbol", "Apple Symbols", sans-serif !important;
-  font-size: 10px !important;
-  font-weight: normal !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
+input[data-task="<"]::after,
+li[data-task="<"] > input[type="checkbox"]::after,
+li[data-task="<"] > p > input[type="checkbox"]::after {
+  content: none !important;
+  display: none !important;
 }
 
-/* Star/favorite: - [*] */
-li[data-task="*"] > input[type="checkbox"],
-li[data-task="*"] > input[type="checkbox"]:checked,
+/* Question: - [?] - circle with question mark */
+input[data-task="?"],
+li[data-task="?"] > input[type="checkbox"],
+li[data-task="?"] > p > input[type="checkbox"] {
+  border: none !important;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6.5' fill='none' stroke='currentColor' stroke-width='1.5'/%3E%3Cpath fill='none' stroke='currentColor' stroke-width='1.3' stroke-linecap='round' d='M6 6a2 2 0 1 1 2.5 1.94A1.3 1.3 0 0 0 8 9'/%3E%3Ccircle cx='8' cy='11.5' r='0.75' fill='currentColor'/%3E%3C/svg%3E") no-repeat center;
+  -webkit-mask-size: 100% 100%;
+  background-color: var(--text-muted) !important;
+}
+input[data-task="?"]::after,
+li[data-task="?"] > input[type="checkbox"]::after,
+li[data-task="?"] > p > input[type="checkbox"]::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Important: - [!] - circle with exclamation */
+input[data-task="!"],
+li[data-task="!"] > input[type="checkbox"],
+li[data-task="!"] > p > input[type="checkbox"] {
+  border: none !important;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6.5' fill='none' stroke='currentColor' stroke-width='1.5'/%3E%3Cpath stroke='currentColor' stroke-width='1.5' stroke-linecap='round' d='M8 4.5v4'/%3E%3Ccircle cx='8' cy='11' r='0.75' fill='currentColor'/%3E%3C/svg%3E") no-repeat center;
+  -webkit-mask-size: 100% 100%;
+  background-color: var(--text-muted) !important;
+}
+input[data-task="!"]::after,
+li[data-task="!"] > input[type="checkbox"]::after,
+li[data-task="!"] > p > input[type="checkbox"]::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Star/Favorite: - [*] - star outline */
 input[data-task="*"],
-input[data-task="*"]:checked {
-  border-color: var(--theme-accent) !important;
-  background-color: var(--theme-accent) !important;
-  background-image: none !important;
-  border-radius: 4px !important;
+li[data-task="*"] > input[type="checkbox"],
+li[data-task="*"] > p > input[type="checkbox"] {
+  border: none !important;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='currentColor' stroke-width='1.3' stroke-linejoin='round' d='M8 1.5l1.9 3.8l4.2.6l-3 3l.7 4.2L8 11.2l-3.8 1.9l.7-4.2l-3-3l4.2-.6z'/%3E%3C/svg%3E") no-repeat center;
+  -webkit-mask-size: 100% 100%;
+  background-color: var(--text-muted) !important;
 }
-body li[data-task="*"] > input.task-list-item-checkbox::after,
-body li[data-task="*"] > input.task-list-item-checkbox:checked::after,
-body input.task-list-item-checkbox[data-task="*"]::after,
-body input.task-list-item-checkbox[data-task="*"]:checked::after {
-  content: "★" !important;
-  color: white !important;
-  font-family: "Segoe UI Symbol", "Apple Symbols", "Noto Color Emoji", sans-serif !important;
-  font-size: 11px !important;
-  font-weight: normal !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
+input[data-task="*"]::after,
+li[data-task="*"] > input[type="checkbox"]::after,
+li[data-task="*"] > p > input[type="checkbox"]::after {
+  content: none !important;
+  display: none !important;
 }
 
-/* Info: - [i] */
-li[data-task="i"] > input[type="checkbox"],
-li[data-task="i"] > input[type="checkbox"]:checked,
-input[data-task="i"],
-input[data-task="i"]:checked {
-  border-color: #6b7b8a !important;
-  background-color: #6b7b8a !important;
-  background-image: none !important;
-  border-radius: 50% !important;
+/* Quote: - ["] - quotation marks */
+input[data-task="\""],
+li[data-task="\""] > input[type="checkbox"],
+li[data-task="\""] > p > input[type="checkbox"] {
+  border: none !important;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='currentColor' stroke-width='1.3' d='M4 10V7.5A2.5 2.5 0 0 1 6.5 5h.5v1.5a2 2 0 0 0-2 2V10zm6 0V7.5A2.5 2.5 0 0 1 12.5 5h.5v1.5a2 2 0 0 0-2 2V10z'/%3E%3C/svg%3E") no-repeat center;
+  -webkit-mask-size: 100% 100%;
+  background-color: var(--text-muted) !important;
 }
-body li[data-task="i"] > input.task-list-item-checkbox::after,
-body li[data-task="i"] > input.task-list-item-checkbox:checked::after,
-body input.task-list-item-checkbox[data-task="i"]::after,
-body input.task-list-item-checkbox[data-task="i"]:checked::after {
-  content: "i" !important;
-  color: white !important;
-  font-size: 12px !important;
-  font-style: italic !important;
-  font-weight: bold !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
+input[data-task="\""]::after,
+li[data-task="\""] > input[type="checkbox"]::after,
+li[data-task="\""] > p > input[type="checkbox"]::after {
+  content: none !important;
+  display: none !important;
 }
 
-/* Bookmark: - [b] */
-li[data-task="b"] > input[type="checkbox"],
-li[data-task="b"] > input[type="checkbox"]:checked,
-input[data-task="b"],
-input[data-task="b"]:checked {
-  border-color: #8b7355 !important;
-  background-color: transparent !important;
-  background-image: none !important;
-  border-radius: 4px !important;
-}
-body li[data-task="b"] > input.task-list-item-checkbox::after,
-body li[data-task="b"] > input.task-list-item-checkbox:checked::after,
-body input.task-list-item-checkbox[data-task="b"]::after,
-body input.task-list-item-checkbox[data-task="b"]:checked::after {
-  content: "🔖" !important;
-  font-family: "Segoe UI Symbol", "Apple Symbols", "Noto Color Emoji", sans-serif !important;
-  font-size: 12px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-}
-
-/* Location: - [l] */
-li[data-task="l"] > input[type="checkbox"],
-li[data-task="l"] > input[type="checkbox"]:checked,
+/* Location: - [l] - pin outline */
 input[data-task="l"],
-input[data-task="l"]:checked {
-  border-color: #7a8b6e !important;
-  background-color: transparent !important;
-  background-image: none !important;
-  border-radius: 4px !important;
+li[data-task="l"] > input[type="checkbox"],
+li[data-task="l"] > p > input[type="checkbox"] {
+  border: none !important;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='currentColor' stroke-width='1.3' d='M8 14.5C8 14.5 13 10 13 6a5 5 0 1 0-10 0c0 4 5 8.5 5 8.5z'/%3E%3Ccircle cx='8' cy='6' r='2' fill='none' stroke='currentColor' stroke-width='1.3'/%3E%3C/svg%3E") no-repeat center;
+  -webkit-mask-size: 100% 100%;
+  background-color: var(--text-muted) !important;
 }
-body li[data-task="l"] > input.task-list-item-checkbox::after,
-body li[data-task="l"] > input.task-list-item-checkbox:checked::after,
-body input.task-list-item-checkbox[data-task="l"]::after,
-body input.task-list-item-checkbox[data-task="l"]:checked::after {
-  content: "📍" !important;
-  font-family: "Segoe UI Symbol", "Apple Symbols", "Noto Color Emoji", sans-serif !important;
-  font-size: 12px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
+input[data-task="l"]::after,
+li[data-task="l"] > input[type="checkbox"]::after,
+li[data-task="l"] > p > input[type="checkbox"]::after {
+  content: none !important;
+  display: none !important;
 }
 
+/* Bookmark: - [b] - bookmark outline */
+input[data-task="b"],
+li[data-task="b"] > input[type="checkbox"],
+li[data-task="b"] > p > input[type="checkbox"] {
+  border: none !important;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='currentColor' stroke-width='1.3' stroke-linejoin='round' d='M3 2.5A1.5 1.5 0 0 1 4.5 1h7A1.5 1.5 0 0 1 13 2.5v12.5l-5-3l-5 3z'/%3E%3C/svg%3E") no-repeat center;
+  -webkit-mask-size: 100% 100%;
+  background-color: var(--text-muted) !important;
+}
+input[data-task="b"]::after,
+li[data-task="b"] > input[type="checkbox"]::after,
+li[data-task="b"] > p > input[type="checkbox"]::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Info: - [i] - circle with i */
+input[data-task="i"],
+li[data-task="i"] > input[type="checkbox"],
+li[data-task="i"] > p > input[type="checkbox"] {
+  border: none !important;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6.5' fill='none' stroke='currentColor' stroke-width='1.5'/%3E%3Cpath stroke='currentColor' stroke-width='1.5' stroke-linecap='round' d='M8 7v4'/%3E%3Ccircle cx='8' cy='5' r='0.75' fill='currentColor'/%3E%3C/svg%3E") no-repeat center;
+  -webkit-mask-size: 100% 100%;
+  background-color: var(--text-muted) !important;
+}
+input[data-task="i"]::after,
+li[data-task="i"] > input[type="checkbox"]::after,
+li[data-task="i"] > p > input[type="checkbox"]::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Savings/Money: - [S] - dollar sign */
+input[data-task="S"],
+li[data-task="S"] > input[type="checkbox"],
+li[data-task="S"] > p > input[type="checkbox"] {
+  border: none !important;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='currentColor' stroke-width='1.3' stroke-linecap='round' d='M8 1.5v13M11.5 4.5c0-1.5-1.5-2-3.5-2s-3.5.5-3.5 2s1.5 2 3.5 2.5s3.5 1 3.5 2.5s-1.5 2-3.5 2s-3.5-.5-3.5-2'/%3E%3C/svg%3E") no-repeat center;
+  -webkit-mask-size: 100% 100%;
+  background-color: var(--text-muted) !important;
+}
+input[data-task="S"]::after,
+li[data-task="S"] > input[type="checkbox"]::after,
+li[data-task="S"] > p > input[type="checkbox"]::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Idea/Lightbulb: - [I] - lightbulb outline */
+input[data-task="I"],
+li[data-task="I"] > input[type="checkbox"],
+li[data-task="I"] > p > input[type="checkbox"] {
+  border: none !important;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='currentColor' stroke-width='1.3' d='M6 14h4M6 12h4M6 12c0-1.5-2.5-2.5-2.5-5.5a4.5 4.5 0 1 1 9 0c0 3-2.5 4-2.5 5.5'/%3E%3C/svg%3E") no-repeat center;
+  -webkit-mask-size: 100% 100%;
+  background-color: var(--text-muted) !important;
+}
+input[data-task="I"]::after,
+li[data-task="I"] > input[type="checkbox"]::after,
+li[data-task="I"] > p > input[type="checkbox"]::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Pro (thumbs up): - [p] - outline */
+input[data-task="p"],
+li[data-task="p"] > input[type="checkbox"],
+li[data-task="p"] > p > input[type="checkbox"] {
+  border: none !important;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='currentColor' stroke-width='1.2' stroke-linejoin='round' d='M1.5 9v4.5a1 1 0 0 0 1 1H4V8.5H2.5a1 1 0 0 0-1 .5zm2.5-.5v5.5h2.5c1 0 2-.5 2.5-1l2-1.5a1 1 0 0 0 .5-1V9a1 1 0 0 0-1-1h-3l.5-3a1 1 0 0 0-1-1h-.5L4 8.5z'/%3E%3C/svg%3E") no-repeat center;
+  -webkit-mask-size: 100% 100%;
+  background-color: var(--text-muted) !important;
+}
+input[data-task="p"]::after,
+li[data-task="p"] > input[type="checkbox"]::after,
+li[data-task="p"] > p > input[type="checkbox"]::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Con (thumbs down): - [c] - outline */
+input[data-task="c"],
+li[data-task="c"] > input[type="checkbox"],
+li[data-task="c"] > p > input[type="checkbox"] {
+  border: none !important;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='currentColor' stroke-width='1.2' stroke-linejoin='round' d='M1.5 7V2.5a1 1 0 0 1 1-1H4v6H2.5a1 1 0 0 1-1-.5zm2.5.5V2h2.5c1 0 2 .5 2.5 1l2 1.5a1 1 0 0 1 .5 1V7a1 1 0 0 1-1 1h-3l.5 3a1 1 0 0 1-1 1h-.5L4 7.5z'/%3E%3C/svg%3E") no-repeat center;
+  -webkit-mask-size: 100% 100%;
+  background-color: var(--text-muted) !important;
+}
+input[data-task="c"]::after,
+li[data-task="c"] > input[type="checkbox"]::after,
+li[data-task="c"] > p > input[type="checkbox"]::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Fire/Urgent: - [f] - flame outline */
+input[data-task="f"],
+li[data-task="f"] > input[type="checkbox"],
+li[data-task="f"] > p > input[type="checkbox"] {
+  border: none !important;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='currentColor' stroke-width='1.2' stroke-linejoin='round' d='M8 14.5c-3 0-5-2-5-4.5c0-2 1-3.5 2-4.5c0 1.5 1 2 2 1.5C6.5 5 6 3 7.5 1.5c0 2.5 1.5 3.5 3 4c1.5.5 2.5 2 2.5 4c0 2.5-2 5-5 5zm0 0c-1.5 0-2.5-1-2.5-2.5S7 9.5 8 9c1 .5 2.5 1.5 2.5 3S9.5 14.5 8 14.5z'/%3E%3C/svg%3E") no-repeat center;
+  -webkit-mask-size: 100% 100%;
+  background-color: var(--text-muted) !important;
+}
+input[data-task="f"]::after,
+li[data-task="f"] > input[type="checkbox"]::after,
+li[data-task="f"] > p > input[type="checkbox"]::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Key: - [k] - key outline */
+input[data-task="k"],
+li[data-task="k"] > input[type="checkbox"],
+li[data-task="k"] > p > input[type="checkbox"] {
+  border: none !important;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='4.5' cy='8' r='2.5' fill='none' stroke='currentColor' stroke-width='1.3'/%3E%3Cpath fill='none' stroke='currentColor' stroke-width='1.3' stroke-linecap='round' d='M7 8h7m-2-2v2m-3 0v2'/%3E%3C/svg%3E") no-repeat center;
+  -webkit-mask-size: 100% 100%;
+  background-color: var(--text-muted) !important;
+}
+input[data-task="k"]::after,
+li[data-task="k"] > input[type="checkbox"]::after,
+li[data-task="k"] > p > input[type="checkbox"]::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Win/Trophy: - [w] - trophy outline */
+input[data-task="w"],
+li[data-task="w"] > input[type="checkbox"],
+li[data-task="w"] > p > input[type="checkbox"] {
+  border: none !important;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='currentColor' stroke-width='1.2' d='M4 2h8v4a4 4 0 1 1-8 0zm0 2H2.5a1 1 0 0 0-1 1v1a2 2 0 0 0 2 2H4m8-4h1.5a1 1 0 0 1 1 1v1a2 2 0 0 1-2 2H12M8 10v2m-2 2h4'/%3E%3C/svg%3E") no-repeat center;
+  -webkit-mask-size: 100% 100%;
+  background-color: var(--text-muted) !important;
+}
+input[data-task="w"]::after,
+li[data-task="w"] > input[type="checkbox"]::after,
+li[data-task="w"] > p > input[type="checkbox"]::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Up: - [u] - trend up */
+input[data-task="u"],
+li[data-task="u"] > input[type="checkbox"],
+li[data-task="u"] > p > input[type="checkbox"] {
+  border: none !important;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' d='M2 12l4-4l3 3l5-5m0 0v3m0-3h-3'/%3E%3C/svg%3E") no-repeat center;
+  -webkit-mask-size: 100% 100%;
+  background-color: var(--text-muted) !important;
+}
+input[data-task="u"]::after,
+li[data-task="u"] > input[type="checkbox"]::after,
+li[data-task="u"] > p > input[type="checkbox"]::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Down: - [d] - trend down */
+input[data-task="d"],
+li[data-task="d"] > input[type="checkbox"],
+li[data-task="d"] > p > input[type="checkbox"] {
+  border: none !important;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' d='M2 4l4 4l3-3l5 5m0 0v-3m0 3h-3'/%3E%3C/svg%3E") no-repeat center;
+  -webkit-mask-size: 100% 100%;
+  background-color: var(--text-muted) !important;
+}
+input[data-task="d"]::after,
+li[data-task="d"] > input[type="checkbox"]::after,
+li[data-task="d"] > p > input[type="checkbox"]::after {
+  content: none !important;
+  display: none !important;
+}
 /* ============================================
    CALLOUT STYLING - Anthropic style
    ============================================ */
@@ -4004,6 +4052,144 @@ body.file-explorer-icons .nav-file-title:hover::before {
 /* Active file - full opacity */
 body.file-explorer-icons .nav-file-title.is-active::before {
   opacity: 1;
+}
+/* ============================================
+   FULL CALENDAR PLUGIN COMPATIBILITY
+   Styles for the obsidian-full-calendar plugin
+   ============================================ */
+
+/* Today cell - use subtle accent tint instead of grey */
+.fc .fc-day-today {
+  background-color: var(--background-primary) !important;
+}
+
+/* Today cell highlight - subtle accent border instead of background */
+.fc .fc-daygrid-day.fc-day-today {
+  background-color: color-mix(in srgb, var(--interactive-accent) 8%, var(--background-primary)) !important;
+}
+
+/* Scheme-specific today backgrounds */
+body.scheme-anthropic.theme-light .fc .fc-daygrid-day.fc-day-today {
+  background-color: rgba(217, 119, 87, 0.08) !important;
+}
+
+body.scheme-anthropic.theme-dark .fc .fc-daygrid-day.fc-day-today {
+  background-color: rgba(217, 119, 87, 0.12) !important;
+}
+
+body.scheme-nordic.theme-light .fc .fc-daygrid-day.fc-day-today {
+  background-color: rgba(94, 129, 172, 0.08) !important;
+}
+
+body.scheme-nordic.theme-dark .fc .fc-daygrid-day.fc-day-today {
+  background-color: rgba(136, 192, 208, 0.12) !important;
+}
+
+body.scheme-academic.theme-light .fc .fc-daygrid-day.fc-day-today {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+body.scheme-academic.theme-dark .fc .fc-daygrid-day.fc-day-today {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+body.scheme-oldmoney.theme-light .fc .fc-daygrid-day.fc-day-today {
+  background-color: rgba(184, 149, 110, 0.08) !important;
+}
+
+body.scheme-oldmoney.theme-dark .fc .fc-daygrid-day.fc-day-today {
+  background-color: rgba(184, 149, 110, 0.12) !important;
+}
+
+/* Calendar grid borders - use theme border color */
+.fc .fc-scrollgrid,
+.fc .fc-scrollgrid-section > td,
+.fc .fc-scrollgrid-section > th,
+.fc td,
+.fc th {
+  border-color: var(--background-modifier-border) !important;
+}
+
+/* Day numbers - use theme text color */
+.fc .fc-daygrid-day-number {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.fc .fc-day-today .fc-daygrid-day-number {
+  color: var(--text-normal);
+  font-weight: 600;
+}
+
+/* Header toolbar */
+.fc .fc-toolbar-title {
+  color: var(--text-normal);
+  font-family: var(--font-headings, var(--font-interface));
+}
+
+.fc .fc-button {
+  background-color: var(--interactive-normal) !important;
+  border-color: var(--background-modifier-border) !important;
+  color: var(--text-normal) !important;
+}
+
+.fc .fc-button:hover {
+  background-color: var(--interactive-hover) !important;
+}
+
+.fc .fc-button-active {
+  background-color: var(--interactive-accent) !important;
+  color: var(--text-on-accent) !important;
+}
+
+/* Week/day headers */
+.fc .fc-col-header-cell-cushion {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+/* Event styling - let plugin colors through but ensure readability */
+.fc .fc-event {
+  border-radius: var(--radius-s);
+}
+
+/* Past days - slightly muted */
+.fc .fc-day-past .fc-daygrid-day-number {
+  color: var(--text-faint);
+}
+
+/* Calendar container background */
+.fc {
+  background-color: var(--background-primary);
+}
+
+.fc .fc-view-harness {
+  background-color: var(--background-primary);
+}
+/* ============================================
+   TASK GENIUS PLUGIN COMPATIBILITY
+   Additional fixes for Task Genius status selector
+   ============================================ */
+
+/* Ensure status selector containers are transparent */
+.details-status-selector {
+  background-color: transparent;
+}
+
+.details-status-selector .status-option {
+  background-color: transparent;
+}
+
+/* Current/selected status option - subtle highlight */
+.details-status-selector .status-option.current {
+  background-color: rgba(128, 128, 128, 0.15);
+  border-radius: 4px;
+}
+
+/* More options button */
+.details-status-selector .more-status,
+.details-status-selector .clickable-icon {
+  background-color: transparent;
 }
 /* ============================================
    SCHEME-SPECIFIC TAB OVERRIDES (high specificity)
