@@ -56,9 +56,9 @@
   color: var(--text-faint);
 }
 
-/* Folder titles (section headers) - bold like Claude docs */
+/* Folder titles (section headers) */
 .nav-folder-title {
-  font-weight: 600;
+  font-weight: 400;
   font-size: 0.85em;
   color: var(--text-normal);
   padding: 8px 12px;
@@ -66,6 +66,11 @@
   margin-bottom: 4px;
   border-radius: 0;
   background: transparent;
+}
+
+/* Bold folder names when enabled via Style Settings */
+body.bold-folder-names .nav-folder-title {
+  font-weight: 600;
 }
 
 .nav-folder-title:first-child,

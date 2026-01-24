@@ -176,4 +176,10 @@ settings:
     description: Display icons next to folders and markdown files in the file explorer
     type: class-toggle
     default: false
+  -
+    id: bold-folder-names
+    title: Bold Folder Names
+    description: Make folder names bold in the file explorer
+    type: class-toggle
+    default: false
 */
