@@ -147,4 +147,9 @@ body.scheme-nordic.theme-dark {
 
   /* Sidebar */
   --sidebar-background: #2E3440;
+
+  /* Warning/destructive buttons - Aurora Red */
+  --button-warning-bg: #BF616A;
+  --button-warning-text: #ECEFF4;
+  --button-warning-bg-hover: #d06a73;
 }

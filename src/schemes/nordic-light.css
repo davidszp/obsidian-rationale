@@ -131,4 +131,9 @@ body.scheme-nordic.theme-light {
   --icon-color-hover: #2E3440;
   --icon-color-active: #5E81AC;
   --icon-color-focused: #5E81AC;
+
+  /* Warning/destructive buttons - Aurora Red */
+  --button-warning-bg: #BF616A;
+  --button-warning-text: #ECEFF4;
+  --button-warning-bg-hover: #a9545c;
 }

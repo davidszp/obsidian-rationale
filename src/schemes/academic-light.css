@@ -131,4 +131,9 @@ body.scheme-academic.theme-light {
   --icon-color-hover: #1a1a1a;
   --icon-color-active: #333333;
   --icon-color-focused: #333333;
+
+  /* Warning/destructive buttons - Dark grey */
+  --button-warning-bg: #444444;
+  --button-warning-text: #ffffff;
+  --button-warning-bg-hover: #333333;
 }

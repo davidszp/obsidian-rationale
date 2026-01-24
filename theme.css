@@ -370,6 +370,11 @@ body {
   --button-color: #131314;
   --button-background: #f0efe8;
 
+  /* Warning/destructive buttons - Terracotta */
+  --button-warning-bg: #d97757;
+  --button-warning-text: #ffffff;
+  --button-warning-bg-hover: #c86a4a;
+
   /* Graph */
   --graph-line: #c0bfb8;
   --graph-node: #d97757;
@@ -584,6 +589,11 @@ body {
   --button-color: #E0E0E0;
   --button-background: #2a2a2a;
 
+  /* Warning/destructive buttons - Terracotta */
+  --button-warning-bg: #d97757;
+  --button-warning-text: #ffffff;
+  --button-warning-bg-hover: #e88a6a;
+
   /* Graph */
   --graph-line: #4a4a4a;
   --graph-node: #AAAAAA;
@@ -781,6 +791,11 @@ body.scheme-nordic.theme-light {
   --icon-color-hover: #2E3440;
   --icon-color-active: #5E81AC;
   --icon-color-focused: #5E81AC;
+
+  /* Warning/destructive buttons - Aurora Red */
+  --button-warning-bg: #BF616A;
+  --button-warning-text: #ECEFF4;
+  --button-warning-bg-hover: #a9545c;
 }
 /* ============================================
    NORDIC COLOR SCHEME - Dark Mode
@@ -931,6 +946,11 @@ body.scheme-nordic.theme-dark {
 
   /* Sidebar */
   --sidebar-background: #2E3440;
+
+  /* Warning/destructive buttons - Aurora Red */
+  --button-warning-bg: #BF616A;
+  --button-warning-text: #ECEFF4;
+  --button-warning-bg-hover: #d06a73;
 }
 /* ============================================
    ACADEMIC COLOR SCHEME - Light Mode
@@ -1065,6 +1085,11 @@ body.scheme-academic.theme-light {
   --icon-color-hover: #1a1a1a;
   --icon-color-active: #333333;
   --icon-color-focused: #333333;
+
+  /* Warning/destructive buttons - Dark grey */
+  --button-warning-bg: #444444;
+  --button-warning-text: #ffffff;
+  --button-warning-bg-hover: #333333;
 }
 /* ============================================
    ACADEMIC COLOR SCHEME - Dark Mode
@@ -1215,6 +1240,11 @@ body.scheme-academic.theme-dark {
 
   /* Sidebar */
   --sidebar-background: #1a1a1a;
+
+  /* Warning/destructive buttons - Light grey */
+  --button-warning-bg: #AAAAAA;
+  --button-warning-text: #1a1a1a;
+  --button-warning-bg-hover: #BBBBBB;
 }
 
 /* ============================================
@@ -1501,6 +1531,20 @@ a {
 button.mod-cta {
   font-weight: 500;
   border-radius: var(--radius-m);
+}
+
+/* Warning/destructive button styling (Delete, etc.) */
+button.mod-warning {
+  font-weight: 500;
+  border-radius: var(--radius-m);
+  background-color: var(--button-warning-bg);
+  color: var(--button-warning-text);
+  border: 1px solid var(--button-warning-bg);
+}
+
+button.mod-warning:hover {
+  background-color: var(--button-warning-bg-hover);
+  border-color: var(--button-warning-bg-hover);
 }
 
 /* Status bar subtle */

@@ -147,5 +147,10 @@ body.scheme-academic.theme-dark {
 
   /* Sidebar */
   --sidebar-background: #1a1a1a;
+
+  /* Warning/destructive buttons - Light grey */
+  --button-warning-bg: #AAAAAA;
+  --button-warning-text: #1a1a1a;
+  --button-warning-bg-hover: #BBBBBB;
 }
 

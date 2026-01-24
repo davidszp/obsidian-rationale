@@ -284,6 +284,20 @@ button.mod-cta {
   border-radius: var(--radius-m);
 }
 
+/* Warning/destructive button styling (Delete, etc.) */
+button.mod-warning {
+  font-weight: 500;
+  border-radius: var(--radius-m);
+  background-color: var(--button-warning-bg);
+  color: var(--button-warning-text);
+  border: 1px solid var(--button-warning-bg);
+}
+
+button.mod-warning:hover {
+  background-color: var(--button-warning-bg-hover);
+  border-color: var(--button-warning-bg-hover);
+}
+
 /* Status bar subtle */
 .status-bar {
   font-size: 0.8em;

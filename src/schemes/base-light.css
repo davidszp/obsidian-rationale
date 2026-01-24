@@ -148,6 +148,11 @@
   --button-color: #131314;
   --button-background: #f0efe8;
 
+  /* Warning/destructive buttons - Terracotta */
+  --button-warning-bg: #d97757;
+  --button-warning-text: #ffffff;
+  --button-warning-bg-hover: #c86a4a;
+
   /* Graph */
   --graph-line: #c0bfb8;
   --graph-node: #d97757;
