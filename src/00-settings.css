@@ -164,4 +164,16 @@ settings:
     description: Float the status bar in the center bottom of the screen
     type: class-toggle
     default: false
+  -
+    id: file-explorer-heading
+    title: File Explorer
+    type: heading
+    level: 1
+    collapsed: true
+  -
+    id: file-explorer-icons
+    title: Show File Explorer Icons
+    description: Display icons next to folders and markdown files in the file explorer
+    type: class-toggle
+    default: false
 */

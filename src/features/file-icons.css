@@ -1,0 +1,128 @@
+/* ============================================
+   FILE EXPLORER ICONS
+   Optional icons for folders and files using Lucide-style SVGs
+   Toggle via Style Settings: "Show File Explorer Icons"
+
+   All icons are monochrome - same stroke color, different shapes
+   ============================================ */
+
+/* Base styles for all icons */
+body.file-explorer-icons .nav-folder-title-content::before,
+body.file-explorer-icons .nav-file-title::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 6px;
+  vertical-align: -2px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+/* ============================================
+   LIGHT MODE ICONS
+   ============================================ */
+
+/* Folder icon (Lucide folder) */
+body.file-explorer-icons.theme-light .nav-folder-title-content::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z'/%3E%3C/svg%3E");
+}
+
+/* Markdown files - file-text icon */
+body.file-explorer-icons.theme-light .nav-file-title[data-path$=".md"]::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3Cline x1='16' x2='8' y1='13' y2='13'/%3E%3Cline x1='16' x2='8' y1='17' y2='17'/%3E%3Cline x1='10' x2='8' y1='9' y2='9'/%3E%3C/svg%3E");
+}
+
+/* Images - image icon */
+body.file-explorer-icons.theme-light .nav-file-title[data-path$=".png"]::before,
+body.file-explorer-icons.theme-light .nav-file-title[data-path$=".jpg"]::before,
+body.file-explorer-icons.theme-light .nav-file-title[data-path$=".jpeg"]::before,
+body.file-explorer-icons.theme-light .nav-file-title[data-path$=".gif"]::before,
+body.file-explorer-icons.theme-light .nav-file-title[data-path$=".svg"]::before,
+body.file-explorer-icons.theme-light .nav-file-title[data-path$=".webp"]::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='18' height='18' x='3' y='3' rx='2' ry='2'/%3E%3Ccircle cx='9' cy='9' r='2'/%3E%3Cpath d='m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21'/%3E%3C/svg%3E");
+}
+
+/* PDF and generic documents - simple file icon */
+body.file-explorer-icons.theme-light .nav-file-title[data-path$=".pdf"]::before,
+body.file-explorer-icons.theme-light .nav-file-title[data-path$=".doc"]::before,
+body.file-explorer-icons.theme-light .nav-file-title[data-path$=".docx"]::before,
+body.file-explorer-icons.theme-light .nav-file-title[data-path$=".ppt"]::before,
+body.file-explorer-icons.theme-light .nav-file-title[data-path$=".pptx"]::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3C/svg%3E");
+}
+
+/* Spreadsheets - table icon */
+body.file-explorer-icons.theme-light .nav-file-title[data-path$=".xls"]::before,
+body.file-explorer-icons.theme-light .nav-file-title[data-path$=".xlsx"]::before,
+body.file-explorer-icons.theme-light .nav-file-title[data-path$=".csv"]::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18'/%3E%3C/svg%3E");
+}
+
+/* Canvas - grid icon */
+body.file-explorer-icons.theme-light .nav-file-title[data-path$=".canvas"]::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='7' height='7' x='3' y='3' rx='1'/%3E%3Crect width='7' height='7' x='14' y='3' rx='1'/%3E%3Crect width='7' height='7' x='14' y='14' rx='1'/%3E%3Crect width='7' height='7' x='3' y='14' rx='1'/%3E%3C/svg%3E");
+}
+
+/* ============================================
+   DARK MODE ICONS
+   ============================================ */
+
+/* Folder icon */
+body.file-explorer-icons.theme-dark .nav-folder-title-content::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23999999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z'/%3E%3C/svg%3E");
+}
+
+/* Markdown files - file-text icon */
+body.file-explorer-icons.theme-dark .nav-file-title[data-path$=".md"]::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23999999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3Cline x1='16' x2='8' y1='13' y2='13'/%3E%3Cline x1='16' x2='8' y1='17' y2='17'/%3E%3Cline x1='10' x2='8' y1='9' y2='9'/%3E%3C/svg%3E");
+}
+
+/* Images - image icon */
+body.file-explorer-icons.theme-dark .nav-file-title[data-path$=".png"]::before,
+body.file-explorer-icons.theme-dark .nav-file-title[data-path$=".jpg"]::before,
+body.file-explorer-icons.theme-dark .nav-file-title[data-path$=".jpeg"]::before,
+body.file-explorer-icons.theme-dark .nav-file-title[data-path$=".gif"]::before,
+body.file-explorer-icons.theme-dark .nav-file-title[data-path$=".svg"]::before,
+body.file-explorer-icons.theme-dark .nav-file-title[data-path$=".webp"]::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23999999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='18' height='18' x='3' y='3' rx='2' ry='2'/%3E%3Ccircle cx='9' cy='9' r='2'/%3E%3Cpath d='m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21'/%3E%3C/svg%3E");
+}
+
+/* PDF and generic documents - simple file icon */
+body.file-explorer-icons.theme-dark .nav-file-title[data-path$=".pdf"]::before,
+body.file-explorer-icons.theme-dark .nav-file-title[data-path$=".doc"]::before,
+body.file-explorer-icons.theme-dark .nav-file-title[data-path$=".docx"]::before,
+body.file-explorer-icons.theme-dark .nav-file-title[data-path$=".ppt"]::before,
+body.file-explorer-icons.theme-dark .nav-file-title[data-path$=".pptx"]::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23999999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3C/svg%3E");
+}
+
+/* Spreadsheets - table icon */
+body.file-explorer-icons.theme-dark .nav-file-title[data-path$=".xls"]::before,
+body.file-explorer-icons.theme-dark .nav-file-title[data-path$=".xlsx"]::before,
+body.file-explorer-icons.theme-dark .nav-file-title[data-path$=".csv"]::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23999999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18'/%3E%3C/svg%3E");
+}
+
+/* Canvas - grid icon */
+body.file-explorer-icons.theme-dark .nav-file-title[data-path$=".canvas"]::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23999999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='7' height='7' x='3' y='3' rx='1'/%3E%3Crect width='7' height='7' x='14' y='3' rx='1'/%3E%3Crect width='7' height='7' x='14' y='14' rx='1'/%3E%3Crect width='7' height='7' x='3' y='14' rx='1'/%3E%3C/svg%3E");
+}
+
+/* ============================================
+   INTERACTION STATES
+   ============================================ */
+
+/* Hover state - increase opacity */
+body.file-explorer-icons .nav-folder-title:hover .nav-folder-title-content::before,
+body.file-explorer-icons .nav-file-title:hover::before {
+  opacity: 0.85;
+}
+
+/* Active file - full opacity */
+body.file-explorer-icons .nav-file-title.is-active::before {
+  opacity: 1;
+}

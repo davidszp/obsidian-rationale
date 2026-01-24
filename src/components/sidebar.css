@@ -33,9 +33,9 @@
   padding: 12px 8px;
 }
 
-/* Hide file icons for clean look, but keep collapse indicators */
-.nav-file-icon,
-.nav-folder-title-content::before {
+/* Hide Obsidian's native file icons for clean look, but keep collapse indicators */
+/* Note: Custom icons via file-icons.css use ::before pseudo-elements */
+.nav-file-icon {
   display: none !important;
 }
 
