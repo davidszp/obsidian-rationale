@@ -6,6 +6,7 @@
  *   - Academic (DEFAULT): Pure monochrome black/white/grey palette
  *   - Anthropic: Warm cream backgrounds, terracotta accents (inspired by claude.ai)
  *   - Nordic: Cool blue-grays, frost accents (inspired by Nord)
+ *   - Old Money: Warm creams, slate navy, walnut browns, bronze accents
  *
  * Base theme uses Academic colors so plugins reading default CSS variables
  * (like Obsidian Terminal) will use the monochrome palette.
@@ -40,6 +41,9 @@ settings:
       -
         label: Nordic (Cool)
         value: scheme-nordic
+      -
+        label: Old Money (Luxe)
+        value: scheme-oldmoney
   -
     id: colors-heading
     title: Custom Colors

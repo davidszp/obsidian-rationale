@@ -6,6 +6,7 @@
  *   - Academic (DEFAULT): Pure monochrome black/white/grey palette
  *   - Anthropic: Warm cream backgrounds, terracotta accents (inspired by claude.ai)
  *   - Nordic: Cool blue-grays, frost accents (inspired by Nord)
+ *   - Old Money: Warm creams, slate navy, walnut browns, bronze accents
  *
  * Base theme uses Academic colors so plugins reading default CSS variables
  * (like Obsidian Terminal) will use the monochrome palette.
@@ -40,6 +41,9 @@ settings:
       -
         label: Nordic (Cool)
         value: scheme-nordic
+      -
+        label: Old Money (Luxe)
+        value: scheme-oldmoney
   -
     id: colors-heading
     title: Custom Colors
@@ -424,7 +428,7 @@ body {
 
   /* Title bar (desktop) */
   --titlebar-background: #F5F5F5;
-  --titlebar-background-focused: #FFFFFF;
+  --titlebar-background-focused: #F5F5F5;
   --titlebar-text-color: #666666;
   --titlebar-text-color-focused: #1a1a1a;
 
@@ -659,6 +663,320 @@ body {
   --sidebar-background: #1a1a1a;
 }
 /* ============================================
+   ANTHROPIC COLOR SCHEME - Light Mode
+   Warm cream backgrounds, terracotta accents
+   Inspired by claude.ai design
+   ============================================ */
+
+body.scheme-anthropic.theme-light {
+  /* Accent - Terracotta */
+  --theme-accent: var(--custom-accent, #d97757);
+  --accent-h: 15;
+  --accent-s: 63%;
+  --accent-l: 60%;
+
+  /* Warm cream backgrounds - subtle warmth, not too yellow */
+  --background-primary: #FAFAF8;
+  --sidebar-bg: #F2F1ED;
+  --background-primary-alt: #F5F4F0;
+  --background-secondary: #F2F1ED;
+  --background-secondary-alt: #EBEAE5;
+  --background-modifier-border: #E3E2DD;
+  --background-modifier-border-hover: #D8D7D2;
+  --background-modifier-border-focus: var(--theme-accent);
+
+  /* Form backgrounds */
+  --background-modifier-form-field: #ffffff;
+  --background-modifier-form-field-highlighted: #F5F4F0;
+
+  /* Overlays */
+  --background-modifier-cover: rgba(19, 19, 20, 0.5);
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.1);
+
+  /* Interactive states */
+  --background-modifier-hover: rgba(0, 0, 0, 0.04);
+  --background-modifier-active-hover: rgba(0, 0, 0, 0.08);
+  --background-modifier-success: rgba(217, 119, 87, 0.15);
+  --background-modifier-error: rgba(217, 87, 87, 0.15);
+  --background-modifier-error-hover: rgba(217, 87, 87, 0.25);
+
+  /* Text colors */
+  --text-normal: #131314;
+  --text-muted: #6b6a65;
+  --text-faint: #9c9a92;
+  --text-on-accent: #ffffff;
+  --text-on-accent-inverted: #131314;
+  --text-error: #d95757;
+  --text-success: #57a773;
+  --text-warning: #d97757;
+  --text-highlight-bg: rgba(217, 119, 87, 0.2);
+  --text-highlight-bg-active: rgba(217, 119, 87, 0.3);
+  --text-selection: rgba(217, 119, 87, 0.15);
+  --text-accent: #d97757;
+  --text-accent-hover: #c86a4a;
+
+  /* Interactive */
+  --interactive-normal: #F2F1ED;
+  --interactive-hover: #EBEAE5;
+  --interactive-accent: var(--theme-accent);
+  --interactive-accent-hover: #c86a4a;
+
+  /* Links */
+  --link-color: #d97757;
+  --link-color-hover: #c86a4a;
+  --link-external-color: #d97757;
+  --link-external-color-hover: #c86a4a;
+  --link-unresolved-color: #9c9a92;
+  --link-unresolved-opacity: 0.7;
+
+  /* Tags */
+  --tag-color: #6b6a65;
+  --tag-color-hover: #131314;
+  --tag-background: rgba(217, 119, 87, 0.1);
+  --tag-background-hover: rgba(217, 119, 87, 0.2);
+
+  /* Code */
+  --code-normal: #131314;
+  --code-background: #F5F4F0;
+  --code-comment: #9c9a92;
+
+  /* Blockquote */
+  --blockquote-border-color: #d97757;
+  --blockquote-background-color: rgba(217, 119, 87, 0.05);
+
+  /* Horizontal rule */
+  --hr-color: #e0dfd8;
+
+  /* Table */
+  --table-header-background: #F2F1ED;
+  --table-header-background-hover: #EBEAE5;
+  --table-row-even-background: #F5F4F0;
+  --table-row-odd-background: #FAFAF8;
+  --table-row-background-hover: rgba(217, 119, 87, 0.08);
+  --table-border-color: #e0dfd8;
+
+  /* Scrollbar */
+  --scrollbar-thumb-bg: rgba(156, 154, 146, 0.4);
+  --scrollbar-active-thumb-bg: rgba(156, 154, 146, 0.6);
+
+  /* Tab */
+  --tab-text-color: #6b6a65;
+  --tab-text-color-active: #131314;
+  --tab-text-color-focused: #131314;
+  --tab-text-color-focused-active: #131314;
+  --tab-background-active: #FAFAF8;
+
+  /* Nav */
+  --nav-item-color: #6b6a65;
+  --nav-item-color-hover: #131314;
+  --nav-item-color-active: #131314;
+  --nav-item-background-hover: rgba(0, 0, 0, 0.04);
+  --nav-item-background-active: #EBEAE5;
+
+  /* Graph */
+  --graph-line: #c0bfb8;
+  --graph-node: #d97757;
+  --graph-node-focused: #c86a4a;
+
+  /* Callouts */
+  --callout-default: rgba(217, 119, 87, 0.1);
+  --callout-info: rgba(87, 167, 217, 0.12);
+  --callout-warning: rgba(217, 167, 87, 0.15);
+  --callout-error: rgba(217, 87, 87, 0.15);
+  --callout-success: rgba(87, 167, 115, 0.15);
+  --callout-question: rgba(167, 87, 217, 0.12);
+  --callout-tip: rgba(87, 217, 167, 0.12);
+
+  /* Indentation guides */
+  --indentation-guide-color: #e0dfd8;
+  --indentation-guide-color-active: #d97757;
+
+  /* Icon */
+  --icon-color: #6b6a65;
+  --icon-color-hover: #131314;
+  --icon-color-active: #d97757;
+  --icon-color-focused: #d97757;
+
+  /* Title bar (desktop) */
+  --titlebar-background: #F2F1ED;
+  --titlebar-background-focused: #F2F1ED;
+  --titlebar-text-color: #6b6a65;
+  --titlebar-text-color-focused: #131314;
+
+  /* Status bar */
+  --status-bar-background: #F2F1ED;
+  --status-bar-text-color: #6b6a65;
+
+  /* Ribbon */
+  --ribbon-background: #EBEAE5;
+  --ribbon-background-collapsed: #EBEAE5;
+
+  /* Sidebar */
+  --sidebar-background: #F2F1ED;
+
+  /* Warning/destructive buttons - Terracotta */
+  --button-warning-bg: #d97757;
+  --button-warning-text: #ffffff;
+  --button-warning-bg-hover: #c86a4a;
+}
+/* ============================================
+   ANTHROPIC COLOR SCHEME - Dark Mode
+   Warm dark backgrounds, terracotta accents
+   Inspired by claude.ai design
+   ============================================ */
+
+body.scheme-anthropic.theme-dark {
+  /* Accent - Terracotta */
+  --theme-accent: var(--custom-accent, #d97757);
+  --accent-h: 15;
+  --accent-s: 63%;
+  --accent-l: 60%;
+
+  /* Warm dark backgrounds */
+  --background-primary: #1a1a1b;
+  --sidebar-bg: #141415;
+  --background-primary-alt: #1e1e1f;
+  --background-secondary: #242425;
+  --background-secondary-alt: #2a2a2b;
+  --background-modifier-border: #3a3a3b;
+  --background-modifier-border-hover: #4a4a4b;
+  --background-modifier-border-focus: var(--theme-accent);
+
+  /* Form backgrounds */
+  --background-modifier-form-field: #242425;
+  --background-modifier-form-field-highlighted: #2a2a2b;
+
+  /* Overlays */
+  --background-modifier-cover: rgba(0, 0, 0, 0.7);
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.3);
+
+  /* Interactive states */
+  --background-modifier-hover: rgba(255, 255, 255, 0.06);
+  --background-modifier-active-hover: rgba(255, 255, 255, 0.1);
+  --background-modifier-success: rgba(217, 119, 87, 0.2);
+  --background-modifier-error: rgba(217, 87, 87, 0.2);
+  --background-modifier-error-hover: rgba(217, 87, 87, 0.3);
+
+  /* Text colors */
+  --text-normal: #e8e8e8;
+  --text-muted: #a0a0a0;
+  --text-faint: #707070;
+  --text-on-accent: #ffffff;
+  --text-on-accent-inverted: #1a1a1b;
+  --text-error: #e87070;
+  --text-success: #70c090;
+  --text-warning: #e8a070;
+  --text-highlight-bg: rgba(217, 119, 87, 0.25);
+  --text-highlight-bg-active: rgba(217, 119, 87, 0.35);
+  --text-selection: rgba(217, 119, 87, 0.2);
+  --text-accent: #d97757;
+  --text-accent-hover: #e8886a;
+
+  /* Interactive */
+  --interactive-normal: #2a2a2b;
+  --interactive-hover: #3a3a3b;
+  --interactive-accent: var(--theme-accent);
+  --interactive-accent-hover: #e8886a;
+
+  /* Links */
+  --link-color: #d97757;
+  --link-color-hover: #e8886a;
+  --link-external-color: #d97757;
+  --link-external-color-hover: #e8886a;
+  --link-unresolved-color: #707070;
+  --link-unresolved-opacity: 0.7;
+
+  /* Tags */
+  --tag-color: #a0a0a0;
+  --tag-color-hover: #e8e8e8;
+  --tag-background: rgba(217, 119, 87, 0.15);
+  --tag-background-hover: rgba(217, 119, 87, 0.25);
+
+  /* Code */
+  --code-normal: #e8e8e8;
+  --code-background: #242425;
+  --code-comment: #707070;
+
+  /* Blockquote */
+  --blockquote-border-color: #d97757;
+  --blockquote-background-color: rgba(217, 119, 87, 0.1);
+
+  /* Horizontal rule */
+  --hr-color: #3a3a3b;
+
+  /* Table */
+  --table-header-background: #242425;
+  --table-header-background-hover: #2a2a2b;
+  --table-row-even-background: #1e1e1f;
+  --table-row-odd-background: #1a1a1b;
+  --table-row-background-hover: rgba(217, 119, 87, 0.1);
+  --table-border-color: #3a3a3b;
+
+  /* Scrollbar */
+  --scrollbar-thumb-bg: rgba(160, 160, 160, 0.3);
+  --scrollbar-active-thumb-bg: rgba(160, 160, 160, 0.5);
+
+  /* Tab */
+  --tab-text-color: #a0a0a0;
+  --tab-text-color-active: #e8e8e8;
+  --tab-text-color-focused: #e8e8e8;
+  --tab-text-color-focused-active: #e8e8e8;
+  --tab-background-active: #1a1a1b;
+
+  /* Nav */
+  --nav-item-color: #a0a0a0;
+  --nav-item-color-hover: #e8e8e8;
+  --nav-item-color-active: #e8e8e8;
+  --nav-item-background-hover: rgba(255, 255, 255, 0.06);
+  --nav-item-background-active: rgba(255, 255, 255, 0.08);
+
+  /* Graph */
+  --graph-line: #4a4a4b;
+  --graph-node: #d97757;
+  --graph-node-focused: #e8886a;
+
+  /* Callouts */
+  --callout-default: rgba(217, 119, 87, 0.12);
+  --callout-info: rgba(87, 167, 217, 0.15);
+  --callout-warning: rgba(217, 167, 87, 0.15);
+  --callout-error: rgba(217, 87, 87, 0.15);
+  --callout-success: rgba(87, 167, 115, 0.15);
+  --callout-question: rgba(167, 87, 217, 0.15);
+  --callout-tip: rgba(87, 217, 167, 0.12);
+
+  /* Indentation guides */
+  --indentation-guide-color: #3a3a3b;
+  --indentation-guide-color-active: #d97757;
+
+  /* Icon */
+  --icon-color: #a0a0a0;
+  --icon-color-hover: #e8e8e8;
+  --icon-color-active: #d97757;
+  --icon-color-focused: #d97757;
+
+  /* Title bar (desktop) */
+  --titlebar-background: #141415;
+  --titlebar-background-focused: #141415;
+  --titlebar-text-color: #a0a0a0;
+  --titlebar-text-color-focused: #e8e8e8;
+
+  /* Status bar */
+  --status-bar-background: #141415;
+  --status-bar-text-color: #a0a0a0;
+
+  /* Ribbon */
+  --ribbon-background: #1e1e1f;
+  --ribbon-background-collapsed: #1e1e1f;
+
+  /* Sidebar */
+  --sidebar-background: #141415;
+
+  /* Warning/destructive buttons - Terracotta */
+  --button-warning-bg: #d97757;
+  --button-warning-text: #ffffff;
+  --button-warning-bg-hover: #c86a4a;
+}
+/* ============================================
    NORDIC COLOR SCHEME - Light Mode
    Inspired by Nord theme (nordtheme.com)
    ============================================ */
@@ -673,6 +991,8 @@ body.scheme-nordic.theme-light {
   /* Snow Storm backgrounds */
   --background-primary: #ECEFF4;
   --sidebar-bg: #E5E9F0;
+  --ribbon-background: #D8DEE9;
+  --ribbon-background-collapsed: #D8DEE9;
   --background-primary-alt: #E5E9F0;
   --background-secondary: #D8DEE9;
   --background-secondary-alt: #D0D6E0;
@@ -791,6 +1111,19 @@ body.scheme-nordic.theme-light {
   --icon-color-hover: #2E3440;
   --icon-color-active: #5E81AC;
   --icon-color-focused: #5E81AC;
+
+  /* Title bar (desktop) */
+  --titlebar-background: #E5E9F0;
+  --titlebar-background-focused: #E5E9F0;
+  --titlebar-text-color: #4C566A;
+  --titlebar-text-color-focused: #2E3440;
+
+  /* Status bar */
+  --status-bar-background: #E5E9F0;
+  --status-bar-text-color: #4C566A;
+
+  /* Sidebar */
+  --sidebar-background: #E5E9F0;
 
   /* Warning/destructive buttons - Aurora Red */
   --button-warning-bg: #BF616A;
@@ -967,6 +1300,8 @@ body.scheme-academic.theme-light {
   /* White/off-white backgrounds */
   --background-primary: #FFFFFF;
   --sidebar-bg: #F5F5F5;
+  --ribbon-background: #EBEBEB;
+  --ribbon-background-collapsed: #EBEBEB;
   --background-primary-alt: #F5F5F5;
   --background-secondary: #EBEBEB;
   --background-secondary-alt: #E0E0E0;
@@ -1085,6 +1420,19 @@ body.scheme-academic.theme-light {
   --icon-color-hover: #1a1a1a;
   --icon-color-active: #333333;
   --icon-color-focused: #333333;
+
+  /* Title bar (desktop) */
+  --titlebar-background: #F5F5F5;
+  --titlebar-background-focused: #F5F5F5;
+  --titlebar-text-color: #666666;
+  --titlebar-text-color-focused: #1a1a1a;
+
+  /* Status bar */
+  --status-bar-background: #F5F5F5;
+  --status-bar-text-color: #666666;
+
+  /* Sidebar */
+  --sidebar-background: #F5F5F5;
 
   /* Warning/destructive buttons - Dark grey */
   --button-warning-bg: #444444;
@@ -1247,6 +1595,356 @@ body.scheme-academic.theme-dark {
   --button-warning-bg-hover: #BBBBBB;
 }
 
+/* ============================================
+   OLD MONEY COLOR SCHEME - Light Mode
+   Refined luxury: warm creams, slate navy,
+   walnut browns, and bronze accents
+   ============================================ */
+
+body.scheme-oldmoney.theme-light {
+  /* Accent - Slate Navy (sophisticated, understated) */
+  --theme-accent: var(--custom-accent, #4F5D75);
+  --accent-h: 218;
+  --accent-s: 20%;
+  --accent-l: 38%;
+
+  /* Warm cream backgrounds - COMPLETE SET */
+  --background-primary: #FAF8F5;
+  --sidebar-bg: #EDE8E1;
+  --background-primary-alt: #F3F0EB;
+  --background-secondary: #E8E3DB;
+  --background-secondary-alt: #DED8CF;
+  --background-modifier-border: #D4CEC4;
+  --background-modifier-border-hover: #C5BEB3;
+  --background-modifier-border-focus: var(--theme-accent);
+
+  /* Form backgrounds */
+  --background-modifier-form-field: #FFFFFF;
+  --background-modifier-form-field-highlighted: #F5F2ED;
+
+  /* Overlays */
+  --background-modifier-cover: rgba(61, 57, 53, 0.6);
+  --background-modifier-box-shadow: rgba(61, 57, 53, 0.1);
+
+  /* Interactive states */
+  --background-modifier-hover: rgba(61, 57, 53, 0.06);
+  --background-modifier-active-hover: rgba(61, 57, 53, 0.1);
+  --background-modifier-success: rgba(122, 142, 112, 0.2);
+  --background-modifier-error: rgba(156, 87, 87, 0.15);
+  --background-modifier-error-hover: rgba(156, 87, 87, 0.25);
+
+  /* Text - Warm charcoal tones */
+  --text-normal: #3D3935;
+  --text-muted: #6B6560;
+  --text-faint: #8A857E;
+  --text-on-accent: #FAF8F5;
+  --text-on-accent-inverted: #3D3935;
+  --text-error: #9C5757;
+  --text-success: #7A8E70;
+  --text-warning: #A67C52;
+  --text-highlight-bg: rgba(79, 93, 117, 0.2);
+  --text-highlight-bg-active: rgba(79, 93, 117, 0.3);
+  --text-selection: rgba(79, 93, 117, 0.15);
+  --text-accent: #4F5D75;
+  --text-accent-hover: #6B7A94;
+
+  /* Interactive */
+  --interactive-normal: #EDE8E1;
+  --interactive-hover: #E3DDD4;
+  --interactive-accent: var(--theme-accent);
+  --interactive-accent-hover: #6B7A94;
+
+  /* Links - Slate navy */
+  --link-color: #4F5D75;
+  --link-color-hover: #6B7A94;
+  --link-external-color: #4F5D75;
+  --link-external-color-hover: #6B7A94;
+  --link-unresolved-color: #9A7B5B;
+  --link-unresolved-opacity: 0.7;
+
+  /* Tags - Bronze/caramel accent */
+  --tag-color: #7A6548;
+  --tag-color-hover: #9A7B5B;
+  --tag-background: rgba(154, 123, 91, 0.12);
+  --tag-background-hover: rgba(154, 123, 91, 0.2);
+
+  /* Code */
+  --code-normal: #3D3935;
+  --code-background: #F3F0EB;
+  --code-comment: #6B6560;
+
+  /* Blockquote - Bronze accent */
+  --blockquote-border-color: #9A7B5B;
+  --blockquote-background-color: rgba(154, 123, 91, 0.08);
+
+  /* Horizontal rule */
+  --hr-color: #D4CEC4;
+
+  /* Table */
+  --table-header-background: #E8E3DB;
+  --table-header-background-hover: #DED8CF;
+  --table-row-even-background: #F3F0EB;
+  --table-row-odd-background: #FAF8F5;
+  --table-row-background-hover: rgba(79, 93, 117, 0.08);
+  --table-border-color: #D4CEC4;
+
+  /* Scrollbar */
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb-bg: rgba(107, 101, 96, 0.3);
+  --scrollbar-active-thumb-bg: rgba(107, 101, 96, 0.5);
+
+  /* Tab */
+  --tab-text-color: #6B6560;
+  --tab-text-color-active: #3D3935;
+  --tab-text-color-focused: #3D3935;
+  --tab-text-color-focused-active: #3D3935;
+  --tab-background-active: #FAF8F5;
+
+  /* Nav */
+  --nav-item-color: #6B6560;
+  --nav-item-color-hover: #3D3935;
+  --nav-item-color-active: #3D3935;
+  --nav-item-background-hover: rgba(61, 57, 53, 0.06);
+  --nav-item-background-active: #E3DDD4;
+
+  /* Graph */
+  --graph-line: #C5BEB3;
+  --graph-node: #4F5D75;
+  --graph-node-focused: #9A7B5B;
+
+  /* Canvas */
+  --canvas-color: #F3F0EB;
+
+  /* Callouts */
+  --callout-default: rgba(79, 93, 117, 0.1);
+  --callout-info: rgba(79, 93, 117, 0.12);
+  --callout-warning: rgba(166, 124, 82, 0.15);
+  --callout-error: rgba(156, 87, 87, 0.15);
+  --callout-success: rgba(122, 142, 112, 0.15);
+  --callout-question: rgba(154, 123, 91, 0.15);
+  --callout-tip: rgba(122, 142, 112, 0.12);
+
+  /* Indentation guides */
+  --indentation-guide-color: #D4CEC4;
+  --indentation-guide-color-active: #4F5D75;
+
+  /* Embedded content */
+  --embed-border-left: 3px solid #4F5D75;
+  --embed-background: rgba(79, 93, 117, 0.04);
+
+  /* Search */
+  --search-match-color: #3D3935;
+  --search-match-color-current: #3D3935;
+  --search-match-background: rgba(154, 123, 91, 0.25);
+  --search-match-background-current: rgba(154, 123, 91, 0.4);
+
+  /* Dividers */
+  --divider-color: #D4CEC4;
+  --divider-color-hover: #C5BEB3;
+
+  /* Icon */
+  --icon-color: #6B6560;
+  --icon-color-hover: #3D3935;
+  --icon-color-active: #4F5D75;
+  --icon-color-focused: #4F5D75;
+
+  /* Title bar (desktop) */
+  --titlebar-background: #EDE8E1;
+  --titlebar-background-focused: #EDE8E1;
+  --titlebar-text-color: #6B6560;
+  --titlebar-text-color-focused: #3D3935;
+
+  /* Status bar */
+  --status-bar-background: #EDE8E1;
+  --status-bar-text-color: #6B6560;
+
+  /* Ribbon */
+  --ribbon-background: #E8E3DB;
+  --ribbon-background-collapsed: #E8E3DB;
+
+  /* Sidebar */
+  --sidebar-background: #EDE8E1;
+
+  /* Warning/destructive buttons */
+  --button-warning-bg: #9C5757;
+  --button-warning-text: #FAF8F5;
+  --button-warning-bg-hover: #8a4c4c;
+}
+/* ============================================
+   OLD MONEY COLOR SCHEME - Dark Mode
+   Refined luxury: deep charcoal, rich walnut,
+   bronze metallics, and marble undertones
+   ============================================ */
+
+body.scheme-oldmoney.theme-dark {
+  /* Accent - Bronze/brass (warm metallic) */
+  --theme-accent: var(--custom-accent, #B8956E);
+  --accent-h: 32;
+  --accent-s: 38%;
+  --accent-l: 58%;
+
+  /* Deep warm charcoal backgrounds - COMPLETE SET */
+  --background-primary: #1E1C1A;
+  --sidebar-bg: #252321;
+  --background-primary-alt: #232120;
+  --background-secondary: #2A2826;
+  --background-secondary-alt: #31302D;
+  --background-modifier-border: #3D3A36;
+  --background-modifier-border-hover: #4A4641;
+  --background-modifier-border-focus: var(--theme-accent);
+
+  /* Form backgrounds */
+  --background-modifier-form-field: #2A2826;
+  --background-modifier-form-field-highlighted: #31302D;
+
+  /* Overlays */
+  --background-modifier-cover: rgba(0, 0, 0, 0.7);
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.3);
+
+  /* Interactive states */
+  --background-modifier-hover: rgba(232, 228, 222, 0.06);
+  --background-modifier-active-hover: rgba(232, 228, 222, 0.1);
+  --background-modifier-success: rgba(142, 162, 132, 0.2);
+  --background-modifier-error: rgba(176, 97, 97, 0.2);
+  --background-modifier-error-hover: rgba(176, 97, 97, 0.3);
+
+  /* Text - Warm cream tones */
+  --text-normal: #E8E4DE;
+  --text-muted: #A09A92;
+  --text-faint: #7A756E;
+  --text-on-accent: #1E1C1A;
+  --text-on-accent-inverted: #E8E4DE;
+  --text-error: #C78080;
+  --text-success: #8EA284;
+  --text-warning: #C9A06A;
+  --text-highlight-bg: rgba(184, 149, 110, 0.25);
+  --text-highlight-bg-active: rgba(184, 149, 110, 0.35);
+  --text-selection: rgba(184, 149, 110, 0.2);
+  --text-accent: #B8956E;
+  --text-accent-hover: #CBAB88;
+
+  /* Interactive */
+  --interactive-normal: #31302D;
+  --interactive-hover: #3D3A36;
+  --interactive-accent: var(--theme-accent);
+  --interactive-accent-hover: #CBAB88;
+
+  /* Links - Bronze tones */
+  --link-color: #B8956E;
+  --link-color-hover: #CBAB88;
+  --link-external-color: #B8956E;
+  --link-external-color-hover: #CBAB88;
+  --link-unresolved-color: #8B9AAD;
+  --link-unresolved-opacity: 0.7;
+
+  /* Tags - Muted slate */
+  --tag-color: #8B9AAD;
+  --tag-color-hover: #A3B0C0;
+  --tag-background: rgba(139, 154, 173, 0.15);
+  --tag-background-hover: rgba(139, 154, 173, 0.25);
+
+  /* Code */
+  --code-normal: #E8E4DE;
+  --code-background: #252321;
+  --code-comment: #7A756E;
+
+  /* Blockquote - Bronze accent */
+  --blockquote-border-color: #B8956E;
+  --blockquote-background-color: rgba(184, 149, 110, 0.1);
+
+  /* Horizontal rule */
+  --hr-color: #3D3A36;
+
+  /* Table */
+  --table-header-background: #2A2826;
+  --table-header-background-hover: #31302D;
+  --table-row-even-background: #232120;
+  --table-row-odd-background: #1E1C1A;
+  --table-row-background-hover: rgba(184, 149, 110, 0.1);
+  --table-border-color: #3D3A36;
+
+  /* Scrollbar */
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb-bg: rgba(160, 154, 146, 0.3);
+  --scrollbar-active-thumb-bg: rgba(160, 154, 146, 0.5);
+
+  /* Tab */
+  --tab-text-color: #A09A92;
+  --tab-text-color-active: #E8E4DE;
+  --tab-text-color-focused: #E8E4DE;
+  --tab-text-color-focused-active: #E8E4DE;
+  --tab-background-active: #1E1C1A;
+
+  /* Nav */
+  --nav-item-color: #A09A92;
+  --nav-item-color-hover: #E8E4DE;
+  --nav-item-color-active: #E8E4DE;
+  --nav-item-background-hover: rgba(232, 228, 222, 0.06);
+  --nav-item-background-active: rgba(184, 149, 110, 0.15);
+
+  /* Graph */
+  --graph-line: #4A4641;
+  --graph-node: #B8956E;
+  --graph-node-focused: #CBAB88;
+
+  /* Canvas */
+  --canvas-color: #252321;
+
+  /* Callouts */
+  --callout-default: rgba(184, 149, 110, 0.12);
+  --callout-info: rgba(139, 154, 173, 0.15);
+  --callout-warning: rgba(201, 160, 106, 0.15);
+  --callout-error: rgba(199, 128, 128, 0.15);
+  --callout-success: rgba(142, 162, 132, 0.15);
+  --callout-question: rgba(184, 149, 110, 0.15);
+  --callout-tip: rgba(142, 162, 132, 0.12);
+
+  /* Indentation guides */
+  --indentation-guide-color: #3D3A36;
+  --indentation-guide-color-active: #B8956E;
+
+  /* Embedded content */
+  --embed-border-left: 3px solid #B8956E;
+  --embed-background: rgba(184, 149, 110, 0.06);
+
+  /* Search */
+  --search-match-color: #E8E4DE;
+  --search-match-color-current: #E8E4DE;
+  --search-match-background: rgba(184, 149, 110, 0.3);
+  --search-match-background-current: rgba(184, 149, 110, 0.45);
+
+  /* Dividers */
+  --divider-color: #3D3A36;
+  --divider-color-hover: #4A4641;
+
+  /* Icon */
+  --icon-color: #A09A92;
+  --icon-color-hover: #E8E4DE;
+  --icon-color-active: #B8956E;
+  --icon-color-focused: #B8956E;
+
+  /* Title bar (desktop) */
+  --titlebar-background: #252321;
+  --titlebar-background-focused: #252321;
+  --titlebar-text-color: #A09A92;
+  --titlebar-text-color-focused: #E8E4DE;
+
+  /* Status bar */
+  --status-bar-background: #252321;
+  --status-bar-text-color: #A09A92;
+
+  /* Ribbon */
+  --ribbon-background: #2A2826;
+  --ribbon-background-collapsed: #2A2826;
+
+  /* Sidebar */
+  --sidebar-background: #252321;
+
+  /* Warning/destructive buttons */
+  --button-warning-bg: #B06161;
+  --button-warning-text: #E8E4DE;
+  --button-warning-bg-hover: #9a5454;
+}
 /* ============================================
    COMPONENT REFINEMENTS
    ============================================ */
@@ -1755,6 +2453,21 @@ body.scheme-academic.theme-dark .nav-file-title.is-active {
   border-radius: var(--radius-s);
 }
 
+/* Active/selected state - Old Money scheme */
+body.scheme-oldmoney.theme-light .nav-file-title.is-active {
+  background-color: #E3DDD4;
+  color: var(--text-normal);
+  font-weight: 400;
+  border-radius: var(--radius-s);
+}
+
+body.scheme-oldmoney.theme-dark .nav-file-title.is-active {
+  background-color: rgba(184, 149, 110, 0.15);
+  color: var(--text-normal);
+  font-weight: 400;
+  border-radius: var(--radius-s);
+}
+
 /* Nested folders - simple indentation, no lines */
 .nav-folder-children {
   padding-left: 12px;
@@ -1848,15 +2561,15 @@ body.scheme-academic.theme-dark .nav-file-title.is-active {
   border-bottom: 1px solid var(--background-modifier-border);
 }
 
-/* Ribbon (left icon bar) - uses sidebar background */
+/* Ribbon (left icon bar) - uses ribbon background variable */
 .workspace-ribbon {
-  background-color: var(--sidebar-bg) !important;
+  background-color: var(--ribbon-background) !important;
   border-right: 1px solid var(--background-modifier-border);
 }
 
 .workspace-ribbon.mod-left,
 .workspace-ribbon.mod-right {
-  background-color: var(--sidebar-bg) !important;
+  background-color: var(--ribbon-background) !important;
 }
 
 .workspace-ribbon-collapse-btn {
@@ -1975,6 +2688,91 @@ body.scheme-academic.theme-light .mod-right-split .nav-file-title.is-active {
 body.scheme-academic.theme-dark .mod-left-split .nav-file-title.is-active,
 body.scheme-academic.theme-dark .mod-right-split .nav-file-title.is-active {
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Selected item in sidebar - Old Money scheme */
+body.scheme-oldmoney.theme-light .mod-left-split .nav-file-title.is-active,
+body.scheme-oldmoney.theme-light .mod-right-split .nav-file-title.is-active {
+  background-color: #E3DDD4;
+}
+
+body.scheme-oldmoney.theme-dark .mod-left-split .nav-file-title.is-active,
+body.scheme-oldmoney.theme-dark .mod-right-split .nav-file-title.is-active {
+  background-color: rgba(184, 149, 110, 0.15);
+}
+
+/* ============================================
+   DRAG AND DROP - Folder highlight when dragging
+   ============================================ */
+
+/* Base drag-over state for folders */
+.nav-folder-title.is-being-dragged-over,
+.nav-folder.is-being-dragged-over > .nav-folder-title,
+.tree-item-self.is-being-dragged-over,
+.nav-file-title.is-being-dragged-over {
+  background-color: var(--interactive-accent) !important;
+  color: var(--text-on-accent) !important;
+  border-radius: var(--radius-s);
+}
+
+/* Anthropic scheme - warm terracotta highlight */
+body.scheme-anthropic.theme-light .nav-folder-title.is-being-dragged-over,
+body.scheme-anthropic.theme-light .nav-folder.is-being-dragged-over > .nav-folder-title,
+body.scheme-anthropic.theme-light .tree-item-self.is-being-dragged-over {
+  background-color: #d97757 !important;
+  color: #ffffff !important;
+}
+
+body.scheme-anthropic.theme-dark .nav-folder-title.is-being-dragged-over,
+body.scheme-anthropic.theme-dark .nav-folder.is-being-dragged-over > .nav-folder-title,
+body.scheme-anthropic.theme-dark .tree-item-self.is-being-dragged-over {
+  background-color: #d97757 !important;
+  color: #ffffff !important;
+}
+
+/* Nordic scheme - frost blue highlight */
+body.scheme-nordic.theme-light .nav-folder-title.is-being-dragged-over,
+body.scheme-nordic.theme-light .nav-folder.is-being-dragged-over > .nav-folder-title,
+body.scheme-nordic.theme-light .tree-item-self.is-being-dragged-over {
+  background-color: #5E81AC !important;
+  color: #ffffff !important;
+}
+
+body.scheme-nordic.theme-dark .nav-folder-title.is-being-dragged-over,
+body.scheme-nordic.theme-dark .nav-folder.is-being-dragged-over > .nav-folder-title,
+body.scheme-nordic.theme-dark .tree-item-self.is-being-dragged-over {
+  background-color: #81A1C1 !important;
+  color: #2E3440 !important;
+}
+
+/* Academic scheme - neutral grey highlight */
+body.scheme-academic.theme-light .nav-folder-title.is-being-dragged-over,
+body.scheme-academic.theme-light .nav-folder.is-being-dragged-over > .nav-folder-title,
+body.scheme-academic.theme-light .tree-item-self.is-being-dragged-over {
+  background-color: #333333 !important;
+  color: #ffffff !important;
+}
+
+body.scheme-academic.theme-dark .nav-folder-title.is-being-dragged-over,
+body.scheme-academic.theme-dark .nav-folder.is-being-dragged-over > .nav-folder-title,
+body.scheme-academic.theme-dark .tree-item-self.is-being-dragged-over {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Old Money scheme - slate navy (light) / bronze (dark) highlight */
+body.scheme-oldmoney.theme-light .nav-folder-title.is-being-dragged-over,
+body.scheme-oldmoney.theme-light .nav-folder.is-being-dragged-over > .nav-folder-title,
+body.scheme-oldmoney.theme-light .tree-item-self.is-being-dragged-over {
+  background-color: #4F5D75 !important;
+  color: #FAF8F5 !important;
+}
+
+body.scheme-oldmoney.theme-dark .nav-folder-title.is-being-dragged-over,
+body.scheme-oldmoney.theme-dark .nav-folder.is-being-dragged-over > .nav-folder-title,
+body.scheme-oldmoney.theme-dark .tree-item-self.is-being-dragged-over {
+  background-color: #B8956E !important;
+  color: #1E1C1A !important;
 }
 
 /* ============================================
@@ -3141,28 +3939,45 @@ body.scheme-academic.theme-dark .workspace-tab-header:not(.is-active):not(.mod-a
   background-color: #1a1a1a !important;
 }
 
+/* Old Money Light - all active tabs */
+body.scheme-oldmoney.theme-light .workspace-tab-header.is-active,
+body.scheme-oldmoney.theme-light .workspace-tab-header.mod-active,
+body.scheme-oldmoney.theme-light .mod-root .workspace-tab-header.is-active,
+body.scheme-oldmoney.theme-light .mod-root .workspace-tab-header.mod-active {
+  background-color: #E3DDD4 !important;
+}
+
+/* Old Money Light - non-active tabs */
+body.scheme-oldmoney.theme-light .workspace-tab-header:not(.is-active):not(.mod-active) {
+  background-color: #EDE8E1 !important;
+}
+
+/* Old Money Dark - all active tabs */
+body.scheme-oldmoney.theme-dark .workspace-tab-header.is-active,
+body.scheme-oldmoney.theme-dark .workspace-tab-header.mod-active,
+body.scheme-oldmoney.theme-dark .mod-root .workspace-tab-header.is-active,
+body.scheme-oldmoney.theme-dark .mod-root .workspace-tab-header.mod-active {
+  background-color: #2A2826 !important;
+}
+
+/* Old Money Dark - non-active tabs */
+body.scheme-oldmoney.theme-dark .workspace-tab-header:not(.is-active):not(.mod-active) {
+  background-color: #1E1C1A !important;
+}
+
 /* ============================================
    VIEW HEADER BACKGROUND FIXES
+   Keep top bar uniform horizontally (x-axis alignment)
    ============================================ */
 
-/* Nordic Dark - view header should match background */
-body.scheme-nordic.theme-dark .view-header {
-  background-color: #2E3440 !important;
+/* Entire top bar should be uniform - use titlebar background */
+.sidebar-toggle-button,
+.sidebar-toggle-button.mod-left,
+.sidebar-toggle-button.mod-right,
+.mod-top-left-space,
+.workspace-tab-header-tab-list {
+  background-color: var(--titlebar-background);
 }
-
-body.scheme-nordic.theme-dark .workspace-leaf-content {
-  background-color: #2E3440 !important;
-}
-
-/* Academic Dark - view header should match background */
-body.scheme-academic.theme-dark .view-header {
-  background-color: #1a1a1a !important;
-}
-
-body.scheme-academic.theme-dark .workspace-leaf-content {
-  background-color: #1a1a1a !important;
-}
-
 /* ============================================
    MOBILE & TABLET STYLING
    Responsive adjustments for touch devices

@@ -202,7 +202,7 @@
 
   /* Title bar (desktop) */
   --titlebar-background: #F5F5F5;
-  --titlebar-background-focused: #FFFFFF;
+  --titlebar-background-focused: #F5F5F5;
   --titlebar-text-color: #666666;
   --titlebar-text-color-focused: #1a1a1a;
 

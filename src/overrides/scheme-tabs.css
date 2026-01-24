@@ -81,3 +81,29 @@ body.scheme-academic.theme-dark .workspace-tab-header:not(.is-active):not(.mod-a
   background-color: #1a1a1a !important;
 }
 
+/* Old Money Light - all active tabs */
+body.scheme-oldmoney.theme-light .workspace-tab-header.is-active,
+body.scheme-oldmoney.theme-light .workspace-tab-header.mod-active,
+body.scheme-oldmoney.theme-light .mod-root .workspace-tab-header.is-active,
+body.scheme-oldmoney.theme-light .mod-root .workspace-tab-header.mod-active {
+  background-color: #E3DDD4 !important;
+}
+
+/* Old Money Light - non-active tabs */
+body.scheme-oldmoney.theme-light .workspace-tab-header:not(.is-active):not(.mod-active) {
+  background-color: #EDE8E1 !important;
+}
+
+/* Old Money Dark - all active tabs */
+body.scheme-oldmoney.theme-dark .workspace-tab-header.is-active,
+body.scheme-oldmoney.theme-dark .workspace-tab-header.mod-active,
+body.scheme-oldmoney.theme-dark .mod-root .workspace-tab-header.is-active,
+body.scheme-oldmoney.theme-dark .mod-root .workspace-tab-header.mod-active {
+  background-color: #2A2826 !important;
+}
+
+/* Old Money Dark - non-active tabs */
+body.scheme-oldmoney.theme-dark .workspace-tab-header:not(.is-active):not(.mod-active) {
+  background-color: #1E1C1A !important;
+}
+

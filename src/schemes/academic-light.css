@@ -13,6 +13,8 @@ body.scheme-academic.theme-light {
   /* White/off-white backgrounds */
   --background-primary: #FFFFFF;
   --sidebar-bg: #F5F5F5;
+  --ribbon-background: #EBEBEB;
+  --ribbon-background-collapsed: #EBEBEB;
   --background-primary-alt: #F5F5F5;
   --background-secondary: #EBEBEB;
   --background-secondary-alt: #E0E0E0;
@@ -131,6 +133,19 @@ body.scheme-academic.theme-light {
   --icon-color-hover: #1a1a1a;
   --icon-color-active: #333333;
   --icon-color-focused: #333333;
+
+  /* Title bar (desktop) */
+  --titlebar-background: #F5F5F5;
+  --titlebar-background-focused: #F5F5F5;
+  --titlebar-text-color: #666666;
+  --titlebar-text-color-focused: #1a1a1a;
+
+  /* Status bar */
+  --status-bar-background: #F5F5F5;
+  --status-bar-text-color: #666666;
+
+  /* Sidebar */
+  --sidebar-background: #F5F5F5;
 
   /* Warning/destructive buttons - Dark grey */
   --button-warning-bg: #444444;

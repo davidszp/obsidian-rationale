@@ -13,6 +13,8 @@ body.scheme-nordic.theme-light {
   /* Snow Storm backgrounds */
   --background-primary: #ECEFF4;
   --sidebar-bg: #E5E9F0;
+  --ribbon-background: #D8DEE9;
+  --ribbon-background-collapsed: #D8DEE9;
   --background-primary-alt: #E5E9F0;
   --background-secondary: #D8DEE9;
   --background-secondary-alt: #D0D6E0;
@@ -131,6 +133,19 @@ body.scheme-nordic.theme-light {
   --icon-color-hover: #2E3440;
   --icon-color-active: #5E81AC;
   --icon-color-focused: #5E81AC;
+
+  /* Title bar (desktop) */
+  --titlebar-background: #E5E9F0;
+  --titlebar-background-focused: #E5E9F0;
+  --titlebar-text-color: #4C566A;
+  --titlebar-text-color-focused: #2E3440;
+
+  /* Status bar */
+  --status-bar-background: #E5E9F0;
+  --status-bar-text-color: #4C566A;
+
+  /* Sidebar */
+  --sidebar-background: #E5E9F0;
 
   /* Warning/destructive buttons - Aurora Red */
   --button-warning-bg: #BF616A;

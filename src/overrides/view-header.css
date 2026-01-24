@@ -1,22 +1,13 @@
 /* ============================================
    VIEW HEADER BACKGROUND FIXES
+   Keep top bar uniform horizontally (x-axis alignment)
    ============================================ */
 
-/* Nordic Dark - view header should match background */
-body.scheme-nordic.theme-dark .view-header {
-  background-color: #2E3440 !important;
+/* Entire top bar should be uniform - use titlebar background */
+.sidebar-toggle-button,
+.sidebar-toggle-button.mod-left,
+.sidebar-toggle-button.mod-right,
+.mod-top-left-space,
+.workspace-tab-header-tab-list {
+  background-color: var(--titlebar-background);
 }
-
-body.scheme-nordic.theme-dark .workspace-leaf-content {
-  background-color: #2E3440 !important;
-}
-
-/* Academic Dark - view header should match background */
-body.scheme-academic.theme-dark .view-header {
-  background-color: #1a1a1a !important;
-}
-
-body.scheme-academic.theme-dark .workspace-leaf-content {
-  background-color: #1a1a1a !important;
-}
-

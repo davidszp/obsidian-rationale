@@ -24,10 +24,14 @@ cat \
     "$SRC_DIR/02-base-variables.css" \
     "$SRC_DIR/schemes/base-light.css" \
     "$SRC_DIR/schemes/base-dark.css" \
+    "$SRC_DIR/schemes/anthropic-light.css" \
+    "$SRC_DIR/schemes/anthropic-dark.css" \
     "$SRC_DIR/schemes/nordic-light.css" \
     "$SRC_DIR/schemes/nordic-dark.css" \
     "$SRC_DIR/schemes/academic-light.css" \
     "$SRC_DIR/schemes/academic-dark.css" \
+    "$SRC_DIR/schemes/oldmoney-light.css" \
+    "$SRC_DIR/schemes/oldmoney-dark.css" \
     "$SRC_DIR/components/base.css" \
     "$SRC_DIR/components/sidebar.css" \
     "$SRC_DIR/components/checkboxes.css" \

@@ -145,6 +145,21 @@ body.scheme-academic.theme-dark .nav-file-title.is-active {
   border-radius: var(--radius-s);
 }
 
+/* Active/selected state - Old Money scheme */
+body.scheme-oldmoney.theme-light .nav-file-title.is-active {
+  background-color: #E3DDD4;
+  color: var(--text-normal);
+  font-weight: 400;
+  border-radius: var(--radius-s);
+}
+
+body.scheme-oldmoney.theme-dark .nav-file-title.is-active {
+  background-color: rgba(184, 149, 110, 0.15);
+  color: var(--text-normal);
+  font-weight: 400;
+  border-radius: var(--radius-s);
+}
+
 /* Nested folders - simple indentation, no lines */
 .nav-folder-children {
   padding-left: 12px;
@@ -238,15 +253,15 @@ body.scheme-academic.theme-dark .nav-file-title.is-active {
   border-bottom: 1px solid var(--background-modifier-border);
 }
 
-/* Ribbon (left icon bar) - uses sidebar background */
+/* Ribbon (left icon bar) - uses ribbon background variable */
 .workspace-ribbon {
-  background-color: var(--sidebar-bg) !important;
+  background-color: var(--ribbon-background) !important;
   border-right: 1px solid var(--background-modifier-border);
 }
 
 .workspace-ribbon.mod-left,
 .workspace-ribbon.mod-right {
-  background-color: var(--sidebar-bg) !important;
+  background-color: var(--ribbon-background) !important;
 }
 
 .workspace-ribbon-collapse-btn {
@@ -365,5 +380,90 @@ body.scheme-academic.theme-light .mod-right-split .nav-file-title.is-active {
 body.scheme-academic.theme-dark .mod-left-split .nav-file-title.is-active,
 body.scheme-academic.theme-dark .mod-right-split .nav-file-title.is-active {
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Selected item in sidebar - Old Money scheme */
+body.scheme-oldmoney.theme-light .mod-left-split .nav-file-title.is-active,
+body.scheme-oldmoney.theme-light .mod-right-split .nav-file-title.is-active {
+  background-color: #E3DDD4;
+}
+
+body.scheme-oldmoney.theme-dark .mod-left-split .nav-file-title.is-active,
+body.scheme-oldmoney.theme-dark .mod-right-split .nav-file-title.is-active {
+  background-color: rgba(184, 149, 110, 0.15);
+}
+
+/* ============================================
+   DRAG AND DROP - Folder highlight when dragging
+   ============================================ */
+
+/* Base drag-over state for folders */
+.nav-folder-title.is-being-dragged-over,
+.nav-folder.is-being-dragged-over > .nav-folder-title,
+.tree-item-self.is-being-dragged-over,
+.nav-file-title.is-being-dragged-over {
+  background-color: var(--interactive-accent) !important;
+  color: var(--text-on-accent) !important;
+  border-radius: var(--radius-s);
+}
+
+/* Anthropic scheme - warm terracotta highlight */
+body.scheme-anthropic.theme-light .nav-folder-title.is-being-dragged-over,
+body.scheme-anthropic.theme-light .nav-folder.is-being-dragged-over > .nav-folder-title,
+body.scheme-anthropic.theme-light .tree-item-self.is-being-dragged-over {
+  background-color: #d97757 !important;
+  color: #ffffff !important;
+}
+
+body.scheme-anthropic.theme-dark .nav-folder-title.is-being-dragged-over,
+body.scheme-anthropic.theme-dark .nav-folder.is-being-dragged-over > .nav-folder-title,
+body.scheme-anthropic.theme-dark .tree-item-self.is-being-dragged-over {
+  background-color: #d97757 !important;
+  color: #ffffff !important;
+}
+
+/* Nordic scheme - frost blue highlight */
+body.scheme-nordic.theme-light .nav-folder-title.is-being-dragged-over,
+body.scheme-nordic.theme-light .nav-folder.is-being-dragged-over > .nav-folder-title,
+body.scheme-nordic.theme-light .tree-item-self.is-being-dragged-over {
+  background-color: #5E81AC !important;
+  color: #ffffff !important;
+}
+
+body.scheme-nordic.theme-dark .nav-folder-title.is-being-dragged-over,
+body.scheme-nordic.theme-dark .nav-folder.is-being-dragged-over > .nav-folder-title,
+body.scheme-nordic.theme-dark .tree-item-self.is-being-dragged-over {
+  background-color: #81A1C1 !important;
+  color: #2E3440 !important;
+}
+
+/* Academic scheme - neutral grey highlight */
+body.scheme-academic.theme-light .nav-folder-title.is-being-dragged-over,
+body.scheme-academic.theme-light .nav-folder.is-being-dragged-over > .nav-folder-title,
+body.scheme-academic.theme-light .tree-item-self.is-being-dragged-over {
+  background-color: #333333 !important;
+  color: #ffffff !important;
+}
+
+body.scheme-academic.theme-dark .nav-folder-title.is-being-dragged-over,
+body.scheme-academic.theme-dark .nav-folder.is-being-dragged-over > .nav-folder-title,
+body.scheme-academic.theme-dark .tree-item-self.is-being-dragged-over {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Old Money scheme - slate navy (light) / bronze (dark) highlight */
+body.scheme-oldmoney.theme-light .nav-folder-title.is-being-dragged-over,
+body.scheme-oldmoney.theme-light .nav-folder.is-being-dragged-over > .nav-folder-title,
+body.scheme-oldmoney.theme-light .tree-item-self.is-being-dragged-over {
+  background-color: #4F5D75 !important;
+  color: #FAF8F5 !important;
+}
+
+body.scheme-oldmoney.theme-dark .nav-folder-title.is-being-dragged-over,
+body.scheme-oldmoney.theme-dark .nav-folder.is-being-dragged-over > .nav-folder-title,
+body.scheme-oldmoney.theme-dark .tree-item-self.is-being-dragged-over {
+  background-color: #B8956E !important;
+  color: #1E1C1A !important;
 }
 

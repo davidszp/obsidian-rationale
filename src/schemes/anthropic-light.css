@@ -1,0 +1,157 @@
+/* ============================================
+   ANTHROPIC COLOR SCHEME - Light Mode
+   Warm cream backgrounds, terracotta accents
+   Inspired by claude.ai design
+   ============================================ */
+
+body.scheme-anthropic.theme-light {
+  /* Accent - Terracotta */
+  --theme-accent: var(--custom-accent, #d97757);
+  --accent-h: 15;
+  --accent-s: 63%;
+  --accent-l: 60%;
+
+  /* Warm cream backgrounds - subtle warmth, not too yellow */
+  --background-primary: #FAFAF8;
+  --sidebar-bg: #F2F1ED;
+  --background-primary-alt: #F5F4F0;
+  --background-secondary: #F2F1ED;
+  --background-secondary-alt: #EBEAE5;
+  --background-modifier-border: #E3E2DD;
+  --background-modifier-border-hover: #D8D7D2;
+  --background-modifier-border-focus: var(--theme-accent);
+
+  /* Form backgrounds */
+  --background-modifier-form-field: #ffffff;
+  --background-modifier-form-field-highlighted: #F5F4F0;
+
+  /* Overlays */
+  --background-modifier-cover: rgba(19, 19, 20, 0.5);
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.1);
+
+  /* Interactive states */
+  --background-modifier-hover: rgba(0, 0, 0, 0.04);
+  --background-modifier-active-hover: rgba(0, 0, 0, 0.08);
+  --background-modifier-success: rgba(217, 119, 87, 0.15);
+  --background-modifier-error: rgba(217, 87, 87, 0.15);
+  --background-modifier-error-hover: rgba(217, 87, 87, 0.25);
+
+  /* Text colors */
+  --text-normal: #131314;
+  --text-muted: #6b6a65;
+  --text-faint: #9c9a92;
+  --text-on-accent: #ffffff;
+  --text-on-accent-inverted: #131314;
+  --text-error: #d95757;
+  --text-success: #57a773;
+  --text-warning: #d97757;
+  --text-highlight-bg: rgba(217, 119, 87, 0.2);
+  --text-highlight-bg-active: rgba(217, 119, 87, 0.3);
+  --text-selection: rgba(217, 119, 87, 0.15);
+  --text-accent: #d97757;
+  --text-accent-hover: #c86a4a;
+
+  /* Interactive */
+  --interactive-normal: #F2F1ED;
+  --interactive-hover: #EBEAE5;
+  --interactive-accent: var(--theme-accent);
+  --interactive-accent-hover: #c86a4a;
+
+  /* Links */
+  --link-color: #d97757;
+  --link-color-hover: #c86a4a;
+  --link-external-color: #d97757;
+  --link-external-color-hover: #c86a4a;
+  --link-unresolved-color: #9c9a92;
+  --link-unresolved-opacity: 0.7;
+
+  /* Tags */
+  --tag-color: #6b6a65;
+  --tag-color-hover: #131314;
+  --tag-background: rgba(217, 119, 87, 0.1);
+  --tag-background-hover: rgba(217, 119, 87, 0.2);
+
+  /* Code */
+  --code-normal: #131314;
+  --code-background: #F5F4F0;
+  --code-comment: #9c9a92;
+
+  /* Blockquote */
+  --blockquote-border-color: #d97757;
+  --blockquote-background-color: rgba(217, 119, 87, 0.05);
+
+  /* Horizontal rule */
+  --hr-color: #e0dfd8;
+
+  /* Table */
+  --table-header-background: #F2F1ED;
+  --table-header-background-hover: #EBEAE5;
+  --table-row-even-background: #F5F4F0;
+  --table-row-odd-background: #FAFAF8;
+  --table-row-background-hover: rgba(217, 119, 87, 0.08);
+  --table-border-color: #e0dfd8;
+
+  /* Scrollbar */
+  --scrollbar-thumb-bg: rgba(156, 154, 146, 0.4);
+  --scrollbar-active-thumb-bg: rgba(156, 154, 146, 0.6);
+
+  /* Tab */
+  --tab-text-color: #6b6a65;
+  --tab-text-color-active: #131314;
+  --tab-text-color-focused: #131314;
+  --tab-text-color-focused-active: #131314;
+  --tab-background-active: #FAFAF8;
+
+  /* Nav */
+  --nav-item-color: #6b6a65;
+  --nav-item-color-hover: #131314;
+  --nav-item-color-active: #131314;
+  --nav-item-background-hover: rgba(0, 0, 0, 0.04);
+  --nav-item-background-active: #EBEAE5;
+
+  /* Graph */
+  --graph-line: #c0bfb8;
+  --graph-node: #d97757;
+  --graph-node-focused: #c86a4a;
+
+  /* Callouts */
+  --callout-default: rgba(217, 119, 87, 0.1);
+  --callout-info: rgba(87, 167, 217, 0.12);
+  --callout-warning: rgba(217, 167, 87, 0.15);
+  --callout-error: rgba(217, 87, 87, 0.15);
+  --callout-success: rgba(87, 167, 115, 0.15);
+  --callout-question: rgba(167, 87, 217, 0.12);
+  --callout-tip: rgba(87, 217, 167, 0.12);
+
+  /* Indentation guides */
+  --indentation-guide-color: #e0dfd8;
+  --indentation-guide-color-active: #d97757;
+
+  /* Icon */
+  --icon-color: #6b6a65;
+  --icon-color-hover: #131314;
+  --icon-color-active: #d97757;
+  --icon-color-focused: #d97757;
+
+  /* Title bar (desktop) */
+  --titlebar-background: #F2F1ED;
+  --titlebar-background-focused: #F2F1ED;
+  --titlebar-text-color: #6b6a65;
+  --titlebar-text-color-focused: #131314;
+
+  /* Status bar */
+  --status-bar-background: #F2F1ED;
+  --status-bar-text-color: #6b6a65;
+
+  /* Ribbon */
+  --ribbon-background: #EBEAE5;
+  --ribbon-background-collapsed: #EBEAE5;
+
+  /* Sidebar */
+  --sidebar-background: #F2F1ED;
+
+  /* Warning/destructive buttons - Terracotta */
+  --button-warning-bg: #d97757;
+  --button-warning-text: #ffffff;
+  --button-warning-bg-hover: #c86a4a;
+}

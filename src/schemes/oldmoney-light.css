@@ -1,0 +1,175 @@
+/* ============================================
+   OLD MONEY COLOR SCHEME - Light Mode
+   Refined luxury: warm creams, slate navy,
+   walnut browns, and bronze accents
+   ============================================ */
+
+body.scheme-oldmoney.theme-light {
+  /* Accent - Slate Navy (sophisticated, understated) */
+  --theme-accent: var(--custom-accent, #4F5D75);
+  --accent-h: 218;
+  --accent-s: 20%;
+  --accent-l: 38%;
+
+  /* Warm cream backgrounds - COMPLETE SET */
+  --background-primary: #FAF8F5;
+  --sidebar-bg: #EDE8E1;
+  --background-primary-alt: #F3F0EB;
+  --background-secondary: #E8E3DB;
+  --background-secondary-alt: #DED8CF;
+  --background-modifier-border: #D4CEC4;
+  --background-modifier-border-hover: #C5BEB3;
+  --background-modifier-border-focus: var(--theme-accent);
+
+  /* Form backgrounds */
+  --background-modifier-form-field: #FFFFFF;
+  --background-modifier-form-field-highlighted: #F5F2ED;
+
+  /* Overlays */
+  --background-modifier-cover: rgba(61, 57, 53, 0.6);
+  --background-modifier-box-shadow: rgba(61, 57, 53, 0.1);
+
+  /* Interactive states */
+  --background-modifier-hover: rgba(61, 57, 53, 0.06);
+  --background-modifier-active-hover: rgba(61, 57, 53, 0.1);
+  --background-modifier-success: rgba(122, 142, 112, 0.2);
+  --background-modifier-error: rgba(156, 87, 87, 0.15);
+  --background-modifier-error-hover: rgba(156, 87, 87, 0.25);
+
+  /* Text - Warm charcoal tones */
+  --text-normal: #3D3935;
+  --text-muted: #6B6560;
+  --text-faint: #8A857E;
+  --text-on-accent: #FAF8F5;
+  --text-on-accent-inverted: #3D3935;
+  --text-error: #9C5757;
+  --text-success: #7A8E70;
+  --text-warning: #A67C52;
+  --text-highlight-bg: rgba(79, 93, 117, 0.2);
+  --text-highlight-bg-active: rgba(79, 93, 117, 0.3);
+  --text-selection: rgba(79, 93, 117, 0.15);
+  --text-accent: #4F5D75;
+  --text-accent-hover: #6B7A94;
+
+  /* Interactive */
+  --interactive-normal: #EDE8E1;
+  --interactive-hover: #E3DDD4;
+  --interactive-accent: var(--theme-accent);
+  --interactive-accent-hover: #6B7A94;
+
+  /* Links - Slate navy */
+  --link-color: #4F5D75;
+  --link-color-hover: #6B7A94;
+  --link-external-color: #4F5D75;
+  --link-external-color-hover: #6B7A94;
+  --link-unresolved-color: #9A7B5B;
+  --link-unresolved-opacity: 0.7;
+
+  /* Tags - Bronze/caramel accent */
+  --tag-color: #7A6548;
+  --tag-color-hover: #9A7B5B;
+  --tag-background: rgba(154, 123, 91, 0.12);
+  --tag-background-hover: rgba(154, 123, 91, 0.2);
+
+  /* Code */
+  --code-normal: #3D3935;
+  --code-background: #F3F0EB;
+  --code-comment: #6B6560;
+
+  /* Blockquote - Bronze accent */
+  --blockquote-border-color: #9A7B5B;
+  --blockquote-background-color: rgba(154, 123, 91, 0.08);
+
+  /* Horizontal rule */
+  --hr-color: #D4CEC4;
+
+  /* Table */
+  --table-header-background: #E8E3DB;
+  --table-header-background-hover: #DED8CF;
+  --table-row-even-background: #F3F0EB;
+  --table-row-odd-background: #FAF8F5;
+  --table-row-background-hover: rgba(79, 93, 117, 0.08);
+  --table-border-color: #D4CEC4;
+
+  /* Scrollbar */
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb-bg: rgba(107, 101, 96, 0.3);
+  --scrollbar-active-thumb-bg: rgba(107, 101, 96, 0.5);
+
+  /* Tab */
+  --tab-text-color: #6B6560;
+  --tab-text-color-active: #3D3935;
+  --tab-text-color-focused: #3D3935;
+  --tab-text-color-focused-active: #3D3935;
+  --tab-background-active: #FAF8F5;
+
+  /* Nav */
+  --nav-item-color: #6B6560;
+  --nav-item-color-hover: #3D3935;
+  --nav-item-color-active: #3D3935;
+  --nav-item-background-hover: rgba(61, 57, 53, 0.06);
+  --nav-item-background-active: #E3DDD4;
+
+  /* Graph */
+  --graph-line: #C5BEB3;
+  --graph-node: #4F5D75;
+  --graph-node-focused: #9A7B5B;
+
+  /* Canvas */
+  --canvas-color: #F3F0EB;
+
+  /* Callouts */
+  --callout-default: rgba(79, 93, 117, 0.1);
+  --callout-info: rgba(79, 93, 117, 0.12);
+  --callout-warning: rgba(166, 124, 82, 0.15);
+  --callout-error: rgba(156, 87, 87, 0.15);
+  --callout-success: rgba(122, 142, 112, 0.15);
+  --callout-question: rgba(154, 123, 91, 0.15);
+  --callout-tip: rgba(122, 142, 112, 0.12);
+
+  /* Indentation guides */
+  --indentation-guide-color: #D4CEC4;
+  --indentation-guide-color-active: #4F5D75;
+
+  /* Embedded content */
+  --embed-border-left: 3px solid #4F5D75;
+  --embed-background: rgba(79, 93, 117, 0.04);
+
+  /* Search */
+  --search-match-color: #3D3935;
+  --search-match-color-current: #3D3935;
+  --search-match-background: rgba(154, 123, 91, 0.25);
+  --search-match-background-current: rgba(154, 123, 91, 0.4);
+
+  /* Dividers */
+  --divider-color: #D4CEC4;
+  --divider-color-hover: #C5BEB3;
+
+  /* Icon */
+  --icon-color: #6B6560;
+  --icon-color-hover: #3D3935;
+  --icon-color-active: #4F5D75;
+  --icon-color-focused: #4F5D75;
+
+  /* Title bar (desktop) */
+  --titlebar-background: #EDE8E1;
+  --titlebar-background-focused: #EDE8E1;
+  --titlebar-text-color: #6B6560;
+  --titlebar-text-color-focused: #3D3935;
+
+  /* Status bar */
+  --status-bar-background: #EDE8E1;
+  --status-bar-text-color: #6B6560;
+
+  /* Ribbon */
+  --ribbon-background: #E8E3DB;
+  --ribbon-background-collapsed: #E8E3DB;
+
+  /* Sidebar */
+  --sidebar-background: #EDE8E1;
+
+  /* Warning/destructive buttons */
+  --button-warning-bg: #9C5757;
+  --button-warning-text: #FAF8F5;
+  --button-warning-bg-hover: #8a4c4c;
+}
