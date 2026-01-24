@@ -15,8 +15,8 @@ body.scheme-anthropic.theme-light {
   --background-primary: #FAFAF8;
   --sidebar-bg: #F2F1ED;
   --background-primary-alt: #F5F4F0;
-  --background-secondary: #F2F1ED;
-  --background-secondary-alt: #EBEAE5;
+  --background-secondary: #E3E1DB;
+  --background-secondary-alt: #E8E6E0;
   --background-modifier-border: #E3E2DD;
   --background-modifier-border-hover: #D8D7D2;
   --background-modifier-border-focus: var(--theme-accent);
@@ -52,8 +52,8 @@ body.scheme-anthropic.theme-light {
   --text-accent-hover: #c86a4a;
 
   /* Interactive */
-  --interactive-normal: #F2F1ED;
-  --interactive-hover: #EBEAE5;
+  --interactive-normal: #E8E6E0;
+  --interactive-hover: #E0DED8;
   --interactive-accent: var(--theme-accent);
   --interactive-accent-hover: #c86a4a;
 

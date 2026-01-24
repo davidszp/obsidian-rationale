@@ -11,3 +11,13 @@
 .workspace-tab-header-tab-list {
   background-color: var(--titlebar-background);
 }
+
+/* Give sidebar tab icons a visible background */
+.mod-left-split .workspace-tab-header,
+.mod-right-split .workspace-tab-header,
+.workspace-tab-header-tab-list .workspace-tab-header,
+.workspace-tab-header-inner,
+.workspace-tab-header-tab-list .clickable-icon {
+  background-color: var(--background-secondary-alt) !important;
+  border-radius: var(--radius-s);
+}

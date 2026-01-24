@@ -679,8 +679,8 @@ body.scheme-anthropic.theme-light {
   --background-primary: #FAFAF8;
   --sidebar-bg: #F2F1ED;
   --background-primary-alt: #F5F4F0;
-  --background-secondary: #F2F1ED;
-  --background-secondary-alt: #EBEAE5;
+  --background-secondary: #E3E1DB;
+  --background-secondary-alt: #E8E6E0;
   --background-modifier-border: #E3E2DD;
   --background-modifier-border-hover: #D8D7D2;
   --background-modifier-border-focus: var(--theme-accent);
@@ -716,8 +716,8 @@ body.scheme-anthropic.theme-light {
   --text-accent-hover: #c86a4a;
 
   /* Interactive */
-  --interactive-normal: #F2F1ED;
-  --interactive-hover: #EBEAE5;
+  --interactive-normal: #E8E6E0;
+  --interactive-hover: #E0DED8;
   --interactive-accent: var(--theme-accent);
   --interactive-accent-hover: #c86a4a;
 
@@ -1146,7 +1146,7 @@ body.scheme-nordic.theme-dark {
   --sidebar-bg: #242933;
   --background-primary-alt: #3B4252;
   --background-secondary: #2E3440;
-  --background-secondary-alt: #242933;
+  --background-secondary-alt: #3B4252;
   --background-modifier-border: #434C5E;
   --background-modifier-border-hover: #4C566A;
   --background-modifier-border-focus: var(--theme-accent);
@@ -3977,6 +3977,16 @@ body.scheme-oldmoney.theme-dark .workspace-tab-header:not(.is-active):not(.mod-a
 .mod-top-left-space,
 .workspace-tab-header-tab-list {
   background-color: var(--titlebar-background);
+}
+
+/* Give sidebar tab icons a visible background */
+.mod-left-split .workspace-tab-header,
+.mod-right-split .workspace-tab-header,
+.workspace-tab-header-tab-list .workspace-tab-header,
+.workspace-tab-header-inner,
+.workspace-tab-header-tab-list .clickable-icon {
+  background-color: var(--background-secondary-alt) !important;
+  border-radius: var(--radius-s);
 }
 /* ============================================
    MOBILE & TABLET STYLING
