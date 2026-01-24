@@ -3976,27 +3976,41 @@ body.scheme-oldmoney.theme-dark .workspace-tab-header:not(.is-active):not(.mod-a
 
 /* ============================================
    VIEW HEADER BACKGROUND FIXES
-   Keep top bar uniform horizontally (x-axis alignment)
    ============================================ */
 
-/* Entire top bar should be uniform - use titlebar background */
+/* Nordic Dark - view header should match background */
+body.scheme-nordic.theme-dark .view-header {
+  background-color: #2E3440 !important;
+}
+
+body.scheme-nordic.theme-dark .workspace-leaf-content {
+  background-color: #2E3440 !important;
+}
+
+/* Academic Dark - view header should match background */
+body.scheme-academic.theme-dark .view-header {
+  background-color: #1a1a1a !important;
+}
+
+body.scheme-academic.theme-dark .workspace-leaf-content {
+  background-color: #1a1a1a !important;
+}
+
+/* Top bar uniform background */
 .sidebar-toggle-button,
-.sidebar-toggle-button.mod-left,
-.sidebar-toggle-button.mod-right,
 .mod-top-left-space,
 .workspace-tab-header-tab-list {
   background-color: var(--titlebar-background);
 }
 
-/* Give sidebar tab icons a visible background */
-.mod-left-split .workspace-tab-header,
-.mod-right-split .workspace-tab-header,
-.workspace-tab-header-tab-list .workspace-tab-header,
-.workspace-tab-header-inner,
-.workspace-tab-header-tab-list .clickable-icon {
+/* Sidebar panel icons (folder, bookmark, search, forward) - visible background */
+/* Target only the left sidebar icons, NOT document tabs */
+.mod-left-split .workspace-tab-header-container .workspace-tab-header-inner,
+.mod-left-split .workspace-tab-header-tab-list .clickable-icon {
   background-color: var(--background-secondary-alt) !important;
   border-radius: var(--radius-s);
 }
+
 /* ============================================
    MOBILE & TABLET STYLING
    Responsive adjustments for touch devices
