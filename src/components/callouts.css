@@ -99,7 +99,7 @@
 .callout[data-callout="cite"] {
   border-left-color: var(--theme-accent, #d97757);
   border-left-width: 3px;
-  background-color: rgba(217, 119, 87, 0.04);
+  background-color: transparent;
   padding: 16px 20px;
 }
 

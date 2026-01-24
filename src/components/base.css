@@ -319,7 +319,7 @@ button.mod-warning:hover {
 /* Properties/frontmatter styling */
 .metadata-container {
   border-radius: var(--radius-m);
-  background: var(--background-secondary);
+  background: transparent;
 }
 
 /* Selection highlight */
