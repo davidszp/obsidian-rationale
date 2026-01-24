@@ -1654,11 +1654,11 @@ body.scheme-oldmoney.theme-light {
   --interactive-accent: var(--theme-accent);
   --interactive-accent-hover: #6B7A94;
 
-  /* Links - Slate navy */
-  --link-color: #4F5D75;
-  --link-color-hover: #6B7A94;
-  --link-external-color: #4F5D75;
-  --link-external-color-hover: #6B7A94;
+  /* Links - Brass/bronze */
+  --link-color: #9A7B5B;
+  --link-color-hover: #7A6548;
+  --link-external-color: #9A7B5B;
+  --link-external-color-hover: #7A6548;
   --link-unresolved-color: #9A7B5B;
   --link-unresolved-opacity: 0.7;
 
@@ -3852,6 +3852,15 @@ body.scheme-academic .rich-foot--backlinks::before,
 body.scheme-academic .rich-foot--outlinks::before,
 body.scheme-academic .rich-foot--links::before {
   color: #555555 !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+
+/* Richfoot section headers - Old Money scheme (brass) */
+body.scheme-oldmoney .rich-foot--backlinks::before,
+body.scheme-oldmoney .rich-foot--outlinks::before,
+body.scheme-oldmoney .rich-foot--links::before {
+  color: #9A7B5B !important;
   filter: none !important;
   -webkit-filter: none !important;
 }
