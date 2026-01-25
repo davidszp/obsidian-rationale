@@ -2,6 +2,8 @@
 
 **A thoughtful Obsidian theme for writers, researchers, and academics.**
 
+![Rationale Theme](assets/rationale%20theme.png)
+
 Rationale creates a calm, focused environment for deep work. Four carefully crafted color schemes adapt to your mood and context—from pure monochrome for distraction-free writing to warm, inviting palettes for long research sessions.
 
 | Light | Dark |
