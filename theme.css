@@ -782,7 +782,7 @@ body.scheme-anthropic.theme-light {
   --tab-text-color-active: #131314;
   --tab-text-color-focused: #131314;
   --tab-text-color-focused-active: #131314;
-  --tab-background-active: #FAFAF8;
+  --tab-background-active: #D5D2CB;
 
   /* Nav */
   --nav-item-color: #6b6a65;
@@ -939,7 +939,7 @@ body.scheme-anthropic.theme-dark {
   --tab-text-color-active: #e8e8e8;
   --tab-text-color-focused: #e8e8e8;
   --tab-text-color-focused-active: #e8e8e8;
-  --tab-background-active: #1a1a1b;
+  --tab-background-active: #2a2a2b;
 
   /* Nav */
   --nav-item-color: #a0a0a0;
@@ -1097,7 +1097,7 @@ body.scheme-nordic.theme-light {
   --tab-text-color-active: #2E3440;
   --tab-text-color-focused: #2E3440;
   --tab-text-color-focused-active: #2E3440;
-  --tab-background-active: #ECEFF4;
+  --tab-background-active: #D8DEE9;
 
   /* Nav */
   --nav-item-color: #4C566A;
@@ -1248,7 +1248,7 @@ body.scheme-nordic.theme-dark {
   --tab-text-color-active: #ECEFF4;
   --tab-text-color-focused: #ECEFF4;
   --tab-text-color-focused-active: #ECEFF4;
-  --tab-background-active: #2E3440;
+  --tab-background-active: #3B4252;
 
   /* Nav */
   --nav-item-color: #A5B0C0;
@@ -1406,7 +1406,7 @@ body.scheme-academic.theme-light {
   --tab-text-color-active: #1a1a1a;
   --tab-text-color-focused: #1a1a1a;
   --tab-text-color-focused-active: #1a1a1a;
-  --tab-background-active: #FFFFFF;
+  --tab-background-active: #E0E0E0;
 
   /* Nav */
   --nav-item-color: #666666;
@@ -1557,7 +1557,7 @@ body.scheme-academic.theme-dark {
   --tab-text-color-active: #E0E0E0;
   --tab-text-color-focused: #E0E0E0;
   --tab-text-color-focused-active: #E0E0E0;
-  --tab-background-active: #1a1a1a;
+  --tab-background-active: #2a2a2a;
 
   /* Nav */
   --nav-item-color: #888888;
@@ -1716,7 +1716,7 @@ body.scheme-oldmoney.theme-light {
   --tab-text-color-active: #3D3935;
   --tab-text-color-focused: #3D3935;
   --tab-text-color-focused-active: #3D3935;
-  --tab-background-active: #FAF8F5;
+  --tab-background-active: #E3DDD4;
 
   /* Nav */
   --nav-item-color: #6B6560;
@@ -1891,7 +1891,7 @@ body.scheme-oldmoney.theme-dark {
   --tab-text-color-active: #E8E4DE;
   --tab-text-color-focused: #E8E4DE;
   --tab-text-color-focused-active: #E8E4DE;
-  --tab-background-active: #1E1C1A;
+  --tab-background-active: #2A2826;
 
   /* Nav */
   --nav-item-color: #A09A92;
@@ -3733,14 +3733,7 @@ body {
   letter-spacing: -0.01em;
 }
 
-/* Main workspace tab header - match document background */
-.mod-root .workspace-tab-header-container {
-  background-color: var(--background-primary) !important;
-}
-
-.mod-root .workspace-tab-header-container-inner {
-  background-color: var(--background-primary) !important;
-}
+/* Main workspace tab container - use Obsidian defaults */
 
 /* ============================================
    HIDE TOP TAB BAR (VERTICAL TABS)
@@ -4335,17 +4328,105 @@ body.scheme-academic.theme-dark .workspace-leaf-content {
 
 /* Top bar uniform background */
 .sidebar-toggle-button,
-.mod-top-left-space,
-.workspace-tab-header-tab-list {
+.mod-top-left-space {
   background-color: var(--titlebar-background);
 }
 
-/* Sidebar panel icons (folder, bookmark, search, forward) - visible background */
-/* Target only the left sidebar icons, NOT document tabs */
-.mod-left-split .workspace-tab-header-container .workspace-tab-header-inner,
-.mod-left-split .workspace-tab-header-tab-list .clickable-icon {
+/* Tab list should be transparent so chevron blends with surroundings */
+.workspace-tab-header-tab-list {
+  background-color: transparent;
+}
+
+/* Sidebar panel icons (folder, bookmark, search, forward) - subtle background */
+/* Target only the left sidebar icons, NOT main workspace controls */
+.mod-left-split .workspace-tab-header-container .workspace-tab-header-inner {
   background-color: var(--background-secondary-alt) !important;
   border-radius: var(--radius-s);
+}
+
+/* Remove background from workspace dropdown/chevron controls */
+/* Use unset to completely reset the background */
+.workspace-tab-header-tab-list > .clickable-icon,
+.workspace-tab-header-tab-list .clickable-icon,
+div.workspace-tab-header-tab-list > span.clickable-icon,
+.workspace-tab-header-tab-list span.clickable-icon {
+  background: unset !important;
+  background-color: unset !important;
+  background-image: none !important;
+  border-radius: 0 !important;
+  --icon-color: var(--text-muted);
+  --icon-color-hover: var(--text-normal);
+}
+
+/* Override any Obsidian default interactive background */
+.workspace-tab-header-tab-list .clickable-icon,
+.workspace-tab-header-tab-list .clickable-icon:hover {
+  background: unset !important;
+  background-color: unset !important;
+  box-shadow: none !important;
+}
+
+/* Scheme-specific overrides for Nordic and Academic (higher specificity) */
+body.scheme-nordic.theme-dark .workspace-tab-header-tab-list .clickable-icon,
+body.scheme-nordic.theme-dark .workspace-tab-header-tab-list .clickable-icon:hover,
+body.scheme-academic.theme-dark .workspace-tab-header-tab-list .clickable-icon,
+body.scheme-academic.theme-dark .workspace-tab-header-tab-list .clickable-icon:hover,
+body.theme-dark .workspace-tab-header-tab-list .clickable-icon,
+body.theme-dark .workspace-tab-header-tab-list .clickable-icon:hover,
+.theme-dark .workspace-tab-header-tab-list > .clickable-icon,
+.theme-dark div.workspace-tab-header-tab-list > span.clickable-icon {
+  background: unset !important;
+  background-color: unset !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+/* Maximum specificity override - repeat class for higher specificity */
+body.theme-dark.theme-dark .workspace-tab-header-tab-list.workspace-tab-header-tab-list .clickable-icon.clickable-icon {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Nuclear option - target all clickable-icons in tab list with max specificity */
+body.theme-dark div.workspace-tab-header-tab-list span.clickable-icon {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Ultimate reset for tab-list clickable icons - covers all possibilities */
+.workspace-tab-header-tab-list .clickable-icon,
+.workspace-tab-header-tab-list .clickable-icon *,
+.workspace-tab-header-tab-list .clickable-icon::before,
+.workspace-tab-header-tab-list .clickable-icon::after,
+.workspace-tab-header-tab-list .clickable-icon svg {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* Force for all dark themes regardless of scheme */
+.theme-dark .workspace-tab-header-tab-list .clickable-icon {
+  background: transparent !important;
+  background-color: transparent !important;
+  --background-modifier-hover: transparent !important;
+  --interactive-normal: transparent !important;
+}
+
+/* Target the has-active-menu state that adds background */
+.workspace-tab-header-tab-list .clickable-icon.has-active-menu,
+.workspace-tab-header-tab-list .has-active-menu,
+.clickable-icon.has-active-menu {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+.theme-dark .clickable-icon.has-active-menu,
+body.theme-dark .workspace-tab-header-tab-list .clickable-icon.has-active-menu {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
 }
 
 /* ============================================

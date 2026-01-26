@@ -22,16 +22,104 @@ body.scheme-academic.theme-dark .workspace-leaf-content {
 
 /* Top bar uniform background */
 .sidebar-toggle-button,
-.mod-top-left-space,
-.workspace-tab-header-tab-list {
+.mod-top-left-space {
   background-color: var(--titlebar-background);
 }
 
-/* Sidebar panel icons (folder, bookmark, search, forward) - visible background */
-/* Target only the left sidebar icons, NOT document tabs */
-.mod-left-split .workspace-tab-header-container .workspace-tab-header-inner,
-.mod-left-split .workspace-tab-header-tab-list .clickable-icon {
+/* Tab list should be transparent so chevron blends with surroundings */
+.workspace-tab-header-tab-list {
+  background-color: transparent;
+}
+
+/* Sidebar panel icons (folder, bookmark, search, forward) - subtle background */
+/* Target only the left sidebar icons, NOT main workspace controls */
+.mod-left-split .workspace-tab-header-container .workspace-tab-header-inner {
   background-color: var(--background-secondary-alt) !important;
   border-radius: var(--radius-s);
+}
+
+/* Remove background from workspace dropdown/chevron controls */
+/* Use unset to completely reset the background */
+.workspace-tab-header-tab-list > .clickable-icon,
+.workspace-tab-header-tab-list .clickable-icon,
+div.workspace-tab-header-tab-list > span.clickable-icon,
+.workspace-tab-header-tab-list span.clickable-icon {
+  background: unset !important;
+  background-color: unset !important;
+  background-image: none !important;
+  border-radius: 0 !important;
+  --icon-color: var(--text-muted);
+  --icon-color-hover: var(--text-normal);
+}
+
+/* Override any Obsidian default interactive background */
+.workspace-tab-header-tab-list .clickable-icon,
+.workspace-tab-header-tab-list .clickable-icon:hover {
+  background: unset !important;
+  background-color: unset !important;
+  box-shadow: none !important;
+}
+
+/* Scheme-specific overrides for Nordic and Academic (higher specificity) */
+body.scheme-nordic.theme-dark .workspace-tab-header-tab-list .clickable-icon,
+body.scheme-nordic.theme-dark .workspace-tab-header-tab-list .clickable-icon:hover,
+body.scheme-academic.theme-dark .workspace-tab-header-tab-list .clickable-icon,
+body.scheme-academic.theme-dark .workspace-tab-header-tab-list .clickable-icon:hover,
+body.theme-dark .workspace-tab-header-tab-list .clickable-icon,
+body.theme-dark .workspace-tab-header-tab-list .clickable-icon:hover,
+.theme-dark .workspace-tab-header-tab-list > .clickable-icon,
+.theme-dark div.workspace-tab-header-tab-list > span.clickable-icon {
+  background: unset !important;
+  background-color: unset !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+/* Maximum specificity override - repeat class for higher specificity */
+body.theme-dark.theme-dark .workspace-tab-header-tab-list.workspace-tab-header-tab-list .clickable-icon.clickable-icon {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Nuclear option - target all clickable-icons in tab list with max specificity */
+body.theme-dark div.workspace-tab-header-tab-list span.clickable-icon {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Ultimate reset for tab-list clickable icons - covers all possibilities */
+.workspace-tab-header-tab-list .clickable-icon,
+.workspace-tab-header-tab-list .clickable-icon *,
+.workspace-tab-header-tab-list .clickable-icon::before,
+.workspace-tab-header-tab-list .clickable-icon::after,
+.workspace-tab-header-tab-list .clickable-icon svg {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* Force for all dark themes regardless of scheme */
+.theme-dark .workspace-tab-header-tab-list .clickable-icon {
+  background: transparent !important;
+  background-color: transparent !important;
+  --background-modifier-hover: transparent !important;
+  --interactive-normal: transparent !important;
+}
+
+/* Target the has-active-menu state that adds background */
+.workspace-tab-header-tab-list .clickable-icon.has-active-menu,
+.workspace-tab-header-tab-list .has-active-menu,
+.clickable-icon.has-active-menu {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+.theme-dark .clickable-icon.has-active-menu,
+body.theme-dark .workspace-tab-header-tab-list .clickable-icon.has-active-menu {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
 }
 
