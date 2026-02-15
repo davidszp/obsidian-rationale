@@ -359,3 +359,16 @@ button.mod-warning:hover {
   box-shadow: 0px 4px 20px var(--background-modifier-box-shadow);
 }
 
+/* Notification / Notice styling */
+.notice-container .notice {
+  background-color: var(--background-primary-alt);
+  color: var(--text-normal);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-m);
+}
+
+.notice-container .notice.mod-warning {
+  background-color: var(--background-modifier-error);
+  border-color: var(--text-error);
+}
+
