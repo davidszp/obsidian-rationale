@@ -406,7 +406,7 @@ body {
   --graph-node-unresolved: #c0bfb8;
 
   /* Canvas */
-  --canvas-color: #f0efe8;
+  --canvas-background: #f0efe8;
 
   /* Callouts - monochrome */
   --callout-default: rgba(0, 0, 0, 0.05);
@@ -625,7 +625,7 @@ body {
   --graph-node-unresolved: #555555;
 
   /* Canvas */
-  --canvas-color: #242424;
+  --canvas-background: #242424;
 
   /* Callouts - monochrome */
   --callout-default: rgba(255, 255, 255, 0.05);
@@ -1731,7 +1731,7 @@ body.scheme-oldmoney.theme-light {
   --graph-node-focused: #9A7B5B;
 
   /* Canvas */
-  --canvas-color: #F3F0EB;
+  --canvas-background: #F3F0EB;
 
   /* Callouts */
   --callout-default: rgba(79, 93, 117, 0.1);
@@ -1906,7 +1906,7 @@ body.scheme-oldmoney.theme-dark {
   --graph-node-focused: #CBAB88;
 
   /* Canvas */
-  --canvas-color: #252321;
+  --canvas-background: #252321;
 
   /* Callouts */
   --callout-default: rgba(184, 149, 110, 0.12);
@@ -2339,21 +2339,11 @@ button.mod-warning:hover {
 
 /* Canvas edge styling - ensure edges are visible */
 .canvas-edges :not(.is-themed) path.canvas-display-path {
-  stroke: var(--background-modifier-border-hover);
-}
-
-.canvas-edges :not(.is-themed) polyline.canvas-path-end {
-  stroke: var(--background-modifier-border-hover);
-  fill: var(--background-modifier-border-hover);
+  stroke: var(--text-faint);
 }
 
 .canvas-edge.is-focused path.canvas-display-path {
   stroke: var(--interactive-accent);
-}
-
-.canvas-edge.is-focused polyline.canvas-path-end {
-  stroke: var(--interactive-accent);
-  fill: var(--interactive-accent);
 }
 
 /* ============================================

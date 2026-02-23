@@ -116,7 +116,7 @@ body.scheme-oldmoney.theme-dark {
   --graph-node-focused: #CBAB88;
 
   /* Canvas */
-  --canvas-color: #252321;
+  --canvas-background: #252321;
 
   /* Callouts */
   --callout-default: rgba(184, 149, 110, 0.12);

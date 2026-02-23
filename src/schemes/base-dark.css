@@ -162,7 +162,7 @@
   --graph-node-unresolved: #555555;
 
   /* Canvas */
-  --canvas-color: #242424;
+  --canvas-background: #242424;
 
   /* Callouts - monochrome */
   --callout-default: rgba(255, 255, 255, 0.05);
