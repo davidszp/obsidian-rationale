@@ -114,6 +114,9 @@ body.scheme-anthropic.theme-dark {
   --graph-node: #d97757;
   --graph-node-focused: #e8886a;
 
+  /* Canvas */
+  --canvas-background: #1e1e1f;
+
   /* Callouts */
   --callout-default: rgba(217, 119, 87, 0.12);
   --callout-info: rgba(87, 167, 217, 0.15);

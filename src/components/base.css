@@ -333,6 +333,12 @@ button.mod-warning:hover {
   margin: var(--size-4-2) 0;
 }
 
+/* Remove embed margin inside canvas nodes to prevent black bar gaps */
+.canvas-node .markdown-embed {
+  margin: 0;
+  border-radius: 0;
+}
+
 /* Search results */
 .search-result-file-match {
   border-radius: var(--radius-s);

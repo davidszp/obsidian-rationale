@@ -114,6 +114,9 @@ body.scheme-anthropic.theme-light {
   --graph-node: #d97757;
   --graph-node-focused: #c86a4a;
 
+  /* Canvas */
+  --canvas-background: #F5F4F0;
+
   /* Callouts */
   --callout-default: rgba(217, 119, 87, 0.1);
   --callout-info: rgba(87, 167, 217, 0.12);

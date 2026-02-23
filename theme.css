@@ -796,6 +796,9 @@ body.scheme-anthropic.theme-light {
   --graph-node: #d97757;
   --graph-node-focused: #c86a4a;
 
+  /* Canvas */
+  --canvas-background: #F5F4F0;
+
   /* Callouts */
   --callout-default: rgba(217, 119, 87, 0.1);
   --callout-info: rgba(87, 167, 217, 0.12);
@@ -952,6 +955,9 @@ body.scheme-anthropic.theme-dark {
   --graph-line: #4a4a4b;
   --graph-node: #d97757;
   --graph-node-focused: #e8886a;
+
+  /* Canvas */
+  --canvas-background: #1e1e1f;
 
   /* Callouts */
   --callout-default: rgba(217, 119, 87, 0.12);
@@ -1111,6 +1117,9 @@ body.scheme-nordic.theme-light {
   --graph-node: #5E81AC;
   --graph-node-focused: #81A1C1;
 
+  /* Canvas */
+  --canvas-background: #E5E9F0;
+
   /* Callouts */
   --callout-default: rgba(94, 129, 172, 0.12);
   --callout-info: rgba(136, 192, 208, 0.15);
@@ -1261,6 +1270,9 @@ body.scheme-nordic.theme-dark {
   --graph-line: #434C5E;
   --graph-node: #88C0D0;
   --graph-node-focused: #8FBCBB;
+
+  /* Canvas */
+  --canvas-background: #3B4252;
 
   /* Callouts */
   --callout-default: rgba(136, 192, 208, 0.12);
@@ -1420,6 +1432,9 @@ body.scheme-academic.theme-light {
   --graph-node: #555555;
   --graph-node-focused: #333333;
 
+  /* Canvas */
+  --canvas-background: #F5F5F5;
+
   /* Callouts */
   --callout-default: rgba(0, 0, 0, 0.05);
   --callout-info: rgba(0, 0, 0, 0.05);
@@ -1570,6 +1585,9 @@ body.scheme-academic.theme-dark {
   --graph-line: #4a4a4a;
   --graph-node: #AAAAAA;
   --graph-node-focused: #CCCCCC;
+
+  /* Canvas */
+  --canvas-background: #242424;
 
   /* Callouts */
   --callout-default: rgba(255, 255, 255, 0.05);
@@ -2296,6 +2314,12 @@ button.mod-warning:hover {
 .markdown-embed {
   border-radius: var(--radius-m);
   margin: var(--size-4-2) 0;
+}
+
+/* Remove embed margin inside canvas nodes to prevent black bar gaps */
+.canvas-node .markdown-embed {
+  margin: 0;
+  border-radius: 0;
 }
 
 /* Search results */

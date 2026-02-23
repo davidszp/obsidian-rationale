@@ -112,6 +112,9 @@ body.scheme-academic.theme-dark {
   --graph-node: #AAAAAA;
   --graph-node-focused: #CCCCCC;
 
+  /* Canvas */
+  --canvas-background: #242424;
+
   /* Callouts */
   --callout-default: rgba(255, 255, 255, 0.05);
   --callout-info: rgba(255, 255, 255, 0.05);

@@ -115,6 +115,9 @@ body.scheme-academic.theme-light {
   --graph-node: #555555;
   --graph-node-focused: #333333;
 
+  /* Canvas */
+  --canvas-background: #F5F5F5;
+
   /* Callouts */
   --callout-default: rgba(0, 0, 0, 0.05);
   --callout-info: rgba(0, 0, 0, 0.05);

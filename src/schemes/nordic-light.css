@@ -115,6 +115,9 @@ body.scheme-nordic.theme-light {
   --graph-node: #5E81AC;
   --graph-node-focused: #81A1C1;
 
+  /* Canvas */
+  --canvas-background: #E5E9F0;
+
   /* Callouts */
   --callout-default: rgba(94, 129, 172, 0.12);
   --callout-info: rgba(136, 192, 208, 0.15);
