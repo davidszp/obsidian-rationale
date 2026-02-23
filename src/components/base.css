@@ -372,3 +372,22 @@ button.mod-warning:hover {
   border-color: var(--text-error);
 }
 
+/* Canvas edge styling - ensure edges are visible */
+.canvas-edges :not(.is-themed) path.canvas-display-path {
+  stroke: var(--background-modifier-border-hover);
+}
+
+.canvas-edges :not(.is-themed) polyline.canvas-path-end {
+  stroke: var(--background-modifier-border-hover);
+  fill: var(--background-modifier-border-hover);
+}
+
+.canvas-edge.is-focused path.canvas-display-path {
+  stroke: var(--interactive-accent);
+}
+
+.canvas-edge.is-focused polyline.canvas-path-end {
+  stroke: var(--interactive-accent);
+  fill: var(--interactive-accent);
+}
+
