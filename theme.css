@@ -182,6 +182,23 @@ settings:
     description: Make folder names bold in the file explorer
     type: class-toggle
     default: false
+  -
+    id: breadcrumb-path
+    title: Highlight Breadcrumb Path
+    description: Highlight ancestor folders of the active file in the sidebar
+    type: class-select
+    allowEmpty: false
+    default: breadcrumb-off
+    options:
+      -
+        label: Off
+        value: breadcrumb-off
+      -
+        label: Bold
+        value: breadcrumb-bold
+      -
+        label: Shaded Background
+        value: breadcrumb-shaded
 */
 /* Google Fonts - Serif for body, Sans for headings */
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
@@ -2768,6 +2785,40 @@ body.scheme-oldmoney.theme-light .mod-right-split .nav-file-title.is-active {
 body.scheme-oldmoney.theme-dark .mod-left-split .nav-file-title.is-active,
 body.scheme-oldmoney.theme-dark .mod-right-split .nav-file-title.is-active {
   background-color: rgba(184, 149, 110, 0.15);
+}
+
+/* ============================================
+   BREADCRUMB PATH - Highlight ancestor folders
+   of the active file in the sidebar
+   ============================================ */
+
+/* --- Breadcrumb: Bold mode --- */
+/* All ancestor folders get bold text */
+body.breadcrumb-bold .nav-folder:has(.nav-file-title.is-active) > .nav-folder-title {
+  font-weight: 600;
+  color: var(--text-normal);
+}
+
+/* --- Breadcrumb: Shaded Background mode --- */
+/* Semi-transparent bg on each ancestor .nav-folder — nested folders compound,
+   so deeper ancestors get progressively darker automatically */
+body.breadcrumb-shaded .nav-folder:has(.nav-file-title.is-active) > .nav-folder-title {
+  background-color: var(--breadcrumb-shade, rgba(0, 0, 0, 0.04));
+  border-radius: var(--radius-s);
+  color: var(--text-normal);
+}
+
+/* Immediate parent gets a stronger tint */
+body.breadcrumb-shaded .nav-folder:has(> .nav-folder-children > .nav-file > .nav-file-title.is-active) > .nav-folder-title {
+  background-color: var(--breadcrumb-shade-strong, rgba(0, 0, 0, 0.08));
+  font-weight: 500;
+}
+
+/* Dark mode shading */
+.theme-dark body.breadcrumb-shaded .nav-folder:has(.nav-file-title.is-active) > .nav-folder-title,
+body.breadcrumb-shaded.theme-dark .nav-folder:has(.nav-file-title.is-active) > .nav-folder-title {
+  --breadcrumb-shade: rgba(255, 255, 255, 0.04);
+  --breadcrumb-shade-strong: rgba(255, 255, 255, 0.08);
 }
 
 /* ============================================

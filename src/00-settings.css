@@ -182,4 +182,21 @@ settings:
     description: Make folder names bold in the file explorer
     type: class-toggle
     default: false
+  -
+    id: breadcrumb-path
+    title: Highlight Breadcrumb Path
+    description: Highlight ancestor folders of the active file in the sidebar
+    type: class-select
+    allowEmpty: false
+    default: breadcrumb-off
+    options:
+      -
+        label: Off
+        value: breadcrumb-off
+      -
+        label: Bold
+        value: breadcrumb-bold
+      -
+        label: Shaded Background
+        value: breadcrumb-shaded
 */
