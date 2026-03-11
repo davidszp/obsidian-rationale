@@ -55,7 +55,7 @@ body.scheme-anthropic.theme-light {
   --interactive-normal: #E8E6E0;
   --interactive-hover: #E0DED8;
   --interactive-accent: var(--theme-accent);
-  --interactive-accent-hover: #c86a4a;
+  --interactive-accent-hover: #e8a08a;
 
   /* Links */
   --link-color: #d97757;

@@ -57,7 +57,7 @@
   --interactive-normal: #F0F0F0;
   --interactive-hover: #E5E5E5;
   --interactive-accent: var(--theme-accent);
-  --interactive-accent-hover: #333333;
+  --interactive-accent-hover: #b0b0b0;
 
   /* Links - Dark grey */
   --link-color: #444444;

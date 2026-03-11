@@ -318,7 +318,7 @@ body {
   --interactive-normal: #F0F0F0;
   --interactive-hover: #E5E5E5;
   --interactive-accent: var(--theme-accent);
-  --interactive-accent-hover: #333333;
+  --interactive-accent-hover: #b0b0b0;
 
   /* Links - Dark grey */
   --link-color: #444444;
@@ -537,7 +537,7 @@ body {
   --interactive-normal: #2a2a2a;
   --interactive-hover: #3a3a3a;
   --interactive-accent: var(--theme-accent);
-  --interactive-accent-hover: #CCCCCC;
+  --interactive-accent-hover: #888888;
 
   /* Links - Light grey */
   --link-color: #BBBBBB;
@@ -754,7 +754,7 @@ body.scheme-anthropic.theme-light {
   --interactive-normal: #E8E6E0;
   --interactive-hover: #E0DED8;
   --interactive-accent: var(--theme-accent);
-  --interactive-accent-hover: #c86a4a;
+  --interactive-accent-hover: #e8a08a;
 
   /* Links */
   --link-color: #d97757;
@@ -914,7 +914,7 @@ body.scheme-anthropic.theme-dark {
   --interactive-normal: #2a2a2b;
   --interactive-hover: #3a3a3b;
   --interactive-accent: var(--theme-accent);
-  --interactive-accent-hover: #e8886a;
+  --interactive-accent-hover: #b8604a;
 
   /* Links */
   --link-color: #d97757;
@@ -1390,7 +1390,7 @@ body.scheme-academic.theme-light {
   --interactive-normal: #F0F0F0;
   --interactive-hover: #E5E5E5;
   --interactive-accent: var(--theme-accent);
-  --interactive-accent-hover: #333333;
+  --interactive-accent-hover: #b0b0b0;
 
   /* Links - Dark grey */
   --link-color: #444444;
@@ -1544,7 +1544,7 @@ body.scheme-academic.theme-dark {
   --interactive-normal: #2a2a2a;
   --interactive-hover: #3a3a3a;
   --interactive-accent: var(--theme-accent);
-  --interactive-accent-hover: #CCCCCC;
+  --interactive-accent-hover: #888888;
 
   /* Links - Light grey */
   --link-color: #BBBBBB;
@@ -1655,11 +1655,11 @@ body.scheme-academic.theme-dark {
    ============================================ */
 
 body.scheme-oldmoney.theme-light {
-  /* Accent - Slate Navy (sophisticated, understated) */
-  --theme-accent: var(--custom-accent, #4F5D75);
-  --accent-h: 218;
-  --accent-s: 20%;
-  --accent-l: 38%;
+  /* Accent - Bronze (warm, refined) */
+  --theme-accent: var(--custom-accent, #8B7355);
+  --accent-h: 30;
+  --accent-s: 24%;
+  --accent-l: 44%;
 
   /* Warm cream backgrounds - COMPLETE SET */
   --background-primary: #FAF8F5;
@@ -1695,17 +1695,17 @@ body.scheme-oldmoney.theme-light {
   --text-error: #9C5757;
   --text-success: #7A8E70;
   --text-warning: #A67C52;
-  --text-highlight-bg: rgba(79, 93, 117, 0.2);
-  --text-highlight-bg-active: rgba(79, 93, 117, 0.3);
-  --text-selection: rgba(79, 93, 117, 0.15);
-  --text-accent: #4F5D75;
-  --text-accent-hover: #6B7A94;
+  --text-highlight-bg: rgba(139, 115, 85, 0.2);
+  --text-highlight-bg-active: rgba(139, 115, 85, 0.3);
+  --text-selection: rgba(139, 115, 85, 0.15);
+  --text-accent: #8B7355;
+  --text-accent-hover: #b09a7d;
 
   /* Interactive */
   --interactive-normal: #EDE8E1;
   --interactive-hover: #E3DDD4;
   --interactive-accent: var(--theme-accent);
-  --interactive-accent-hover: #6B7A94;
+  --interactive-accent-hover: #b09a7d;
 
   /* Links - Brass/bronze */
   --link-color: #9A7B5B;
@@ -1880,7 +1880,7 @@ body.scheme-oldmoney.theme-dark {
   --interactive-normal: #31302D;
   --interactive-hover: #3D3A36;
   --interactive-accent: var(--theme-accent);
-  --interactive-accent-hover: #CBAB88;
+  --interactive-accent-hover: #9a7a58;
 
   /* Links - Bronze tones */
   --link-color: #B8956E;
@@ -2282,6 +2282,13 @@ a {
 button.mod-cta {
   font-weight: 500;
   border-radius: var(--radius-m);
+  color: var(--text-on-accent);
+  background-color: var(--interactive-accent);
+}
+
+button.mod-cta:hover {
+  background-color: var(--interactive-accent-hover);
+  color: var(--text-on-accent);
 }
 
 /* Warning/destructive button styling (Delete, etc.) */

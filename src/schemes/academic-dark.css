@@ -53,7 +53,7 @@ body.scheme-academic.theme-dark {
   --interactive-normal: #2a2a2a;
   --interactive-hover: #3a3a3a;
   --interactive-accent: var(--theme-accent);
-  --interactive-accent-hover: #CCCCCC;
+  --interactive-accent-hover: #888888;
 
   /* Links - Light grey */
   --link-color: #BBBBBB;

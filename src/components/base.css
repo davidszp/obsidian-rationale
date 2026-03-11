@@ -282,6 +282,13 @@ a {
 button.mod-cta {
   font-weight: 500;
   border-radius: var(--radius-m);
+  color: var(--text-on-accent);
+  background-color: var(--interactive-accent);
+}
+
+button.mod-cta:hover {
+  background-color: var(--interactive-accent-hover);
+  color: var(--text-on-accent);
 }
 
 /* Warning/destructive button styling (Delete, etc.) */
