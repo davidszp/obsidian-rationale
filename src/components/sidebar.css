@@ -170,6 +170,7 @@ body.scheme-oldmoney.theme-dark .nav-file-title.is-active {
   padding-left: 12px;
   margin-left: 0;
   border-left: none;
+  overflow: hidden;
 }
 
 .nav-folder.mod-root > .nav-folder-children {
